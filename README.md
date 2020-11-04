@@ -1,5 +1,5 @@
 
-# A3-The-American-Food-Problem
+# A3-Fires in the USA
 Team members:  
 * Andrew Lee  
 * Claire Beard  
