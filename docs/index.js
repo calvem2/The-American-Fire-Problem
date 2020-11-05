@@ -12,7 +12,7 @@ var path = d3.geoPath().projection(projection);
 
 // TODO: Load the actual dataset
 // Load the fire data
-d3.csv("../fireTest.csv").then(function(fires) {
+d3.csv("fireTest.csv").then(function(fires) {
     // TODO: figure out how to fix the range
     // Circle size scale
     var size = d3.scaleSqrt()
