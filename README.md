@@ -7,6 +7,6 @@ Team members:
 * Megan Calverley  
 * Anne Pham
 
-Project page: https://cse442-20f.github.io/A3-The-American-Food-Problem/  
+Project page: https://cse442-20f.github.io/A3-The-American-Fire-Problem/  
 
 Modify or replace `index.html` in the `docs` folder to update your project page.

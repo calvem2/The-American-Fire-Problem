@@ -1,0 +1,1215 @@
+STATE,FIRE_YEAR,FIRE_COUNT
+Alaska,1992,481
+Alaska,1993,861
+Alaska,1994,640
+Alaska,1995,418
+Alaska,1996,718
+Alaska,1997,721
+Alaska,1998,408
+Alaska,1999,482
+Alaska,2000,364
+Alaska,2001,361
+Alaska,2002,538
+Alaska,2003,478
+Alaska,2004,694
+Alaska,2005,619
+Alaska,2006,301
+Alaska,2007,513
+Alaska,2008,369
+Alaska,2009,513
+Alaska,2010,691
+Alaska,2011,508
+Alaska,2012,409
+Alaska,2013,592
+Alaska,2014,393
+Alaska,2015,771
+Alabama,1992,93
+Alabama,1993,137
+Alabama,1994,3452
+Alabama,1995,4230
+Alabama,1996,4048
+Alabama,1997,2591
+Alabama,1998,3566
+Alabama,1999,4501
+Alabama,2000,6264
+Alabama,2001,3309
+Alabama,2002,2926
+Alabama,2003,1824
+Alabama,2004,3054
+Alabama,2005,2547
+Alabama,2006,3947
+Alabama,2007,3833
+Alabama,2008,2012
+Alabama,2009,1372
+Alabama,2010,2913
+Alabama,2011,2042
+Alabama,2012,1747
+Alabama,2013,1670
+Alabama,2014,2418
+Alabama,2015,2074
+Arkansas,1992,128
+Arkansas,1993,151
+Arkansas,1994,167
+Arkansas,1995,240
+Arkansas,1996,224
+Arkansas,1997,1040
+Arkansas,1998,1156
+Arkansas,1999,2224
+Arkansas,2000,2363
+Arkansas,2001,1266
+Arkansas,2002,1001
+Arkansas,2003,1664
+Arkansas,2004,1364
+Arkansas,2005,2296
+Arkansas,2006,2571
+Arkansas,2007,1301
+Arkansas,2008,883
+Arkansas,2009,1076
+Arkansas,2010,2220
+Arkansas,2011,2546
+Arkansas,2012,2351
+Arkansas,2013,847
+Arkansas,2014,1295
+Arkansas,2015,1289
+Arizona,1992,3494
+Arizona,1993,4639
+Arizona,1994,4519
+Arizona,1995,4502
+Arizona,1996,3761
+Arizona,1997,2250
+Arizona,1998,2679
+Arizona,1999,2736
+Arizona,2000,3859
+Arizona,2001,3186
+Arizona,2002,2918
+Arizona,2003,2916
+Arizona,2004,2843
+Arizona,2005,3690
+Arizona,2006,3319
+Arizona,2007,2443
+Arizona,2008,1898
+Arizona,2009,2333
+Arizona,2010,1617
+Arizona,2011,1912
+Arizona,2012,1760
+Arizona,2013,1665
+Arizona,2014,2828
+Arizona,2015,3819
+California,1992,10833
+California,1993,8270
+California,1994,8654
+California,1995,7381
+California,1996,9173
+California,1997,7930
+California,1998,6864
+California,1999,8910
+California,2000,6977
+California,2001,8182
+California,2002,7133
+California,2003,7913
+California,2004,7418
+California,2005,6678
+California,2006,8271
+California,2007,10151
+California,2008,7744
+California,2009,6940
+California,2010,5776
+California,2011,8562
+California,2012,7208
+California,2013,8723
+California,2014,6494
+California,2015,7365
+Colorado,1992,1322
+Colorado,1993,1244
+Colorado,1994,2515
+Colorado,1995,1517
+Colorado,1996,1405
+Colorado,1997,722
+Colorado,1998,765
+Colorado,1999,756
+Colorado,2000,1619
+Colorado,2001,1266
+Colorado,2002,1221
+Colorado,2003,2422
+Colorado,2004,1310
+Colorado,2005,1875
+Colorado,2006,1316
+Colorado,2007,1070
+Colorado,2008,1015
+Colorado,2009,952
+Colorado,2010,2694
+Colorado,2011,957
+Colorado,2012,1106
+Colorado,2013,3894
+Colorado,2014,603
+Colorado,2015,591
+Connecticut,1992,202
+Connecticut,1993,103
+Connecticut,1994,290
+Connecticut,1995,110
+Connecticut,1996,27
+Connecticut,1997,83
+Connecticut,1998,30
+Connecticut,1999,297
+Connecticut,2000,126
+Connecticut,2001,207
+Connecticut,2002,107
+Connecticut,2003,95
+Connecticut,2004,87
+Connecticut,2005,293
+Connecticut,2006,372
+Connecticut,2007,331
+Connecticut,2008,366
+Connecticut,2009,257
+Connecticut,2010,418
+Connecticut,2011,227
+Connecticut,2012,576
+Connecticut,2015,372
+District of Columbia,1992,3
+District of Columbia,1993,7
+District of Columbia,1994,4
+District of Columbia,1995,5
+District of Columbia,1997,3
+District of Columbia,1998,13
+District of Columbia,1999,8
+District of Columbia,2001,1
+District of Columbia,2002,1
+District of Columbia,2005,2
+District of Columbia,2006,3
+District of Columbia,2007,1
+District of Columbia,2008,1
+District of Columbia,2009,1
+District of Columbia,2010,1
+District of Columbia,2011,2
+District of Columbia,2012,5
+District of Columbia,2013,1
+District of Columbia,2014,1
+District of Columbia,2015,3
+Delaware,1992,3
+Delaware,1993,1
+Delaware,1994,2
+Delaware,1995,5
+Delaware,1997,5
+Delaware,1999,2
+Delaware,2000,1
+Delaware,2001,1
+Delaware,2002,39
+Delaware,2003,21
+Delaware,2004,27
+Delaware,2005,14
+Delaware,2007,2
+Delaware,2010,1
+Delaware,2012,19
+Delaware,2013,9
+Delaware,2014,3
+Delaware,2015,16
+Florida,1992,4222
+Florida,1993,4548
+Florida,1994,3530
+Florida,1995,3186
+Florida,1996,4697
+Florida,1997,3912
+Florida,1998,4813
+Florida,1999,5484
+Florida,2000,6499
+Florida,2001,4887
+Florida,2002,3131
+Florida,2003,2150
+Florida,2004,3618
+Florida,2005,2395
+Florida,2006,5115
+Florida,2007,4589
+Florida,2008,3105
+Florida,2009,3016
+Florida,2010,2373
+Florida,2011,5029
+Florida,2012,3107
+Florida,2013,2163
+Florida,2014,2144
+Florida,2015,2548
+Georgia,1992,6459
+Georgia,1993,9111
+Georgia,1994,6584
+Georgia,1995,7968
+Georgia,1996,9872
+Georgia,1997,7234
+Georgia,1998,7301
+Georgia,1999,11138
+Georgia,2000,10549
+Georgia,2001,9572
+Georgia,2002,7804
+Georgia,2003,4567
+Georgia,2004,8127
+Georgia,2005,6049
+Georgia,2006,8925
+Georgia,2007,8717
+Georgia,2008,5807
+Georgia,2009,4176
+Georgia,2010,5874
+Georgia,2011,8414
+Georgia,2012,4949
+Georgia,2013,3252
+Georgia,2014,4063
+Georgia,2015,2355
+Hawaii,1992,77
+Hawaii,1993,14
+Hawaii,1994,9
+Hawaii,1995,10
+Hawaii,1996,8
+Hawaii,1997,12
+Hawaii,1998,26
+Hawaii,1999,9
+Hawaii,2000,13
+Hawaii,2001,566
+Hawaii,2002,576
+Hawaii,2003,941
+Hawaii,2004,687
+Hawaii,2005,1242
+Hawaii,2006,789
+Hawaii,2007,964
+Hawaii,2008,769
+Hawaii,2009,816
+Hawaii,2010,984
+Hawaii,2011,603
+Hawaii,2012,714
+Hawaii,2013,60
+Hawaii,2014,2
+Hawaii,2015,4
+Iowa,1992,5
+Iowa,1993,6
+Iowa,1994,5
+Iowa,1995,6
+Iowa,1996,28
+Iowa,1997,10
+Iowa,1998,3
+Iowa,1999,20
+Iowa,2000,19
+Iowa,2001,10
+Iowa,2002,51
+Iowa,2003,50
+Iowa,2004,50
+Iowa,2005,34
+Iowa,2006,442
+Iowa,2007,143
+Iowa,2008,151
+Iowa,2009,702
+Iowa,2010,199
+Iowa,2011,439
+Iowa,2012,458
+Iowa,2013,243
+Iowa,2014,543
+Iowa,2015,517
+Idaho,1992,2195
+Idaho,1993,698
+Idaho,1994,3336
+Idaho,1995,1433
+Idaho,1996,1974
+Idaho,1997,1130
+Idaho,1998,1758
+Idaho,1999,1916
+Idaho,2000,1749
+Idaho,2001,1683
+Idaho,2002,1511
+Idaho,2003,1657
+Idaho,2004,1138
+Idaho,2005,1144
+Idaho,2006,1888
+Idaho,2007,1589
+Idaho,2008,986
+Idaho,2009,1198
+Idaho,2010,1150
+Idaho,2011,1318
+Idaho,2012,1189
+Idaho,2013,1566
+Idaho,2014,1215
+Idaho,2015,1277
+Illinois,1992,18
+Illinois,1993,5
+Illinois,1994,27
+Illinois,1995,47
+Illinois,1996,21
+Illinois,1997,10
+Illinois,1998,22
+Illinois,1999,53
+Illinois,2000,29
+Illinois,2001,45
+Illinois,2002,43
+Illinois,2003,48
+Illinois,2004,88
+Illinois,2005,62
+Illinois,2006,34
+Illinois,2007,99
+Illinois,2008,197
+Illinois,2009,347
+Illinois,2010,452
+Illinois,2011,136
+Illinois,2012,167
+Illinois,2013,44
+Illinois,2014,227
+Illinois,2015,106
+Indiana,1992,95
+Indiana,1993,56
+Indiana,1994,85
+Indiana,1995,101
+Indiana,1996,88
+Indiana,1997,36
+Indiana,1998,57
+Indiana,1999,151
+Indiana,2000,92
+Indiana,2001,140
+Indiana,2002,123
+Indiana,2003,155
+Indiana,2004,193
+Indiana,2005,173
+Indiana,2006,86
+Indiana,2007,127
+Indiana,2008,67
+Indiana,2009,45
+Indiana,2010,73
+Indiana,2011,26
+Indiana,2012,57
+Indiana,2013,20
+Indiana,2014,36
+Indiana,2015,16
+Kansas,1992,16
+Kansas,1993,14
+Kansas,1994,47
+Kansas,1995,30
+Kansas,1996,30
+Kansas,1997,22
+Kansas,1998,31
+Kansas,1999,36
+Kansas,2000,48
+Kansas,2001,69
+Kansas,2002,128
+Kansas,2003,113
+Kansas,2004,76
+Kansas,2005,175
+Kansas,2006,348
+Kansas,2007,196
+Kansas,2008,94
+Kansas,2009,71
+Kansas,2010,40
+Kansas,2011,56
+Kansas,2012,73
+Kansas,2013,14
+Kansas,2014,59
+Kansas,2015,5887
+Kentucky,1992,49
+Kentucky,1993,81
+Kentucky,1994,178
+Kentucky,1995,180
+Kentucky,1996,72
+Kentucky,1997,675
+Kentucky,1998,957
+Kentucky,1999,1879
+Kentucky,2000,1587
+Kentucky,2001,2061
+Kentucky,2002,1050
+Kentucky,2003,956
+Kentucky,2004,1238
+Kentucky,2005,1766
+Kentucky,2006,1884
+Kentucky,2007,2081
+Kentucky,2008,1563
+Kentucky,2009,1419
+Kentucky,2010,1913
+Kentucky,2011,1032
+Kentucky,2012,1263
+Kentucky,2013,1003
+Kentucky,2014,1446
+Kentucky,2015,756
+Louisiana,1992,87
+Louisiana,1993,127
+Louisiana,1994,111
+Louisiana,1995,139
+Louisiana,1996,157
+Louisiana,1997,1361
+Louisiana,1998,2283
+Louisiana,1999,2788
+Louisiana,2000,4234
+Louisiana,2001,976
+Louisiana,2002,1481
+Louisiana,2003,94
+Louisiana,2004,78
+Louisiana,2005,3384
+Louisiana,2006,3131
+Louisiana,2007,63
+Louisiana,2008,1438
+Louisiana,2009,1542
+Louisiana,2010,2419
+Louisiana,2011,217
+Louisiana,2012,877
+Louisiana,2013,1075
+Louisiana,2014,876
+Louisiana,2015,1075
+Massachusetts,1992,7
+Massachusetts,1993,4
+Massachusetts,1994,1
+Massachusetts,1995,15
+Massachusetts,1996,4
+Massachusetts,1997,11
+Massachusetts,1998,1
+Massachusetts,1999,7
+Massachusetts,2000,3
+Massachusetts,2001,17
+Massachusetts,2002,115
+Massachusetts,2003,75
+Massachusetts,2004,69
+Massachusetts,2005,30
+Massachusetts,2006,31
+Massachusetts,2007,34
+Massachusetts,2008,12
+Massachusetts,2009,1
+Massachusetts,2010,3
+Massachusetts,2012,5
+Massachusetts,2013,5
+Massachusetts,2014,6
+Massachusetts,2015,2170
+Maryland,1992,12
+Maryland,1993,11
+Maryland,1994,16
+Maryland,1995,32
+Maryland,1996,17
+Maryland,1997,19
+Maryland,1998,17
+Maryland,1999,34
+Maryland,2000,14
+Maryland,2001,22
+Maryland,2002,14
+Maryland,2003,5
+Maryland,2004,21
+Maryland,2005,417
+Maryland,2006,718
+Maryland,2007,598
+Maryland,2008,530
+Maryland,2009,261
+Maryland,2010,168
+Maryland,2011,133
+Maryland,2012,163
+Maryland,2013,127
+Maryland,2014,123
+Maryland,2015,150
+Maine,1992,611
+Maine,1993,672
+Maine,1994,541
+Maine,1995,963
+Maine,1996,315
+Maine,1997,585
+Maine,1998,580
+Maine,1999,681
+Maine,2000,346
+Maine,2001,963
+Maine,2002,664
+Maine,2003,624
+Maine,2004,467
+Maine,2005,472
+Maine,2006,623
+Maine,2007,481
+Maine,2008,466
+Maine,2009,483
+Maine,2010,505
+Maine,2011,365
+Maine,2012,560
+Maine,2013,444
+Maine,2014,333
+Maine,2015,406
+Michigan,1992,614
+Michigan,1993,262
+Michigan,1994,644
+Michigan,1995,627
+Michigan,1996,386
+Michigan,1997,118
+Michigan,1998,170
+Michigan,1999,150
+Michigan,2000,115
+Michigan,2001,424
+Michigan,2002,308
+Michigan,2003,750
+Michigan,2004,467
+Michigan,2005,641
+Michigan,2006,534
+Michigan,2007,516
+Michigan,2008,444
+Michigan,2009,486
+Michigan,2010,584
+Michigan,2011,309
+Michigan,2012,711
+Michigan,2013,455
+Michigan,2014,264
+Michigan,2015,523
+Minnesota,1992,1620
+Minnesota,1993,1363
+Minnesota,1994,1904
+Minnesota,1995,1731
+Minnesota,1996,1752
+Minnesota,1997,2528
+Minnesota,1998,2474
+Minnesota,1999,2113
+Minnesota,2000,2631
+Minnesota,2001,1327
+Minnesota,2002,2039
+Minnesota,2003,3297
+Minnesota,2004,1989
+Minnesota,2005,1728
+Minnesota,2006,2507
+Minnesota,2007,1787
+Minnesota,2008,1165
+Minnesota,2009,1233
+Minnesota,2010,2075
+Minnesota,2011,1235
+Minnesota,2012,2295
+Minnesota,2013,1132
+Minnesota,2014,1006
+Minnesota,2015,1838
+Missouri,1992,1680
+Missouri,1993,907
+Missouri,1994,1607
+Missouri,1995,2060
+Missouri,1996,443
+Missouri,1997,1314
+Missouri,1998,521
+Missouri,1999,1204
+Missouri,2000,673
+Missouri,2001,884
+Missouri,2002,670
+Missouri,2003,340
+Missouri,2004,307
+Missouri,2005,413
+Missouri,2006,442
+Missouri,2007,523
+Missouri,2008,136
+Missouri,2009,239
+Missouri,2010,196
+Missouri,2011,740
+Missouri,2012,221
+Missouri,2013,413
+Missouri,2014,1251
+Missouri,2015,769
+Mississippi,1992,4478
+Mississippi,1993,4015
+Mississippi,1994,3356
+Mississippi,1995,4992
+Mississippi,1996,4923
+Mississippi,1997,2783
+Mississippi,1998,3424
+Mississippi,1999,5436
+Mississippi,2000,7984
+Mississippi,2001,2888
+Mississippi,2002,2832
+Mississippi,2003,1913
+Mississippi,2004,2812
+Mississippi,2005,3520
+Mississippi,2006,5533
+Mississippi,2007,2767
+Mississippi,2008,2016
+Mississippi,2009,1966
+Mississippi,2010,2926
+Mississippi,2011,1614
+Mississippi,2012,1218
+Mississippi,2013,1488
+Mississippi,2014,2224
+Mississippi,2015,2122
+Montana,1992,1642
+Montana,1993,743
+Montana,1994,2984
+Montana,1995,1052
+Montana,1996,1993
+Montana,1997,993
+Montana,1998,1909
+Montana,1999,2089
+Montana,2000,2428
+Montana,2001,1603
+Montana,2002,1597
+Montana,2003,2471
+Montana,2004,1503
+Montana,2005,1497
+Montana,2006,2460
+Montana,2007,1997
+Montana,2008,1532
+Montana,2009,1662
+Montana,2010,1140
+Montana,2011,1190
+Montana,2012,1854
+Montana,2013,1359
+Montana,2014,1203
+Montana,2015,1866
+North Carolina,1992,5696
+North Carolina,1993,4808
+North Carolina,1994,5739
+North Carolina,1995,5253
+North Carolina,1996,4238
+North Carolina,1997,4512
+North Carolina,1998,4324
+North Carolina,1999,4041
+North Carolina,2000,4987
+North Carolina,2001,8143
+North Carolina,2002,5590
+North Carolina,2003,2041
+North Carolina,2004,4343
+North Carolina,2005,4045
+North Carolina,2006,5059
+North Carolina,2007,7284
+North Carolina,2008,4382
+North Carolina,2009,3319
+North Carolina,2010,4100
+North Carolina,2011,5427
+North Carolina,2012,3559
+North Carolina,2013,3329
+North Carolina,2014,4587
+North Carolina,2015,2471
+North Dakota,1992,396
+North Dakota,1993,386
+North Dakota,1994,501
+North Dakota,1995,272
+North Dakota,1996,527
+North Dakota,1997,453
+North Dakota,1998,492
+North Dakota,1999,506
+North Dakota,2000,627
+North Dakota,2001,553
+North Dakota,2002,907
+North Dakota,2003,835
+North Dakota,2004,819
+North Dakota,2005,903
+North Dakota,2006,1061
+North Dakota,2007,865
+North Dakota,2008,723
+North Dakota,2009,415
+North Dakota,2010,435
+North Dakota,2011,373
+North Dakota,2012,1098
+North Dakota,2013,541
+North Dakota,2014,510
+North Dakota,2015,1003
+Nebraska,1992,25
+Nebraska,1993,17
+Nebraska,1994,80
+Nebraska,1995,56
+Nebraska,1996,59
+Nebraska,1997,57
+Nebraska,1998,43
+Nebraska,1999,75
+Nebraska,2000,114
+Nebraska,2001,77
+Nebraska,2002,183
+Nebraska,2003,161
+Nebraska,2004,169
+Nebraska,2005,177
+Nebraska,2006,122
+Nebraska,2007,822
+Nebraska,2008,611
+Nebraska,2009,715
+Nebraska,2010,610
+Nebraska,2011,832
+Nebraska,2012,1223
+Nebraska,2013,423
+Nebraska,2014,723
+Nebraska,2015,599
+New Hampshire,1992,107
+New Hampshire,1993,142
+New Hampshire,1994,133
+New Hampshire,1995,195
+New Hampshire,1996,83
+New Hampshire,1997,85
+New Hampshire,1998,171
+New Hampshire,1999,5
+New Hampshire,2000,87
+New Hampshire,2001,124
+New Hampshire,2002,116
+New Hampshire,2003,56
+New Hampshire,2004,70
+New Hampshire,2005,88
+New Hampshire,2006,111
+New Hampshire,2007,95
+New Hampshire,2008,102
+New Hampshire,2009,68
+New Hampshire,2010,98
+New Hampshire,2011,4
+New Hampshire,2012,100
+New Hampshire,2013,147
+New Hampshire,2014,125
+New Hampshire,2015,140
+New Jersey,1992,1325
+New Jersey,1993,842
+New Jersey,1994,1326
+New Jersey,1995,1817
+New Jersey,1996,768
+New Jersey,1997,1383
+New Jersey,1998,1312
+New Jersey,1999,1758
+New Jersey,2000,972
+New Jersey,2001,1571
+New Jersey,2002,1419
+New Jersey,2003,674
+New Jersey,2004,819
+New Jersey,2005,996
+New Jersey,2006,1352
+New Jersey,2007,1097
+New Jersey,2008,1152
+New Jersey,2009,614
+New Jersey,2010,1010
+New Jersey,2011,272
+New Jersey,2012,1029
+New Jersey,2013,872
+New Jersey,2014,799
+New Jersey,2015,770
+New Mexico,1992,977
+New Mexico,1993,1809
+New Mexico,1994,2668
+New Mexico,1995,1665
+New Mexico,1996,2101
+New Mexico,1997,1380
+New Mexico,1998,1294
+New Mexico,1999,1231
+New Mexico,2000,2794
+New Mexico,2001,1701
+New Mexico,2002,2077
+New Mexico,2003,1969
+New Mexico,2004,1229
+New Mexico,2005,1582
+New Mexico,2006,1996
+New Mexico,2007,1428
+New Mexico,2008,864
+New Mexico,2009,1448
+New Mexico,2010,1145
+New Mexico,2011,2197
+New Mexico,2012,1174
+New Mexico,2013,1078
+New Mexico,2014,893
+New Mexico,2015,778
+Nevada,1992,556
+Nevada,1993,443
+Nevada,1994,710
+Nevada,1995,545
+Nevada,1996,1088
+Nevada,1997,595
+Nevada,1998,638
+Nevada,1999,1047
+Nevada,2000,977
+Nevada,2001,1118
+Nevada,2002,649
+Nevada,2003,664
+Nevada,2004,776
+Nevada,2005,749
+Nevada,2006,1049
+Nevada,2007,698
+Nevada,2008,447
+Nevada,2009,570
+Nevada,2010,353
+Nevada,2011,721
+Nevada,2012,838
+Nevada,2013,657
+Nevada,2014,542
+Nevada,2015,526
+New York,1992,364
+New York,1993,304
+New York,1994,129
+New York,1995,487
+New York,1996,107
+New York,1997,365
+New York,1998,310
+New York,1999,711
+New York,2000,1756
+New York,2001,3262
+New York,2002,3512
+New York,2003,4934
+New York,2004,4062
+New York,2005,7700
+New York,2006,6631
+New York,2007,6319
+New York,2008,7156
+New York,2009,5764
+New York,2010,6181
+New York,2011,3740
+New York,2012,3944
+New York,2013,2890
+New York,2014,4358
+New York,2015,5884
+Ohio,1992,21
+Ohio,1993,18
+Ohio,1994,28
+Ohio,1995,47
+Ohio,1996,9
+Ohio,1997,22
+Ohio,1998,27
+Ohio,1999,40
+Ohio,2000,28
+Ohio,2001,86
+Ohio,2002,142
+Ohio,2003,63
+Ohio,2004,72
+Ohio,2005,100
+Ohio,2006,222
+Ohio,2007,259
+Ohio,2008,116
+Ohio,2009,244
+Ohio,2010,180
+Ohio,2011,79
+Ohio,2012,204
+Ohio,2013,323
+Ohio,2014,612
+Ohio,2015,537
+Oklahoma,1992,1468
+Oklahoma,1993,2300
+Oklahoma,1994,1913
+Oklahoma,1995,2603
+Oklahoma,1996,2689
+Oklahoma,1997,914
+Oklahoma,1998,816
+Oklahoma,1999,1665
+Oklahoma,2000,1643
+Oklahoma,2001,1290
+Oklahoma,2002,1535
+Oklahoma,2003,1639
+Oklahoma,2004,1688
+Oklahoma,2005,2768
+Oklahoma,2006,3265
+Oklahoma,2007,1334
+Oklahoma,2008,2165
+Oklahoma,2009,2049
+Oklahoma,2010,2146
+Oklahoma,2011,2542
+Oklahoma,2012,1655
+Oklahoma,2013,795
+Oklahoma,2014,1172
+Oklahoma,2015,1185
+Oregon,1992,3957
+Oregon,1993,1852
+Oregon,1994,3473
+Oregon,1995,2264
+Oregon,1996,2875
+Oregon,1997,2142
+Oregon,1998,2575
+Oregon,1999,2927
+Oregon,2000,1938
+Oregon,2001,3368
+Oregon,2002,2759
+Oregon,2003,2615
+Oregon,2004,2270
+Oregon,2005,1746
+Oregon,2006,3184
+Oregon,2007,2512
+Oregon,2008,2668
+Oregon,2009,2304
+Oregon,2010,1925
+Oregon,2011,1968
+Oregon,2012,1657
+Oregon,2013,2562
+Oregon,2014,3047
+Oregon,2015,2500
+Pennsylvania,1992,17
+Pennsylvania,1993,19
+Pennsylvania,1994,20
+Pennsylvania,1995,22
+Pennsylvania,1996,12
+Pennsylvania,1997,12
+Pennsylvania,1998,18
+Pennsylvania,1999,30
+Pennsylvania,2000,14
+Pennsylvania,2001,35
+Pennsylvania,2002,628
+Pennsylvania,2003,407
+Pennsylvania,2004,193
+Pennsylvania,2005,783
+Pennsylvania,2006,874
+Pennsylvania,2007,514
+Pennsylvania,2008,652
+Pennsylvania,2009,633
+Pennsylvania,2010,583
+Pennsylvania,2011,201
+Pennsylvania,2012,724
+Pennsylvania,2013,639
+Pennsylvania,2014,875
+Pennsylvania,2015,807
+Puerto Rico,1992,4
+Puerto Rico,1993,1
+Puerto Rico,1994,4
+Puerto Rico,1996,3
+Puerto Rico,1997,6
+Puerto Rico,1998,1
+Puerto Rico,2002,1
+Puerto Rico,2003,3622
+Puerto Rico,2004,1885
+Puerto Rico,2005,4274
+Puerto Rico,2006,2529
+Puerto Rico,2007,3693
+Puerto Rico,2008,17
+Puerto Rico,2009,1690
+Puerto Rico,2010,1750
+Puerto Rico,2011,2490
+Puerto Rico,2012,8
+Puerto Rico,2013,33
+Puerto Rico,2014,42
+Puerto Rico,2015,28
+Rhode Island,1994,1
+Rhode Island,2005,18
+Rhode Island,2006,25
+Rhode Island,2007,21
+Rhode Island,2008,135
+Rhode Island,2009,47
+Rhode Island,2011,34
+Rhode Island,2012,49
+Rhode Island,2013,19
+Rhode Island,2014,46
+Rhode Island,2015,85
+South Carolina,1992,5195
+South Carolina,1993,5287
+South Carolina,1994,4489
+South Carolina,1995,3520
+South Carolina,1996,4414
+South Carolina,1997,3070
+South Carolina,1998,3508
+South Carolina,1999,5384
+South Carolina,2000,4995
+South Carolina,2001,6225
+South Carolina,2002,4683
+South Carolina,2003,1315
+South Carolina,2004,3058
+South Carolina,2005,2704
+South Carolina,2006,2855
+South Carolina,2007,3998
+South Carolina,2008,2744
+South Carolina,2009,1757
+South Carolina,2010,2144
+South Carolina,2011,3181
+South Carolina,2012,1971
+South Carolina,2013,1626
+South Carolina,2014,1893
+South Carolina,2015,1299
+South Dakota,1992,554
+South Dakota,1993,438
+South Dakota,1994,882
+South Dakota,1995,665
+South Dakota,1996,839
+South Dakota,1997,607
+South Dakota,1998,816
+South Dakota,1999,1409
+South Dakota,2000,2271
+South Dakota,2001,1338
+South Dakota,2002,1962
+South Dakota,2003,1730
+South Dakota,2004,1377
+South Dakota,2005,1762
+South Dakota,2006,2646
+South Dakota,2007,1627
+South Dakota,2008,1190
+South Dakota,2009,984
+South Dakota,2010,698
+South Dakota,2011,1431
+South Dakota,2012,2726
+South Dakota,2013,1022
+South Dakota,2014,1023
+South Dakota,2015,966
+Tennessee,1992,55
+Tennessee,1993,65
+Tennessee,1994,73
+Tennessee,1995,106
+Tennessee,1996,56
+Tennessee,1997,1394
+Tennessee,1998,1836
+Tennessee,1999,3454
+Tennessee,2000,2674
+Tennessee,2001,2521
+Tennessee,2002,1485
+Tennessee,2003,31
+Tennessee,2004,69
+Tennessee,2005,2041
+Tennessee,2006,2183
+Tennessee,2007,3393
+Tennessee,2008,1429
+Tennessee,2009,1477
+Tennessee,2010,1904
+Tennessee,2011,1195
+Tennessee,2012,1203
+Tennessee,2013,638
+Tennessee,2014,1260
+Tennessee,2015,612
+Texas,1992,1168
+Texas,1993,1457
+Texas,1994,907
+Texas,1995,1648
+Texas,1996,2843
+Texas,1997,770
+Texas,1998,2026
+Texas,1999,1775
+Texas,2000,2627
+Texas,2001,771
+Texas,2002,1229
+Texas,2003,1147
+Texas,2004,1040
+Texas,2005,6901
+Texas,2006,15022
+Texas,2007,5477
+Texas,2008,18067
+Texas,2009,14142
+Texas,2010,9351
+Texas,2011,19453
+Texas,2012,7623
+Texas,2013,9735
+Texas,2014,8538
+Texas,2015,8304
+Utah,1992,1092
+Utah,1993,710
+Utah,1994,1663
+Utah,1995,1151
+Utah,1996,1666
+Utah,1997,862
+Utah,1998,873
+Utah,1999,1282
+Utah,2000,1857
+Utah,2001,1775
+Utah,2002,1143
+Utah,2003,1422
+Utah,2004,1519
+Utah,2005,1362
+Utah,2006,1926
+Utah,2007,1548
+Utah,2008,1062
+Utah,2009,1157
+Utah,2010,1056
+Utah,2011,1095
+Utah,2012,1592
+Utah,2013,1249
+Utah,2014,1058
+Utah,2015,605
+Virginia,1992,43
+Virginia,1993,54
+Virginia,1994,78
+Virginia,1995,1550
+Virginia,1996,824
+Virginia,1997,1133
+Virginia,1998,1168
+Virginia,1999,1583
+Virginia,2000,988
+Virginia,2001,2101
+Virginia,2002,1572
+Virginia,2003,344
+Virginia,2004,301
+Virginia,2005,786
+Virginia,2006,1268
+Virginia,2007,1446
+Virginia,2008,1287
+Virginia,2009,784
+Virginia,2010,1026
+Virginia,2011,813
+Virginia,2012,685
+Virginia,2013,581
+Virginia,2014,821
+Virginia,2015,597
+Vermont,1992,1
+Vermont,1993,1
+Vermont,1994,6
+Vermont,1995,2
+Vermont,1997,2
+Vermont,1998,2
+Vermont,1999,3
+Vermont,2002,6
+Vermont,2003,9
+Vermont,2004,16
+Vermont,2005,26
+Vermont,2006,4
+Vermont,2007,5
+Vermont,2008,5
+Vermont,2009,1
+Vermont,2010,2
+Vermont,2012,97
+Vermont,2013,126
+Vermont,2014,55
+Vermont,2015,87
+Washington,1992,1774
+Washington,1993,986
+Washington,1994,2022
+Washington,1995,1213
+Washington,1996,1091
+Washington,1997,999
+Washington,1998,1477
+Washington,1999,1475
+Washington,2000,1226
+Washington,2001,1158
+Washington,2002,1418
+Washington,2003,1433
+Washington,2004,1591
+Washington,2005,1089
+Washington,2006,1577
+Washington,2007,1304
+Washington,2008,1490
+Washington,2009,2000
+Washington,2010,1048
+Washington,2011,1028
+Washington,2012,1428
+Washington,2013,1378
+Washington,2014,1567
+Washington,2015,1741
+Wisconsin,1992,1287
+Wisconsin,1993,884
+Wisconsin,1994,1973
+Wisconsin,1995,1640
+Wisconsin,1996,1463
+Wisconsin,1997,1675
+Wisconsin,1998,1611
+Wisconsin,1999,1604
+Wisconsin,2000,1578
+Wisconsin,2001,993
+Wisconsin,2002,949
+Wisconsin,2003,2253
+Wisconsin,2004,1161
+Wisconsin,2005,1565
+Wisconsin,2006,1658
+Wisconsin,2007,1487
+Wisconsin,2008,813
+Wisconsin,2009,1578
+Wisconsin,2010,1312
+Wisconsin,2011,735
+Wisconsin,2012,1380
+Wisconsin,2013,692
+Wisconsin,2014,605
+Wisconsin,2015,965
+West Virginia,1992,701
+West Virginia,1993,847
+West Virginia,1994,1010
+West Virginia,1995,1241
+West Virginia,1996,651
+West Virginia,1997,719
+West Virginia,1998,1006
+West Virginia,1999,1949
+West Virginia,2000,1106
+West Virginia,2001,1789
+West Virginia,2002,1000
+West Virginia,2003,641
+West Virginia,2004,618
+West Virginia,2005,762
+West Virginia,2006,1026
+West Virginia,2007,836
+West Virginia,2008,886
+West Virginia,2009,984
+West Virginia,2010,796
+West Virginia,2011,489
+West Virginia,2012,694
+West Virginia,2013,580
+West Virginia,2014,951
+West Virginia,2015,685
+Wyoming,1992,746
+Wyoming,1993,269
+Wyoming,1994,919
+Wyoming,1995,530
+Wyoming,1996,1032
+Wyoming,1997,195
+Wyoming,1998,198
+Wyoming,1999,305
+Wyoming,2000,571
+Wyoming,2001,672
+Wyoming,2002,670
+Wyoming,2003,717
+Wyoming,2004,409
+Wyoming,2005,521
+Wyoming,2006,769
+Wyoming,2007,595
+Wyoming,2008,449
+Wyoming,2009,474
+Wyoming,2010,631
+Wyoming,2011,640
+Wyoming,2012,1046
+Wyoming,2013,581
+Wyoming,2014,595
+Wyoming,2015,632
