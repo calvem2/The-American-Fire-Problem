@@ -12,7 +12,7 @@ var path = d3.geoPath().projection(projection);
 
 // TODO: Load the actual dataset
 // Load the fire data
-d3.csv("fireTest.csv").then(function(fires) {
+d3.csv("cleanedWildFiresWithStates.csv").then(function(fires) {
 
     // Current state clicked
     var clickedState = null;
@@ -205,13 +205,14 @@ d3.csv("fireTest.csv").then(function(fires) {
         function drawCircles() {
             const circles = g.selectAll("circle")
                 // Filter data to include only current year and state
+                // TODO: use id column for key
                 .data(fires.filter(d => (d.STATE.replace(" ", "_") === clickedState)
-                        && (d.FIRE_YEAR === yearSelected.toString())), d => d.FIRE_NAME)
+                        && (d.FIRE_YEAR === yearSelected.toString())), d => d => [d.FIRE_NAME, d.LATITUDE, d.LONGITUDE])
                 .join(
                         // add new circles
                     enter => enter
                         .append("circle")
-                        .sort((a, b) => b.FIRE_SIZE - a.FIRE_SIZE)
+                        //.sort((a, b) => b.FIRE_SIZE - a.FIRE_SIZE)
                         .attr("cx", function(d) {
                             return projection([d.LONGITUDE, d.LATITUDE])[0];
                         })
@@ -220,7 +221,7 @@ d3.csv("fireTest.csv").then(function(fires) {
                         .attr("fill", "blue")
                         // initially small and translucent before transition
                         .attr("r", 0)
-                        .style("opacity", 0),
+                        .attr("opacity", 0),
                     update => update,
                     exit => exit
                         // TODO: refine transition
