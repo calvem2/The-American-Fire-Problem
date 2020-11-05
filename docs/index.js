@@ -15,9 +15,13 @@ var path = d3.geoPath().projection(projection);
 d3.csv("fireTest.csv").then(function(fires) {
     // TODO: figure out how to fix the range
     // Circle size scale
+    var sizes = fires.map(function(d) {
+        return { "size": parseFloat(d.FIRE_SIZE) };
+    });
+    console.log(sizes);
     var size = d3.scaleSqrt()
-        .domain(d3.extent(fires, d => d.FIRE_SIZE))
-        .range([1, 1.5]);
+        .domain(d3.extent(sizes, d => d.size))
+        .range([1, 8]);
 
     // Draw the map
     d3.json("us.json").then(function(us) {
