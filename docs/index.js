@@ -110,7 +110,6 @@ d3.csv("fireTest.csv").then(function(fires) {
                 .join("circle")
                 .sort((a, b) => b.FIRE_SIZE - a.FIRE_SIZE)
                 .attr("cx", function(d) {
-                    console.log("long/lat: " + projection([d.LONGITUDE, d.LATITUDE]) + " name " + d.FIRE_NAME); 
                     return projection([d.LONGITUDE, d.LATITUDE])[0]; 
                 })
                 .attr("cy", function(d) { return projection([d.LONGITUDE, d.LATITUDE])[1]; })
