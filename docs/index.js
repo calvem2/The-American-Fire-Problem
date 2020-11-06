@@ -324,7 +324,7 @@ d3.csv("cleanedWildFiresWithStates.csv").then(function(fires) {
                         // add new circles
                         enter => enter
                             .append("circle")
-                            //.sort((a, b) => b.FIRE_SIZE - a.FIRE_SIZE)
+                            .sort((a, b) => b.FIRE_SIZE - a.FIRE_SIZE)
                             .attr("cx", function(d) {
                                 return projection([d.LONGITUDE, d.LATITUDE])[0];
                             })
