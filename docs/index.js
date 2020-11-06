@@ -115,7 +115,10 @@ d3.csv("cleanedWildFiresWithStates.csv").then(function(fires) {
                 .range([chartHeight, 0]);
 
             // Add y axis
-            yAxis.call(d3.axisLeft(y));
+            // TODO: refine transition for y axis
+            yAxis.transition()
+                .duration(2000)
+                .call(d3.axisLeft(y));
 
             // TODO: refine color and transitions
             // Add line
@@ -315,6 +318,7 @@ d3.csv("cleanedWildFiresWithStates.csv").then(function(fires) {
 
             // Draw fire markers based on current state and year selected
             function drawFires() {
+                // TODO: fix onclick behavior for fire circles
                 const circles = g.selectAll("circle")
                 // Filter data to include only current year and state
                 // TODO: use id column for key
@@ -366,7 +370,7 @@ d3.csv("cleanedWildFiresWithStates.csv").then(function(fires) {
                     .on('mouseover', function() {
                         d3.select(this)
                             .attr('stroke', '#000')
-                            .attr('stroke-width', 2)
+                            .attr('stroke-width', .2)
                             .attr('stroke-opacity', 1);
                     })
                     .on('mouseout', function() {
