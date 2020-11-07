@@ -10,7 +10,6 @@ var projection = d3.geoAlbersUsa()
 // Create path generator for map
 var path = d3.geoPath().projection(projection);
 
-// TODO: Load the actual dataset
 // Load the fire data
 d3.csv("cleanedWildFiresWithStates.csv").then(function(fires) {
     // Remove the loading circle when the dataset loads
@@ -59,6 +58,7 @@ d3.csv("cleanedWildFiresWithStates.csv").then(function(fires) {
 
     yearSlider.call(sliderYear);
 
+    // Load the fire count data for each state
     d3.csv("fireCountsWithStates.csv").then(function(fireCounts) {
         // TODO: add necessary chart details (titles, subtitles, labels, axis titles)
         // Draw line chart
@@ -152,14 +152,14 @@ d3.csv("cleanedWildFiresWithStates.csv").then(function(fires) {
                         .attr("fill", "red"),
                     update => update
                     ,
-                    exit => exit.attr("fill", "blue")
+                    exit => exit
                 );
 
             // TODO: refine transition for marks
             // Add transition for marks when switching between states
             marks.transition()
                 .duration(1000)
-                .attr("cx", function(d) { console.log(d[0]); return x(parseTime(d[0])); } )
+                .attr("cx", function(d) { return x(parseTime(d[0])); } )
                 .attr("cy", function(d) { return y(d[1]); } )
                 .attr("r", 5)
         }
@@ -187,16 +187,63 @@ d3.csv("cleanedWildFiresWithStates.csv").then(function(fires) {
                 .on("click", reset);
 
             // Create g element where states will be appended
-            const g = svg.append("g");
+            const g = svg.append("g");           
 
-            // TODO: recolor the states based on num fires per yearSelected on slider
-            // TODO: (?) may be easiest to make new dataset with STATE,YEAR,TOTAL_FIRES
+            // TODO: make these colors different?
+            // Scale to sort the data value into color buckets for each state
+            // to the left = lighter color; to the right = darker color
+            // yellow -> orange colors -> red
+            var stateColor = d3.scaleQuantize()
+            .range(["#FAC000","#FF9528","#FC5200","#B62203", "#801100"]);
+
+            // Updates the state color
+            function updateJSONFireSize() {
+                // Filter the firecount csv based on the selected year
+                var filteredCSV = fireCounts.filter(d => (d.FIRE_YEAR === yearSelected.toString()));
+
+                // Filter the min and max data for the given year
+                stateColor.domain([
+                    d3.min(fireCounts, 
+                        function(d) { return d.FIRE_COUNT; }),
+                    d3.max(fireCounts, 
+                        function(d) { return d.FIRE_COUNT; })
+                ]);
+
+                // Merge the data in the fireCounts csv with the json
+                for (var i = 0; i < us.features.length; i++) {
+                    // Get state name
+                    var jsonStateName = us.features[i].properties.name;
+                    // Find state in the csvFile with the selectedYear
+                    for (var j = 0; j < filteredCSV.length; j++) {
+                        var csvStateName = filteredCSV[j].STATE;
+                        // If the state names match
+                        if (jsonStateName === csvStateName) {
+                            // Current fire count for the given state                          
+                            var currFireCount = filteredCSV[j].FIRE_COUNT;
+                            // Update the json file
+                            us.features[i].properties.value = currFireCount;
+                            break;
+                        }
+                    }
+                }
+            }
+
             // Create the states
             const states = g.selectAll("path")
                 .data(us.features)
                 .enter()
                 .append("path")
-                .attr("fill", "#444")
+                .style("fill", function(d) {
+                    // Update the state colors
+                    updateJSONFireSize();
+                    var value = d.properties.value;
+                    // Grey out undefined values
+                    if (value) {
+                        return stateColor(value);
+                    } else {
+                        return "#ccc";
+                    }
+                })
                 .attr("cursor", "pointer")
                 .attr("stroke", "white")                                // states' borders
                 .on("click", clicked)                                   // zoom and display fires on click
@@ -208,6 +255,22 @@ d3.csv("cleanedWildFiresWithStates.csv").then(function(fires) {
             // TODO: add tooltip and/or mouseover hover for states like with fire markers
             states.append("title")
                 .text(d => d.properties.name);
+                
+            // TODO: add animation to state color
+            // Recolor the states
+            function updateStateColors(currYear) {
+                states.style("fill", function(d) {
+                    // Update the state colors
+                    updateJSONFireSize();
+                    var value = d.properties.value;
+                    // Grey out undefined values
+                    if (value) {
+                        return stateColor(value);
+                    } else {
+                        return "#ccc";
+                    }
+                });
+            }
 
             // Set min and max scale for zooming into the map
             const zoom = d3.zoom()
@@ -253,12 +316,6 @@ d3.csv("cleanedWildFiresWithStates.csv").then(function(fires) {
                 // Get state bounds
                 const [[x0, y0], [x1, y1]] = path.bounds(d);
                 event.stopPropagation();
-                // Set color of all states not clicked on
-                states.transition().style("fill", null);
-
-                // TODO: choose color for current state clicked (clickedState)
-                // Change color of state clicked on
-                d3.select(this).transition().style("fill", "red");
 
                 // Zoom into map
                 var scaleFactor = Math.min(8, 0.9 / Math.max((x1 - x0) / width, (y1 - y0) / height));
@@ -287,8 +344,6 @@ d3.csv("cleanedWildFiresWithStates.csv").then(function(fires) {
             // Zoom out to the full map
             function reset() {
                 clearTimeout(null);
-                // Reset state colors
-                states.transition().style("fill", null);
 
                 // Zoom out
                 svg.transition().duration(1100).call(
@@ -385,6 +440,7 @@ d3.csv("cleanedWildFiresWithStates.csv").then(function(fires) {
             // Update current year selected and redraw circles
             sliderYear.on('onchange', val => {
                 yearSelected = val;
+                updateStateColors(yearSelected);
                 drawFires();
             });
         });
