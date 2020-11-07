@@ -13,6 +13,9 @@ var path = d3.geoPath().projection(projection);
 // TODO: Load the actual dataset
 // Load the fire data
 d3.csv("cleanedWildFiresWithStates.csv").then(function(fires) {
+    // Remove the loading circle when the dataset loads
+    d3.select("#circleLoader")
+        .remove();
 
     // Current state clicked
     var clickedState = null;
