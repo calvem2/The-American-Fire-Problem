@@ -11,7 +11,7 @@ var projection = d3.geoAlbersUsa()
 var path = d3.geoPath().projection(projection);
 
 // Load the fire data
-d3.csv("cleanedWildFiresWithStates.csv").then(function(fires) {
+d3.csv("over0.5AcreWithIDs.csv").then(function(fires) {
     // Remove the loading circle when the dataset loads
     d3.select("#circleLoader")
         .remove();
@@ -37,6 +37,7 @@ d3.csv("cleanedWildFiresWithStates.csv").then(function(fires) {
 
     // Create year slider
     var yearSelected = yearMax;                     // current year selected; initially max year
+    var tooltipDisplay = true                       // whether or not to display state tooltips. Disabled once state clicked
     var sliderYear = d3.sliderBottom()
         .min(dataYears[0])                          // max and min ticks
         .max(dataYears[dataYears.length - 1])
@@ -251,10 +252,23 @@ d3.csv("cleanedWildFiresWithStates.csv").then(function(fires) {
 
             // Name the state
             // Displays text for default browser tooltip
+            if (tooltipDisplay){
+                states.append("title")
+                .text(d => d.properties.name +'\n'+ d.properties.value + " Wildfires");
+            }
             // TODO: add tooltip and/or mouseover hover for states like with fire markers
-            states.append("title")
-                .text(d => d.properties.name);
-                
+
+            states
+                .on('mouseover', function() {
+                    if (tooltipDisplay){
+                    d3.select(this)
+                } else {
+                    d3.select(this).attr('title', null)
+                }})
+                .on('mouseout', function() {
+                    d3.select(this).attr('title', null);
+                })
+
             // TODO: add animation to state color
             // Recolor the states
             function updateStateColors(currYear) {
@@ -311,6 +325,7 @@ d3.csv("cleanedWildFiresWithStates.csv").then(function(fires) {
             function clicked(event, d) {
                 // Set current state clicked
                 clickedState = this.id;
+                tooltipDisplay = false
 
                 // Get state bounds
                 const [[x0, y0], [x1, y1]] = path.bounds(d);
@@ -342,6 +357,7 @@ d3.csv("cleanedWildFiresWithStates.csv").then(function(fires) {
 
             // Zoom out to the full map
             function reset() {
+                tooltipDisplay = true
                 clearTimeout(null);
 
                 // Zoom out
@@ -410,7 +426,7 @@ d3.csv("cleanedWildFiresWithStates.csv").then(function(fires) {
                 // Default browswer tooltip
                 circles
                     .append("title")
-                    .text(d => d.FIRE_NAME);
+                    .text(d => d.FIRE_NAME + '\n' + d.FIRE_SIZE + " Acres Burned");
 
                 // Add transition to the circles (fade in and grow)
                 // TODO: refine transition
@@ -433,6 +449,8 @@ d3.csv("cleanedWildFiresWithStates.csv").then(function(fires) {
                     .on('mouseout', function() {
                         d3.select(this).attr('stroke', null);
                     })
+
+
             }
 
             // Add on change function to year slider
