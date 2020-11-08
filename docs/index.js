@@ -74,11 +74,7 @@ d3.csv("cleanedWildFiresWithStates.csv").then(function(fires) {
             .attr("width", chartWidth + margin.left + margin.right)
             .attr("height", chartHeight + margin.top + margin.bottom)
             .append("g")
-            .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
-            .text("SAMPLE TITLE FOR MAP")
-            .attr("font-family", "sans-serif")
-            .attr("font-size", "20px")
-            .attr("fill", "black");
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
         // Create x axis scale
         var x = d3.scaleTime()
