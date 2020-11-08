@@ -74,7 +74,11 @@ d3.csv("cleanedWildFiresWithStates.csv").then(function(fires) {
             .attr("width", chartWidth + margin.left + margin.right)
             .attr("height", chartHeight + margin.top + margin.bottom)
             .append("g")
-            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+            .text("SAMPLE TITLE FOR MAP")
+            .attr("font-family", "sans-serif")
+            .attr("font-size", "20px")
+            .attr("fill", "black");
 
         // Create x axis scale
         var x = d3.scaleTime()
@@ -183,11 +187,7 @@ d3.csv("cleanedWildFiresWithStates.csv").then(function(fires) {
                 .append("svg")
                 .attr("width", width)
                 .attr("height", height)
-                .on("click", reset)
-                .text("SAMPLE TITLE FOR MAP")
-                .attr("font-family", "sans-serif")
-                .attr("font-size", "40px")
-                .attr("fill", "black");
+                .on("click", reset);
 
             // Create g element where states will be appended
             const g = svg.append("g");           
