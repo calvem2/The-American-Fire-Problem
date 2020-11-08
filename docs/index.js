@@ -175,7 +175,6 @@ d3.csv("cleanedWildFiresWithStates.csv").then(function(fires) {
             .domain(d3.extent(sizes, d => d.size))
             // TODO: adjust range
             .range([1, 8]);
-
         // Draw the map
         d3.json("us.json").then(function(us) {
 
@@ -184,7 +183,11 @@ d3.csv("cleanedWildFiresWithStates.csv").then(function(fires) {
                 .append("svg")
                 .attr("width", width)
                 .attr("height", height)
-                .on("click", reset);
+                .on("click", reset)
+                .text("SAMPLE TITLE FOR MAP")
+                .attr("font-family", "sans-serif")
+                .attr("font-size", "40px")
+                .attr("fill", "black");
 
             // Create g element where states will be appended
             const g = svg.append("g");           
