@@ -10,6 +10,8 @@
   max-width: 1200px;
   font-family: "Avenir", "Avenir Next", Helvetica Neue, Arial;
   font-size: 0.95em;
+  color: white;
+  background-color: black;
 }
  a, a:visited { text-decoration: none; color: #7533f4; }
 a:hover { text-decoration: underline; color: #f4b014; }
@@ -31,13 +33,14 @@ p { margin: 0 0 10px 0; }
  .content {
   margin: 0;
   padding: 15px 20px;
-  background-color: #ffffff;
+  background-color: black;
 }
  .title, .title h1, .title a {
   color: #492a7c;
   font-size: 24pt;
   margin-bottom: 20px;
   margin-top: 5px;
+  background-color: black;
 }
  .footer {
   border-top: 1px solid #ccc;
@@ -45,6 +48,7 @@ p { margin: 0 0 10px 0; }
   padding-top: 4px;
   text-align: right;
   font-size: 12px;
+  color black;
 }
 .footer a {
   color: #21346B;
@@ -74,8 +78,14 @@ p { margin: 0 0 10px 0; }
 </head>
 <body>
 <div class="content">
+    <style>
+        h1 {text-align: center;}
+        p {text-align: center;}
+        strong {text-align: center;}
+        div {background-color: black; color:white; }
+    </style>
    <section class="title">
-    <a href="/">The American Fire Problem</a>
+    <h1 href="/">The American Fire Problem</h1>
   </section>
 
    <section>
@@ -85,11 +95,17 @@ p { margin: 0 0 10px 0; }
   </section>
 
   <section>
+    <h1> Interactive Fire Map</h1>
     <div id="circleLoader" class="loader"></div>
-    <a href="/"> Interactive Fire Map</a>
     <div id="slider"></div>
-    <div id="us_map"></div>
-    <div id="line-chart"></div>
+    <div class="sideBySide">
+        <div class="child">
+            <div id="us_map"></div>
+        </div>
+        <div class="child">
+            <div id="line-chart"></div>
+        </div>
+    </div>
   </section>
 
   <section>
@@ -116,7 +132,7 @@ p { margin: 0 0 10px 0; }
   </section>
 
   <div class="footer">
-    <a href="https://courses.cs.washington.edu/courses/cse512/19sp/">CSE 512 Data Visualization</a>
+    <a href="https://courses.cs.washington.edu/courses/cse512/19sp/">CSE 442 Data Visualization</a>
     <a href="http://www.washington.edu">University of Washington</a>
   </div>
  </div>
