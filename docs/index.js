@@ -190,12 +190,12 @@ d3.csv("over0.5AcreWithIDs.csv").then(function(fires) {
             const g = svg.append("g");
 
 
-            // TODO: make these colors different?
+            // TODO: make these colors different
             // Scale to sort the data value into color buckets for each state
             // to the left = lighter color; to the right = darker color
             // yellow -> orange colors -> red
             var stateColor = d3.scaleQuantize()
-            .range(["#FAC000","#FF9528","#FC5200","#B62203", "#801100"]);
+            .range(["#ffd859", "#FAC000","#FF9528","#FC5200","#B62203", "#801100", "#590c00", "#380700"]);
 
             // Updates the state color
             function updateJSONFireSize() {
@@ -392,7 +392,6 @@ d3.csv("over0.5AcreWithIDs.csv").then(function(fires) {
 
             // Draw fire markers based on current state and year selected
             function drawFires() {
-                // TODO: fix onclick behavior for fire circles
                 const circles = g.selectAll("circle")
                 // Filter data to include only current year and state
                 // TODO: use id column for key
