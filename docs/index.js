@@ -143,7 +143,7 @@ d3.csv("over0.5AcreWithIDs.csv").then(function(fires) {
             // TODO: highlight mark corresponding to selected year
             // Add marks for each year
             var marks = markGroup.selectAll("circle")
-                .data(data)
+                .data(data, d => d[0])
                 .join(
                     enter => enter
                         .append("circle")
@@ -153,7 +153,7 @@ d3.csv("over0.5AcreWithIDs.csv").then(function(fires) {
                         .attr("fill", "red"),
                     update => update
                     ,
-                    exit => exit
+                    exit => exit.remove()
                 );
 
             // TODO: refine transition for marks
@@ -186,8 +186,9 @@ d3.csv("over0.5AcreWithIDs.csv").then(function(fires) {
                 .attr("height", height)
                 .on("click", reset);
 
-            // Create g element where states will be appended
-            const g = svg.append("g");           
+            // Create g element where states and fire circles will be appended
+            const g = svg.append("g");
+
 
             // TODO: make these colors different?
             // Scale to sort the data value into color buckets for each state
@@ -410,7 +411,8 @@ d3.csv("over0.5AcreWithIDs.csv").then(function(fires) {
                             .attr("fill", "blue")
                             // initially small and translucent before transition
                             .attr("r", 0)
-                            .attr("opacity", 0),
+                            .attr("opacity", 0)
+                            .on("click", function(event) { event.stopPropagation(); }),
                         update => update,
                         exit => exit
                         // TODO: refine transition
@@ -423,7 +425,7 @@ d3.csv("over0.5AcreWithIDs.csv").then(function(fires) {
                     );
 
                 // Add title to the circles
-                // Default browswer tooltip
+                // Default browser tooltip
                 circles
                     .append("title")
                     .text(d => d.FIRE_NAME + '\n' + d.FIRE_SIZE + " Acres Burned");
