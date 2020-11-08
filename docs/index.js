@@ -258,32 +258,32 @@ d3.csv("over0.5AcreWithIDs.csv").then(function(fires) {
                 .text(d => d.properties.name +'\n'+ d.properties.value + " Wildfires");
             }
             // TODO: add tooltip and/or mouseover hover for states like with fire markers
-
+            // TODO: this tooltipDisplay does not work
             states
                 .on('mouseover', function() {
                     if (tooltipDisplay){
-                    d3.select(this)
-                } else {
-                    d3.select(this).attr('title', null)
+                        d3.select(this)
+                    } else {
+                        d3.select(this).attr('title', null)
                 }})
                 .on('mouseout', function() {
                     d3.select(this).attr('title', null);
                 })
 
-            // TODO: add animation to state color
             // Recolor the states
             function updateStateColors(currYear) {
-                states.style("fill", function(d) {
-                    // Update the state colors
-                    updateJSONFireSize();
-                    var value = d.properties.value;
-                    // Grey out undefined values
-                    if (value) {
-                        return stateColor(value);
-                    } else {
-                        return "#ccc";
-                    }
-                });
+                states.transition().duration(1000)
+                    .style("fill", function(d) {
+                        // Update the state colors
+                        updateJSONFireSize();
+                        var value = d.properties.value;
+                        // Grey out undefined values
+                        if (value) {
+                            return stateColor(value);
+                        } else {
+                            return "#ccc";
+                        }
+                    });
             }
 
             // Set min and max scale for zooming into the map
@@ -326,7 +326,7 @@ d3.csv("over0.5AcreWithIDs.csv").then(function(fires) {
             function clicked(event, d) {
                 // Set current state clicked
                 clickedState = this.id;
-                tooltipDisplay = false
+                tooltipDisplay = false;     
 
                 // Get state bounds
                 const [[x0, y0], [x1, y1]] = path.bounds(d);
