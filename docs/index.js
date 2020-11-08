@@ -142,7 +142,7 @@ d3.csv("cleanedWildFiresWithStates.csv").then(function(fires) {
             // TODO: highlight mark corresponding to selected year
             // Add marks for each year
             var marks = markGroup.selectAll("circle")
-                .data(data)
+                .data(data, d => d[0])
                 .join(
                     enter => enter
                         .append("circle")
@@ -152,7 +152,7 @@ d3.csv("cleanedWildFiresWithStates.csv").then(function(fires) {
                         .attr("fill", "red"),
                     update => update
                     ,
-                    exit => exit
+                    exit => exit.remove()
                 );
 
             // TODO: refine transition for marks
