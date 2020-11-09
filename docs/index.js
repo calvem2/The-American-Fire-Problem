@@ -60,7 +60,7 @@ d3.csv("over0.5AcreWithIDs.csv").then(function(fires) {
     yearSlider.call(sliderYear);
 
     // Load the fire count data for each state
-    d3.csv("fireCountsWithStates.csv").then(function(fireCounts) {
+    d3.csv("fireCountsOver0.5Acre.csv").then(function(fireCounts) {
         // TODO: add necessary chart details (titles, subtitles, labels, axis titles)
         // Draw line chart
 
@@ -275,15 +275,16 @@ d3.csv("over0.5AcreWithIDs.csv").then(function(fires) {
                 states.transition().duration(1000)
                     .style("fill", function(d) {
                         // Update the state colors
+                        // Grey out undefined values
                         updateJSONFireSize();
                         var value = d.properties.value;
-                        // Grey out undefined values
                         if (value) {
                             return stateColor(value);
                         } else {
                             return "#ccc";
                         }
                     });
+                states.select("title").text(d => d.properties.name +'\n'+ d.properties.value + " Wildfires");
             }
 
             // Set min and max scale for zooming into the map
