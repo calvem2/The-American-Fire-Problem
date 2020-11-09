@@ -1,0 +1,1197 @@
+ID,STATE,FIRE_YEAR,FIRE_COUNT
+0,Alabama,1992,68
+1,Alabama,1993,106
+2,Alabama,1994,2722
+3,Alabama,1995,3223
+4,Alabama,1996,3130
+5,Alabama,1997,1931
+6,Alabama,1998,2747
+7,Alabama,1999,3399
+8,Alabama,2000,4858
+9,Alabama,2001,2622
+10,Alabama,2002,2371
+11,Alabama,2003,1424
+12,Alabama,2004,2497
+13,Alabama,2005,2126
+14,Alabama,2006,3327
+15,Alabama,2007,3091
+16,Alabama,2008,1613
+17,Alabama,2009,1139
+18,Alabama,2010,2401
+19,Alabama,2011,1707
+20,Alabama,2012,1180
+21,Alabama,2013,1093
+22,Alabama,2014,1534
+23,Alabama,2015,1335
+24,Alaska,1992,158
+25,Alaska,1993,308
+26,Alaska,1994,231
+27,Alaska,1995,120
+28,Alaska,1996,229
+29,Alaska,1997,283
+30,Alaska,1998,97
+31,Alaska,1999,193
+32,Alaska,2000,122
+33,Alaska,2001,92
+34,Alaska,2002,213
+35,Alaska,2003,149
+36,Alaska,2004,309
+37,Alaska,2005,345
+38,Alaska,2006,94
+39,Alaska,2007,256
+40,Alaska,2008,134
+41,Alaska,2009,216
+42,Alaska,2010,345
+43,Alaska,2011,155
+44,Alaska,2012,175
+45,Alaska,2013,228
+46,Alaska,2014,98
+47,Alaska,2015,433
+48,Arizona,1992,1243
+49,Arizona,1993,2177
+50,Arizona,1994,1582
+51,Arizona,1995,1895
+52,Arizona,1996,993
+53,Arizona,1997,492
+54,Arizona,1998,808
+55,Arizona,1999,713
+56,Arizona,2000,957
+57,Arizona,2001,838
+58,Arizona,2002,757
+59,Arizona,2003,579
+60,Arizona,2004,645
+61,Arizona,2005,1465
+62,Arizona,2006,981
+63,Arizona,2007,543
+64,Arizona,2008,470
+65,Arizona,2009,741
+66,Arizona,2010,387
+67,Arizona,2011,584
+68,Arizona,2012,555
+69,Arizona,2013,430
+70,Arizona,2014,410
+71,Arizona,2015,401
+72,Arkansas,1992,94
+73,Arkansas,1993,100
+74,Arkansas,1994,107
+75,Arkansas,1995,165
+76,Arkansas,1996,164
+77,Arkansas,1997,998
+78,Arkansas,1998,1103
+79,Arkansas,1999,2166
+80,Arkansas,2000,2301
+81,Arkansas,2001,1230
+82,Arkansas,2002,961
+83,Arkansas,2003,1636
+84,Arkansas,2004,1325
+85,Arkansas,2005,2259
+86,Arkansas,2006,2512
+87,Arkansas,2007,1268
+88,Arkansas,2008,860
+89,Arkansas,2009,1064
+90,Arkansas,2010,2194
+91,Arkansas,2011,2371
+92,Arkansas,2012,2183
+93,Arkansas,2013,815
+94,Arkansas,2014,1263
+95,Arkansas,2015,1246
+96,California,1992,3383
+97,California,1993,3139
+98,California,1994,3029
+99,California,1995,2665
+100,California,1996,3498
+101,California,1997,2611
+102,California,1998,2167
+103,California,1999,2888
+104,California,2000,2169
+105,California,2001,2510
+106,California,2002,2383
+107,California,2003,2574
+108,California,2004,2413
+109,California,2005,2381
+110,California,2006,3030
+111,California,2007,4278
+112,California,2008,3989
+113,California,2009,2929
+114,California,2010,2446
+115,California,2011,3402
+116,California,2012,2779
+117,California,2013,3108
+118,California,2014,1913
+119,California,2015,2027
+120,Colorado,1992,246
+121,Colorado,1993,268
+122,Colorado,1994,683
+123,Colorado,1995,398
+124,Colorado,1996,299
+125,Colorado,1997,105
+126,Colorado,1998,181
+127,Colorado,1999,178
+128,Colorado,2000,356
+129,Colorado,2001,220
+130,Colorado,2002,273
+131,Colorado,2003,453
+132,Colorado,2004,204
+133,Colorado,2005,462
+134,Colorado,2006,263
+135,Colorado,2007,180
+136,Colorado,2008,253
+137,Colorado,2009,171
+138,Colorado,2010,539
+139,Colorado,2011,175
+140,Colorado,2012,253
+141,Colorado,2013,431
+142,Colorado,2014,77
+143,Colorado,2015,95
+144,Connecticut,1992,50
+145,Connecticut,1993,65
+146,Connecticut,1994,94
+147,Connecticut,1995,74
+148,Connecticut,1996,15
+149,Connecticut,1997,38
+150,Connecticut,1998,27
+151,Connecticut,1999,156
+152,Connecticut,2000,48
+153,Connecticut,2001,94
+154,Connecticut,2002,43
+155,Connecticut,2003,25
+156,Connecticut,2004,19
+157,Connecticut,2005,74
+158,Connecticut,2006,89
+159,Connecticut,2007,72
+160,Connecticut,2008,103
+161,Connecticut,2009,72
+162,Connecticut,2010,129
+163,Connecticut,2011,47
+164,Connecticut,2012,84
+165,Connecticut,2015,119
+166,Delaware,1992,3
+167,Delaware,1993,1
+168,Delaware,1994,2
+169,Delaware,1995,2
+170,Delaware,1997,4
+171,Delaware,1999,2
+172,Delaware,2000,1
+173,Delaware,2001,1
+174,Delaware,2002,9
+175,Delaware,2003,6
+176,Delaware,2004,11
+177,Delaware,2005,4
+178,Delaware,2010,1
+179,Delaware,2012,11
+180,Delaware,2013,5
+181,Delaware,2014,3
+182,Delaware,2015,12
+183,District of Columbia,1993,4
+184,District of Columbia,1994,1
+185,District of Columbia,1998,2
+186,District of Columbia,1999,1
+187,District of Columbia,2002,1
+188,District of Columbia,2012,4
+189,District of Columbia,2015,1
+190,Florida,1992,3123
+191,Florida,1993,3145
+192,Florida,1994,2431
+193,Florida,1995,2210
+194,Florida,1996,3251
+195,Florida,1997,2657
+196,Florida,1998,3065
+197,Florida,1999,3543
+198,Florida,2000,4143
+199,Florida,2001,3136
+200,Florida,2002,1946
+201,Florida,2003,1331
+202,Florida,2004,2297
+203,Florida,2005,1556
+204,Florida,2006,3234
+205,Florida,2007,2939
+206,Florida,2008,1939
+207,Florida,2009,1998
+208,Florida,2010,1443
+209,Florida,2011,3207
+210,Florida,2012,1946
+211,Florida,2013,1377
+212,Florida,2014,1322
+213,Florida,2015,2463
+214,Georgia,1992,4079
+215,Georgia,1993,5306
+216,Georgia,1994,3871
+217,Georgia,1995,4310
+218,Georgia,1996,5677
+219,Georgia,1997,3819
+220,Georgia,1998,3704
+221,Georgia,1999,6380
+222,Georgia,2000,6045
+223,Georgia,2001,5435
+224,Georgia,2002,4673
+225,Georgia,2003,2239
+226,Georgia,2004,4617
+227,Georgia,2005,3305
+228,Georgia,2006,5021
+229,Georgia,2007,4793
+230,Georgia,2008,3212
+231,Georgia,2009,2319
+232,Georgia,2010,3077
+233,Georgia,2011,5237
+234,Georgia,2012,2863
+235,Georgia,2013,1977
+236,Georgia,2014,2544
+237,Georgia,2015,1413
+238,Hawaii,1992,44
+239,Hawaii,1993,6
+240,Hawaii,1994,3
+241,Hawaii,1995,5
+242,Hawaii,1996,5
+243,Hawaii,1997,2
+244,Hawaii,1998,21
+245,Hawaii,1999,4
+246,Hawaii,2000,9
+247,Hawaii,2001,133
+248,Hawaii,2002,118
+249,Hawaii,2003,222
+250,Hawaii,2004,143
+251,Hawaii,2005,333
+252,Hawaii,2006,167
+253,Hawaii,2007,242
+254,Hawaii,2008,117
+255,Hawaii,2009,131
+256,Hawaii,2010,184
+257,Hawaii,2011,90
+258,Hawaii,2012,128
+259,Hawaii,2013,10
+260,Hawaii,2015,4
+261,Idaho,1992,666
+262,Idaho,1993,151
+263,Idaho,1994,932
+264,Idaho,1995,398
+265,Idaho,1996,731
+266,Idaho,1997,372
+267,Idaho,1998,464
+268,Idaho,1999,637
+269,Idaho,2000,690
+270,Idaho,2001,591
+271,Idaho,2002,374
+272,Idaho,2003,569
+273,Idaho,2004,234
+274,Idaho,2005,534
+275,Idaho,2006,687
+276,Idaho,2007,739
+277,Idaho,2008,324
+278,Idaho,2009,313
+279,Idaho,2010,416
+280,Idaho,2011,491
+281,Idaho,2012,612
+282,Idaho,2013,558
+283,Idaho,2014,389
+284,Idaho,2015,477
+285,Illinois,1992,13
+286,Illinois,1993,3
+287,Illinois,1994,23
+288,Illinois,1995,37
+289,Illinois,1996,17
+290,Illinois,1997,5
+291,Illinois,1998,17
+292,Illinois,1999,30
+293,Illinois,2000,25
+294,Illinois,2001,29
+295,Illinois,2002,23
+296,Illinois,2003,30
+297,Illinois,2004,59
+298,Illinois,2005,27
+299,Illinois,2006,17
+300,Illinois,2007,75
+301,Illinois,2008,117
+302,Illinois,2009,205
+303,Illinois,2010,253
+304,Illinois,2011,85
+305,Illinois,2012,103
+306,Illinois,2013,26
+307,Illinois,2014,171
+308,Illinois,2015,83
+309,Indiana,1992,32
+310,Indiana,1993,13
+311,Indiana,1994,26
+312,Indiana,1995,40
+313,Indiana,1996,26
+314,Indiana,1997,7
+315,Indiana,1998,22
+316,Indiana,1999,63
+317,Indiana,2000,57
+318,Indiana,2001,92
+319,Indiana,2002,63
+320,Indiana,2003,86
+321,Indiana,2004,92
+322,Indiana,2005,73
+323,Indiana,2006,35
+324,Indiana,2007,64
+325,Indiana,2008,30
+326,Indiana,2009,23
+327,Indiana,2010,35
+328,Indiana,2011,15
+329,Indiana,2012,37
+330,Indiana,2013,9
+331,Indiana,2014,25
+332,Indiana,2015,11
+333,Iowa,1992,4
+334,Iowa,1993,3
+335,Iowa,1994,4
+336,Iowa,1995,6
+337,Iowa,1996,26
+338,Iowa,1997,7
+339,Iowa,1998,3
+340,Iowa,1999,17
+341,Iowa,2000,17
+342,Iowa,2001,6
+343,Iowa,2002,26
+344,Iowa,2003,37
+345,Iowa,2004,40
+346,Iowa,2005,23
+347,Iowa,2006,360
+348,Iowa,2007,101
+349,Iowa,2008,118
+350,Iowa,2009,616
+351,Iowa,2010,160
+352,Iowa,2011,362
+353,Iowa,2012,344
+354,Iowa,2013,183
+355,Iowa,2014,427
+356,Iowa,2015,430
+357,Kansas,1992,12
+358,Kansas,1993,12
+359,Kansas,1994,37
+360,Kansas,1995,17
+361,Kansas,1996,25
+362,Kansas,1997,14
+363,Kansas,1998,25
+364,Kansas,1999,29
+365,Kansas,2000,41
+366,Kansas,2001,54
+367,Kansas,2002,98
+368,Kansas,2003,71
+369,Kansas,2004,47
+370,Kansas,2005,116
+371,Kansas,2006,242
+372,Kansas,2007,121
+373,Kansas,2008,65
+374,Kansas,2009,68
+375,Kansas,2010,37
+376,Kansas,2011,48
+377,Kansas,2012,62
+378,Kansas,2013,9
+379,Kansas,2014,52
+380,Kansas,2015,3123
+381,Kentucky,1992,39
+382,Kentucky,1993,63
+383,Kentucky,1994,138
+384,Kentucky,1995,130
+385,Kentucky,1996,53
+386,Kentucky,1997,669
+387,Kentucky,1998,920
+388,Kentucky,1999,1835
+389,Kentucky,2000,1428
+390,Kentucky,2001,1879
+391,Kentucky,2002,1028
+392,Kentucky,2003,805
+393,Kentucky,2004,1060
+394,Kentucky,2005,1498
+395,Kentucky,2006,1677
+396,Kentucky,2007,2046
+397,Kentucky,2008,1549
+398,Kentucky,2009,1408
+399,Kentucky,2010,1887
+400,Kentucky,2011,1022
+401,Kentucky,2012,1078
+402,Kentucky,2013,940
+403,Kentucky,2014,1377
+404,Kentucky,2015,707
+405,Louisiana,1992,77
+406,Louisiana,1993,104
+407,Louisiana,1994,91
+408,Louisiana,1995,117
+409,Louisiana,1996,135
+410,Louisiana,1997,1180
+411,Louisiana,1998,2026
+412,Louisiana,1999,2462
+413,Louisiana,2000,3833
+414,Louisiana,2001,822
+415,Louisiana,2002,1295
+416,Louisiana,2003,89
+417,Louisiana,2004,69
+418,Louisiana,2005,2923
+419,Louisiana,2006,2755
+420,Louisiana,2007,58
+421,Louisiana,2008,1120
+422,Louisiana,2009,1182
+423,Louisiana,2010,1832
+424,Louisiana,2011,178
+425,Louisiana,2012,639
+426,Louisiana,2013,814
+427,Louisiana,2014,708
+428,Louisiana,2015,839
+429,Maine,1992,259
+430,Maine,1993,256
+431,Maine,1994,207
+432,Maine,1995,263
+433,Maine,1996,96
+434,Maine,1997,200
+435,Maine,1998,185
+436,Maine,1999,220
+437,Maine,2000,95
+438,Maine,2001,267
+439,Maine,2002,133
+440,Maine,2003,188
+441,Maine,2004,126
+442,Maine,2005,157
+443,Maine,2006,212
+444,Maine,2007,122
+445,Maine,2008,121
+446,Maine,2009,116
+447,Maine,2010,89
+448,Maine,2011,51
+449,Maine,2012,124
+450,Maine,2013,118
+451,Maine,2014,66
+452,Maine,2015,95
+453,Maryland,1992,9
+454,Maryland,1993,10
+455,Maryland,1994,11
+456,Maryland,1995,22
+457,Maryland,1996,14
+458,Maryland,1997,14
+459,Maryland,1998,12
+460,Maryland,1999,20
+461,Maryland,2000,10
+462,Maryland,2001,19
+463,Maryland,2002,12
+464,Maryland,2003,4
+465,Maryland,2004,19
+466,Maryland,2005,141
+467,Maryland,2006,213
+468,Maryland,2007,184
+469,Maryland,2008,144
+470,Maryland,2009,70
+471,Maryland,2010,80
+472,Maryland,2011,84
+473,Maryland,2012,85
+474,Maryland,2013,60
+475,Maryland,2014,55
+476,Maryland,2015,65
+477,Massachusetts,1992,3
+478,Massachusetts,1993,1
+479,Massachusetts,1995,2
+480,Massachusetts,1996,1
+481,Massachusetts,1997,3
+482,Massachusetts,1998,1
+483,Massachusetts,1999,1
+484,Massachusetts,2000,3
+485,Massachusetts,2001,10
+486,Massachusetts,2002,58
+487,Massachusetts,2003,30
+488,Massachusetts,2004,35
+489,Massachusetts,2005,12
+490,Massachusetts,2006,10
+491,Massachusetts,2007,15
+492,Massachusetts,2008,5
+493,Massachusetts,2009,1
+494,Massachusetts,2010,2
+495,Massachusetts,2012,2
+496,Massachusetts,2013,3
+497,Massachusetts,2014,3
+498,Massachusetts,2015,378
+499,Michigan,1992,363
+500,Michigan,1993,160
+501,Michigan,1994,429
+502,Michigan,1995,366
+503,Michigan,1996,241
+504,Michigan,1997,75
+505,Michigan,1998,97
+506,Michigan,1999,94
+507,Michigan,2000,72
+508,Michigan,2001,227
+509,Michigan,2002,163
+510,Michigan,2003,484
+511,Michigan,2004,244
+512,Michigan,2005,362
+513,Michigan,2006,315
+514,Michigan,2007,271
+515,Michigan,2008,231
+516,Michigan,2009,253
+517,Michigan,2010,294
+518,Michigan,2011,147
+519,Michigan,2012,326
+520,Michigan,2013,203
+521,Michigan,2014,117
+522,Michigan,2015,292
+523,Minnesota,1992,955
+524,Minnesota,1993,857
+525,Minnesota,1994,1160
+526,Minnesota,1995,1061
+527,Minnesota,1996,971
+528,Minnesota,1997,1298
+529,Minnesota,1998,1246
+530,Minnesota,1999,1132
+531,Minnesota,2000,1512
+532,Minnesota,2001,602
+533,Minnesota,2002,966
+534,Minnesota,2003,1767
+535,Minnesota,2004,1027
+536,Minnesota,2005,814
+537,Minnesota,2006,1192
+538,Minnesota,2007,832
+539,Minnesota,2008,547
+540,Minnesota,2009,553
+541,Minnesota,2010,960
+542,Minnesota,2011,505
+543,Minnesota,2012,1051
+544,Minnesota,2013,523
+545,Minnesota,2014,385
+546,Minnesota,2015,811
+547,Mississippi,1992,4433
+548,Mississippi,1993,3974
+549,Mississippi,1994,3327
+550,Mississippi,1995,4948
+551,Mississippi,1996,4888
+552,Mississippi,1997,2758
+553,Mississippi,1998,3398
+554,Mississippi,1999,5379
+555,Mississippi,2000,3406
+556,Mississippi,2001,2394
+557,Mississippi,2002,2373
+558,Mississippi,2003,1887
+559,Mississippi,2004,2779
+560,Mississippi,2005,3478
+561,Mississippi,2006,5463
+562,Mississippi,2007,2718
+563,Mississippi,2008,1954
+564,Mississippi,2009,1908
+565,Mississippi,2010,2847
+566,Mississippi,2011,1537
+567,Mississippi,2012,1185
+568,Mississippi,2013,1456
+569,Mississippi,2014,2209
+570,Mississippi,2015,2093
+571,Missouri,1992,1664
+572,Missouri,1993,886
+573,Missouri,1994,1580
+574,Missouri,1995,2018
+575,Missouri,1996,417
+576,Missouri,1997,1304
+577,Missouri,1998,502
+578,Missouri,1999,1164
+579,Missouri,2000,654
+580,Missouri,2001,824
+581,Missouri,2002,648
+582,Missouri,2003,218
+583,Missouri,2004,225
+584,Missouri,2005,318
+585,Missouri,2006,301
+586,Missouri,2007,286
+587,Missouri,2008,91
+588,Missouri,2009,202
+589,Missouri,2010,167
+590,Missouri,2011,731
+591,Missouri,2012,181
+592,Missouri,2013,404
+593,Missouri,2014,1239
+594,Missouri,2015,608
+595,Montana,1992,564
+596,Montana,1993,194
+597,Montana,1994,959
+598,Montana,1995,358
+599,Montana,1996,740
+600,Montana,1997,309
+601,Montana,1998,711
+602,Montana,1999,686
+603,Montana,2000,1034
+604,Montana,2001,562
+605,Montana,2002,430
+606,Montana,2003,763
+607,Montana,2004,380
+608,Montana,2005,424
+609,Montana,2006,738
+610,Montana,2007,609
+611,Montana,2008,493
+612,Montana,2009,498
+613,Montana,2010,344
+614,Montana,2011,316
+615,Montana,2012,696
+616,Montana,2013,380
+617,Montana,2014,400
+618,Montana,2015,614
+619,Nebraska,1992,15
+620,Nebraska,1993,12
+621,Nebraska,1994,62
+622,Nebraska,1995,46
+623,Nebraska,1996,43
+624,Nebraska,1997,37
+625,Nebraska,1998,36
+626,Nebraska,1999,65
+627,Nebraska,2000,82
+628,Nebraska,2001,45
+629,Nebraska,2002,133
+630,Nebraska,2003,118
+631,Nebraska,2004,140
+632,Nebraska,2005,146
+633,Nebraska,2006,96
+634,Nebraska,2007,428
+635,Nebraska,2008,326
+636,Nebraska,2009,479
+637,Nebraska,2010,392
+638,Nebraska,2011,543
+639,Nebraska,2012,868
+640,Nebraska,2013,275
+641,Nebraska,2014,481
+642,Nebraska,2015,422
+643,Nevada,1992,139
+644,Nevada,1993,136
+645,Nevada,1994,234
+646,Nevada,1995,211
+647,Nevada,1996,462
+648,Nevada,1997,161
+649,Nevada,1998,229
+650,Nevada,1999,479
+651,Nevada,2000,378
+652,Nevada,2001,402
+653,Nevada,2002,178
+654,Nevada,2003,180
+655,Nevada,2004,156
+656,Nevada,2005,345
+657,Nevada,2006,600
+658,Nevada,2007,297
+659,Nevada,2008,122
+660,Nevada,2009,92
+661,Nevada,2010,78
+662,Nevada,2011,274
+663,Nevada,2012,333
+664,Nevada,2013,171
+665,Nevada,2014,104
+666,Nevada,2015,106
+667,New Hampshire,1992,78
+668,New Hampshire,1993,77
+669,New Hampshire,1994,79
+670,New Hampshire,1995,103
+671,New Hampshire,1996,40
+672,New Hampshire,1997,40
+673,New Hampshire,1998,93
+674,New Hampshire,1999,2
+675,New Hampshire,2000,47
+676,New Hampshire,2001,61
+677,New Hampshire,2002,63
+678,New Hampshire,2003,34
+679,New Hampshire,2004,38
+680,New Hampshire,2005,48
+681,New Hampshire,2006,59
+682,New Hampshire,2007,41
+683,New Hampshire,2008,60
+684,New Hampshire,2009,46
+685,New Hampshire,2010,25
+686,New Hampshire,2011,3
+687,New Hampshire,2012,38
+688,New Hampshire,2013,27
+689,New Hampshire,2014,19
+690,New Hampshire,2015,43
+691,New Jersey,1992,375
+692,New Jersey,1993,182
+693,New Jersey,1994,316
+694,New Jersey,1995,484
+695,New Jersey,1996,191
+696,New Jersey,1997,334
+697,New Jersey,1998,294
+698,New Jersey,1999,417
+699,New Jersey,2000,192
+700,New Jersey,2001,305
+701,New Jersey,2002,235
+702,New Jersey,2003,97
+703,New Jersey,2004,80
+704,New Jersey,2005,167
+705,New Jersey,2006,206
+706,New Jersey,2007,165
+707,New Jersey,2008,150
+708,New Jersey,2009,69
+709,New Jersey,2010,143
+710,New Jersey,2011,30
+711,New Jersey,2012,172
+712,New Jersey,2013,134
+713,New Jersey,2014,139
+714,New Jersey,2015,127
+715,New Mexico,1992,432
+716,New Mexico,1993,954
+717,New Mexico,1994,1455
+718,New Mexico,1995,738
+719,New Mexico,1996,945
+720,New Mexico,1997,583
+721,New Mexico,1998,614
+722,New Mexico,1999,461
+723,New Mexico,2000,1327
+724,New Mexico,2001,614
+725,New Mexico,2002,741
+726,New Mexico,2003,607
+727,New Mexico,2004,266
+728,New Mexico,2005,517
+729,New Mexico,2006,727
+730,New Mexico,2007,563
+731,New Mexico,2008,361
+732,New Mexico,2009,722
+733,New Mexico,2010,515
+734,New Mexico,2011,1130
+735,New Mexico,2012,411
+736,New Mexico,2013,287
+737,New Mexico,2014,250
+738,New Mexico,2015,281
+739,New York,1992,307
+740,New York,1993,249
+741,New York,1994,124
+742,New York,1995,443
+743,New York,1996,85
+744,New York,1997,329
+745,New York,1998,283
+746,New York,1999,651
+747,New York,2000,639
+748,New York,2001,1549
+749,New York,2002,1161
+750,New York,2003,1918
+751,New York,2004,1325
+752,New York,2005,2490
+753,New York,2006,2817
+754,New York,2007,1852
+755,New York,2008,2623
+756,New York,2009,2257
+757,New York,2010,1427
+758,New York,2011,514
+759,New York,2012,762
+760,New York,2013,725
+761,New York,2014,1154
+762,New York,2015,1897
+763,North Carolina,1992,3488
+764,North Carolina,1993,2781
+765,North Carolina,1994,3413
+766,North Carolina,1995,3026
+767,North Carolina,1996,2201
+768,North Carolina,1997,2254
+769,North Carolina,1998,2228
+770,North Carolina,1999,1899
+771,North Carolina,2000,2374
+772,North Carolina,2001,3981
+773,North Carolina,2002,2878
+774,North Carolina,2003,926
+775,North Carolina,2004,2115
+776,North Carolina,2005,1997
+777,North Carolina,2006,2233
+778,North Carolina,2007,3190
+779,North Carolina,2008,2019
+780,North Carolina,2009,1350
+781,North Carolina,2010,1612
+782,North Carolina,2011,2292
+783,North Carolina,2012,1250
+784,North Carolina,2013,1204
+785,North Carolina,2014,1632
+786,North Carolina,2015,790
+787,North Dakota,1992,306
+788,North Dakota,1993,287
+789,North Dakota,1994,364
+790,North Dakota,1995,185
+791,North Dakota,1996,321
+792,North Dakota,1997,278
+793,North Dakota,1998,272
+794,North Dakota,1999,290
+795,North Dakota,2000,380
+796,North Dakota,2001,368
+797,North Dakota,2002,571
+798,North Dakota,2003,667
+799,North Dakota,2004,689
+800,North Dakota,2005,789
+801,North Dakota,2006,805
+802,North Dakota,2007,680
+803,North Dakota,2008,530
+804,North Dakota,2009,311
+805,North Dakota,2010,309
+806,North Dakota,2011,246
+807,North Dakota,2012,656
+808,North Dakota,2013,333
+809,North Dakota,2014,270
+810,North Dakota,2015,686
+811,Ohio,1992,19
+812,Ohio,1993,7
+813,Ohio,1994,16
+814,Ohio,1995,40
+815,Ohio,1996,5
+816,Ohio,1997,6
+817,Ohio,1998,16
+818,Ohio,1999,26
+819,Ohio,2000,21
+820,Ohio,2001,44
+821,Ohio,2002,54
+822,Ohio,2003,29
+823,Ohio,2004,39
+824,Ohio,2005,61
+825,Ohio,2006,174
+826,Ohio,2007,179
+827,Ohio,2008,92
+828,Ohio,2009,196
+829,Ohio,2010,150
+830,Ohio,2011,46
+831,Ohio,2012,113
+832,Ohio,2013,230
+833,Ohio,2014,429
+834,Ohio,2015,330
+835,Oklahoma,1992,1215
+836,Oklahoma,1993,1806
+837,Oklahoma,1994,1550
+838,Oklahoma,1995,2136
+839,Oklahoma,1996,2151
+840,Oklahoma,1997,885
+841,Oklahoma,1998,763
+842,Oklahoma,1999,1604
+843,Oklahoma,2000,1590
+844,Oklahoma,2001,1259
+845,Oklahoma,2002,1475
+846,Oklahoma,2003,1368
+847,Oklahoma,2004,1372
+848,Oklahoma,2005,2204
+849,Oklahoma,2006,2566
+850,Oklahoma,2007,1092
+851,Oklahoma,2008,1731
+852,Oklahoma,2009,1663
+853,Oklahoma,2010,1794
+854,Oklahoma,2011,2144
+855,Oklahoma,2012,1385
+856,Oklahoma,2013,572
+857,Oklahoma,2014,976
+858,Oklahoma,2015,1003
+859,Oregon,1992,645
+860,Oregon,1993,288
+861,Oregon,1994,704
+862,Oregon,1995,378
+863,Oregon,1996,687
+864,Oregon,1997,359
+865,Oregon,1998,470
+866,Oregon,1999,635
+867,Oregon,2000,421
+868,Oregon,2001,682
+869,Oregon,2002,627
+870,Oregon,2003,430
+871,Oregon,2004,297
+872,Oregon,2005,388
+873,Oregon,2006,664
+874,Oregon,2007,590
+875,Oregon,2008,557
+876,Oregon,2009,416
+877,Oregon,2010,297
+878,Oregon,2011,383
+879,Oregon,2012,346
+880,Oregon,2013,474
+881,Oregon,2014,629
+882,Oregon,2015,507
+883,Pennsylvania,1992,4
+884,Pennsylvania,1993,4
+885,Pennsylvania,1994,10
+886,Pennsylvania,1995,9
+887,Pennsylvania,1996,4
+888,Pennsylvania,1997,10
+889,Pennsylvania,1998,10
+890,Pennsylvania,1999,15
+891,Pennsylvania,2000,11
+892,Pennsylvania,2001,17
+893,Pennsylvania,2002,318
+894,Pennsylvania,2003,234
+895,Pennsylvania,2004,88
+896,Pennsylvania,2005,431
+897,Pennsylvania,2006,448
+898,Pennsylvania,2007,208
+899,Pennsylvania,2008,301
+900,Pennsylvania,2009,343
+901,Pennsylvania,2010,274
+902,Pennsylvania,2011,84
+903,Pennsylvania,2012,386
+904,Pennsylvania,2013,289
+905,Pennsylvania,2014,518
+906,Pennsylvania,2015,441
+907,Puerto Rico,1992,4
+908,Puerto Rico,1993,1
+909,Puerto Rico,1994,4
+910,Puerto Rico,1996,3
+911,Puerto Rico,1997,4
+912,Puerto Rico,1998,1
+913,Puerto Rico,2002,1
+914,Puerto Rico,2003,2682
+915,Puerto Rico,2004,1319
+916,Puerto Rico,2005,3122
+917,Puerto Rico,2006,1762
+918,Puerto Rico,2007,2719
+919,Puerto Rico,2008,17
+920,Puerto Rico,2009,1198
+921,Puerto Rico,2010,1166
+922,Puerto Rico,2011,1815
+923,Puerto Rico,2012,8
+924,Puerto Rico,2013,27
+925,Puerto Rico,2014,25
+926,Puerto Rico,2015,11
+927,Rhode Island,1994,1
+928,Rhode Island,2005,18
+929,Rhode Island,2006,25
+930,Rhode Island,2007,21
+931,Rhode Island,2008,35
+932,Rhode Island,2009,21
+933,Rhode Island,2011,13
+934,Rhode Island,2012,13
+935,Rhode Island,2013,8
+936,Rhode Island,2014,7
+937,Rhode Island,2015,38
+938,South Carolina,1992,3687
+939,South Carolina,1993,3678
+940,South Carolina,1994,3239
+941,South Carolina,1995,2429
+942,South Carolina,1996,3181
+943,South Carolina,1997,2216
+944,South Carolina,1998,2344
+945,South Carolina,1999,3835
+946,South Carolina,2000,3389
+947,South Carolina,2001,4140
+948,South Carolina,2002,3451
+949,South Carolina,2003,877
+950,South Carolina,2004,2207
+951,South Carolina,2005,1968
+952,South Carolina,2006,1991
+953,South Carolina,2007,2822
+954,South Carolina,2008,1869
+955,South Carolina,2009,1194
+956,South Carolina,2010,1441
+957,South Carolina,2011,2331
+958,South Carolina,2012,1432
+959,South Carolina,2013,1145
+960,South Carolina,2014,1322
+961,South Carolina,2015,922
+962,South Dakota,1992,231
+963,South Dakota,1993,162
+964,South Dakota,1994,390
+965,South Dakota,1995,219
+966,South Dakota,1996,337
+967,South Dakota,1997,192
+968,South Dakota,1998,331
+969,South Dakota,1999,706
+970,South Dakota,2000,1333
+971,South Dakota,2001,623
+972,South Dakota,2002,885
+973,South Dakota,2003,793
+974,South Dakota,2004,432
+975,South Dakota,2005,773
+976,South Dakota,2006,1303
+977,South Dakota,2007,665
+978,South Dakota,2008,549
+979,South Dakota,2009,452
+980,South Dakota,2010,202
+981,South Dakota,2011,716
+982,South Dakota,2012,1416
+983,South Dakota,2013,314
+984,South Dakota,2014,395
+985,South Dakota,2015,447
+986,Tennessee,1992,41
+987,Tennessee,1993,35
+988,Tennessee,1994,54
+989,Tennessee,1995,73
+990,Tennessee,1996,33
+991,Tennessee,1997,1049
+992,Tennessee,1998,1299
+993,Tennessee,1999,2438
+994,Tennessee,2000,1961
+995,Tennessee,2001,1850
+996,Tennessee,2002,1078
+997,Tennessee,2003,25
+998,Tennessee,2004,51
+999,Tennessee,2005,1539
+1000,Tennessee,2006,1727
+1001,Tennessee,2007,2515
+1002,Tennessee,2008,1010
+1003,Tennessee,2009,1050
+1004,Tennessee,2010,1418
+1005,Tennessee,2011,897
+1006,Tennessee,2012,839
+1007,Tennessee,2013,485
+1008,Tennessee,2014,1073
+1009,Tennessee,2015,471
+1010,Texas,1992,1129
+1011,Texas,1993,1397
+1012,Texas,1994,834
+1013,Texas,1995,1589
+1014,Texas,1996,2777
+1015,Texas,1997,712
+1016,Texas,1998,1960
+1017,Texas,1999,1714
+1018,Texas,2000,2561
+1019,Texas,2001,705
+1020,Texas,2002,1116
+1021,Texas,2003,1029
+1022,Texas,2004,930
+1023,Texas,2005,6750
+1024,Texas,2006,14863
+1025,Texas,2007,4624
+1026,Texas,2008,14235
+1027,Texas,2009,10430
+1028,Texas,2010,7106
+1029,Texas,2011,15203
+1030,Texas,2012,5660
+1031,Texas,2013,6818
+1032,Texas,2014,5431
+1033,Texas,2015,5498
+1034,Utah,1992,317
+1035,Utah,1993,215
+1036,Utah,1994,586
+1037,Utah,1995,398
+1038,Utah,1996,660
+1039,Utah,1997,250
+1040,Utah,1998,277
+1041,Utah,1999,510
+1042,Utah,2000,484
+1043,Utah,2001,419
+1044,Utah,2002,283
+1045,Utah,2003,303
+1046,Utah,2004,300
+1047,Utah,2005,479
+1048,Utah,2006,675
+1049,Utah,2007,492
+1050,Utah,2008,265
+1051,Utah,2009,271
+1052,Utah,2010,246
+1053,Utah,2011,320
+1054,Utah,2012,477
+1055,Utah,2013,235
+1056,Utah,2014,220
+1057,Utah,2015,114
+1058,Vermont,1992,1
+1059,Vermont,1993,1
+1060,Vermont,1994,4
+1061,Vermont,1995,1
+1062,Vermont,1997,2
+1063,Vermont,1998,2
+1064,Vermont,1999,3
+1065,Vermont,2002,2
+1066,Vermont,2003,5
+1067,Vermont,2004,6
+1068,Vermont,2005,11
+1069,Vermont,2006,2
+1070,Vermont,2007,1
+1071,Vermont,2008,2
+1072,Vermont,2012,43
+1073,Vermont,2013,70
+1074,Vermont,2014,33
+1075,Vermont,2015,45
+1076,Virginia,1992,24
+1077,Virginia,1993,26
+1078,Virginia,1994,47
+1079,Virginia,1995,871
+1080,Virginia,1996,462
+1081,Virginia,1997,580
+1082,Virginia,1998,640
+1083,Virginia,1999,942
+1084,Virginia,2000,545
+1085,Virginia,2001,1205
+1086,Virginia,2002,845
+1087,Virginia,2003,187
+1088,Virginia,2004,182
+1089,Virginia,2005,462
+1090,Virginia,2006,762
+1091,Virginia,2007,817
+1092,Virginia,2008,822
+1093,Virginia,2009,472
+1094,Virginia,2010,630
+1095,Virginia,2011,564
+1096,Virginia,2012,426
+1097,Virginia,2013,354
+1098,Virginia,2014,576
+1099,Virginia,2015,407
+1100,Washington,1992,487
+1101,Washington,1993,211
+1102,Washington,1994,592
+1103,Washington,1995,326
+1104,Washington,1996,348
+1105,Washington,1997,239
+1106,Washington,1998,388
+1107,Washington,1999,446
+1108,Washington,2000,405
+1109,Washington,2001,405
+1110,Washington,2002,449
+1111,Washington,2003,440
+1112,Washington,2004,413
+1113,Washington,2005,316
+1114,Washington,2006,426
+1115,Washington,2007,391
+1116,Washington,2008,421
+1117,Washington,2009,495
+1118,Washington,2010,258
+1119,Washington,2011,255
+1120,Washington,2012,437
+1121,Washington,2013,374
+1122,Washington,2014,449
+1123,Washington,2015,593
+1124,West Virginia,1992,432
+1125,West Virginia,1993,510
+1126,West Virginia,1994,680
+1127,West Virginia,1995,784
+1128,West Virginia,1996,343
+1129,West Virginia,1997,375
+1130,West Virginia,1998,558
+1131,West Virginia,1999,1154
+1132,West Virginia,2000,692
+1133,West Virginia,2001,1058
+1134,West Virginia,2002,540
+1135,West Virginia,2003,327
+1136,West Virginia,2004,327
+1137,West Virginia,2005,388
+1138,West Virginia,2006,583
+1139,West Virginia,2007,429
+1140,West Virginia,2008,477
+1141,West Virginia,2009,595
+1142,West Virginia,2010,495
+1143,West Virginia,2011,275
+1144,West Virginia,2012,380
+1145,West Virginia,2013,303
+1146,West Virginia,2014,529
+1147,West Virginia,2015,361
+1148,Wisconsin,1992,388
+1149,Wisconsin,1993,266
+1150,Wisconsin,1994,699
+1151,Wisconsin,1995,528
+1152,Wisconsin,1996,516
+1153,Wisconsin,1997,528
+1154,Wisconsin,1998,473
+1155,Wisconsin,1999,516
+1156,Wisconsin,2000,544
+1157,Wisconsin,2001,243
+1158,Wisconsin,2002,295
+1159,Wisconsin,2003,734
+1160,Wisconsin,2004,381
+1161,Wisconsin,2005,470
+1162,Wisconsin,2006,445
+1163,Wisconsin,2007,400
+1164,Wisconsin,2008,158
+1165,Wisconsin,2009,496
+1166,Wisconsin,2010,369
+1167,Wisconsin,2011,156
+1168,Wisconsin,2012,427
+1169,Wisconsin,2013,167
+1170,Wisconsin,2014,175
+1171,Wisconsin,2015,322
+1172,Wyoming,1992,292
+1173,Wyoming,1993,76
+1174,Wyoming,1994,431
+1175,Wyoming,1995,237
+1176,Wyoming,1996,563
+1177,Wyoming,1997,82
+1178,Wyoming,1998,70
+1179,Wyoming,1999,132
+1180,Wyoming,2000,293
+1181,Wyoming,2001,265
+1182,Wyoming,2002,285
+1183,Wyoming,2003,233
+1184,Wyoming,2004,145
+1185,Wyoming,2005,206
+1186,Wyoming,2006,332
+1187,Wyoming,2007,238
+1188,Wyoming,2008,185
+1189,Wyoming,2009,175
+1190,Wyoming,2010,287
+1191,Wyoming,2011,354
+1192,Wyoming,2012,609
+1193,Wyoming,2013,240
+1194,Wyoming,2014,308
+1195,Wyoming,2015,356
