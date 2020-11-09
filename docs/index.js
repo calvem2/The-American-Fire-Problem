@@ -11,7 +11,7 @@ var projection = d3.geoAlbersUsa()
 var path = d3.geoPath().projection(projection);
 
 // Load the fire data
-d3.csv("over0.5AcreWithIDs.csv").then(function(fires) {
+d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
     // Remove the loading circle when the dataset loads
     d3.select("#circleLoader")
         .remove();
