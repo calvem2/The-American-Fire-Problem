@@ -46,7 +46,8 @@ d3.csv("over0.5AcreWithIDs.csv").then(function(fires) {
         .ticks(dataYears.length)                    // number of ticks
         .tickFormat(d3.format('.0f'))               // format for year
         .tickValues(dataYears)                      // tick values
-        .default(dataYears[dataYears.length - 1]);  // value slider set to initially (max year)
+        .default(dataYears[dataYears.length - 1])
+        d3.select("#slider").style("fill", "#BB86FC");  // value slider set to initially (max year)
 
     // TODO: arrange map and slider on page
     // Add slider to html
@@ -65,7 +66,7 @@ d3.csv("over0.5AcreWithIDs.csv").then(function(fires) {
         // Draw line chart
 
         // Set dimensions/margins
-        var margin = {top: 10, right: 30, bottom: 30, left: 60},
+        var margin = {top: 100, right: 30, bottom: 30, left: 60},
             chartWidth = width - margin.left - margin.right,
             chartHeight = height - margin.top - margin.bottom;
 
@@ -76,6 +77,15 @@ d3.csv("over0.5AcreWithIDs.csv").then(function(fires) {
             .attr("height", chartHeight + margin.top + margin.bottom)
             .append("g")
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+        // Graph title
+        svg.append("text")
+            .attr("x", (width / 2))             
+            .attr("y", -50)
+            .attr("text-anchor", "middle")  
+            .style("font-size", "16px") 
+            .style("fill", "white")
+            .text("TODO: Add State & Year");
 
         // Create x axis scale
         var x = d3.scaleTime()
@@ -88,6 +98,26 @@ d3.csv("over0.5AcreWithIDs.csv").then(function(fires) {
             .call(d3.axisBottom(x));
 
         var yAxis = svg.append("g");
+
+        // Axes titles
+        svg.append("text")
+            .attr("class", "x label")
+            .attr("text-anchor", "middle")
+            .attr("x", chartWidth - 440)    // moves the text left and right from the x-axis
+            .attr("y", chartHeight + 30)    // moves the text up and down from the x-axis
+            .style("fill", "white")
+            .text("Year");
+
+        svg.append("text")
+            .attr("class", "y label")
+            .attr("text-anchor", "middle")
+            .attr("y", -60)     // moves the text left and right from the y-axis
+            .attr("x", -200)    // moves the text up and down from the y-axis
+            .attr("dy", ".75em")
+            .attr("transform", "rotate(-90)")
+            .style("fill", "white")
+            .text("# Fires Per Acre");
+
 
         // Append line and marks containers
         var line = svg.append("path");
@@ -195,7 +225,7 @@ d3.csv("over0.5AcreWithIDs.csv").then(function(fires) {
             // to the left = lighter color; to the right = darker color
             // yellow -> orange colors -> red
             var stateColor = d3.scaleQuantize()
-            .range(["#ffd859", "#FAC000","#FF9528","#FC5200","#B62203", "#801100", "#590c00", "#380700"]);
+            .range(["#FCCE01", "#EFB202","#E29704","#D67B06","#C96008", "#BD440A", "#B0290C", "#A40E0E"]);
 
             // Updates the state color
             function updateJSONFireSize() {
@@ -407,7 +437,7 @@ d3.csv("over0.5AcreWithIDs.csv").then(function(fires) {
                             })
                             .attr("cy", function(d) { return projection([d.LONGITUDE, d.LATITUDE])[1]; })
                             // TODO: change circle color
-                            .attr("fill", "blue")
+                            .attr("fill", "4C4645")
                             // initially small and translucent before transition
                             .attr("r", 0)
                             .attr("opacity", 0)
@@ -459,6 +489,7 @@ d3.csv("over0.5AcreWithIDs.csv").then(function(fires) {
             sliderYear.on('onchange', val => {
                 yearSelected = val;
                 updateStateColors(yearSelected);
+                d3.select("#slider").style("fill", "#BB86FC")
                 drawFires();
             });
         });
