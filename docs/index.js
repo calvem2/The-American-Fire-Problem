@@ -126,10 +126,8 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
         // Function to filter data based on state and group by year
         // Returns map of years to number of fires
         function filterData(state) {
-            // Filter Puerto Rico
-            var data = fireCounts.filter(function (d) {
-                return d.STATE !== "Puerto Rico";
-            });
+            // Get data
+            var data = fireCounts;
 
             // Filter to selected state
             if (state !== null) {
@@ -235,10 +233,10 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
 
                 // Filter the min and max data for the given year
                 stateColor.domain([
-                    d3.min(fireCounts, 
-                        function(d) { return d.FIRE_COUNT; }),
-                    d3.max(fireCounts, 
-                        function(d) { return d.FIRE_COUNT; })
+                    d3.min(filteredCSV,
+                        function(d) { return d.FIRES_PER_10K_ACRE; }), //return d.FIRES_PER_10K_ACRE; }),return 0.0008;
+                    d3.max(filteredCSV,
+                        function(d) { return d.FIRES_PER_10K_ACRE; })//return d.FIRES_PER_10K_ACRE; })return 2.3;
                 ]);
 
                 // Merge the data in the fireCounts csv with the json
@@ -251,7 +249,7 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                         // If the state names match
                         if (jsonStateName === csvStateName) {
                             // Current fire count for the given state                          
-                            var currFireCount = filteredCSV[j].FIRE_COUNT;
+                            var currFireCount = filteredCSV[j].FIRES_PER_10K_ACRE;
                             // Update the json file
                             us.features[i].properties.value = currFireCount;
                             break;
