@@ -46,7 +46,7 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
         .ticks(dataYears.length)                    // number of ticks
         .tickFormat(d3.format('.0f'))               // format for year
         .tickValues(dataYears)                      // tick values
-        .default(dataYears[dataYears.length - 1])
+        .default(dataYears[0])
         d3.select("#slider").style("fill", "#BB86FC");  // value slider set to initially (max year)
 
     // TODO: arrange map and slider on page
@@ -237,9 +237,9 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                 // Filter the min and max data for the given year
                 stateColor.domain([
                     d3.min(filteredCSV, 
-                        function(d) { return d.FIRES_PER_10K_ACRE; }), //return d.FIRES_PER_10K_ACRE; }),return 0.0008;
+                        function(d) { return d.FIRES_PER_10K_ACRE; }),
                     d3.max(filteredCSV, 
-                        function(d) { return d.FIRES_PER_10K_ACRE; })//return d.FIRES_PER_10K_ACRE; })return 2.3;
+                        function(d) { return d.FIRES_PER_10K_ACRE; })
                 ]);
 
                 // Merge the data in the fireCounts csv with the json
@@ -251,10 +251,10 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                         var csvStateName = filteredCSV[j].STATE;
                         // If the state names match
                         if (jsonStateName === csvStateName) {
-                            // Current fire count for the given state                          
-                            var currFireCount = filteredCSV[j].FIRES_PER_10K_ACRE;
+                            // Current fire count per 10,000 acres for the given state                          
+                            var currFireRatio = filteredCSV[j].FIRES_PER_10K_ACRE;
                             // Update the json file
-                            us.features[i].properties.value = currFireCount;
+                            us.features[i].properties.value = parseFloat(currFireRatio);
                             break;
                         }
                     }
@@ -287,7 +287,7 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
             // Displays text for default browser tooltip
             if (tooltipDisplay){
                 states.append("title")
-                .text(d => d.properties.name +'\n'+ d.properties.value + " Wildfires");
+                .text(d => d.properties.name +'\n'+ Math.round(d.properties.value  * 10000) / 10000 + " Wildfires per 10,000 acres");
             }
             // TODO: add tooltip and/or mouseover hover for states like with fire markers
             // TODO: this tooltipDisplay does not work
@@ -316,7 +316,9 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                             return "#ccc";
                         }
                     });
-                states.select("title").text(d => d.properties.name +'\n'+ d.properties.value + " Wildfires");
+                //var roundedNum = Math.round(d.properties.value  * 10000) / 10000;
+                states.select("title").text(d => d.properties.name +'\n'+ Math.round(d.properties.value  * 10000) / 10000
+                    + " Wildfires per 10,000 acres");
             }
 
             // Set min and max scale for zooming into the map
