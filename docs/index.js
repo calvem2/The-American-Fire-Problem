@@ -61,7 +61,7 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
     yearSlider.call(sliderYear);
 
     // Load the fire count data for each state
-    d3.csv("fireCountsOver0.5Acre.csv").then(function(fireCounts) {
+    d3.csv("firesPerAcre.csv").then(function(fireCounts) {
         // TODO: add necessary chart details (titles, subtitles, labels, axis titles)
         // Draw line chart
 
@@ -126,7 +126,11 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
         // Function to filter data based on state and group by year
         // Returns map of years to number of fires
         function filterData(state) {
-            var data = fireCounts;
+            // Filter Puerto Rico
+            var data = fireCounts.filter(function (d) {
+                return d.STATE !== "Puerto Rico";
+            });
+
             // Filter to selected state
             if (state !== null) {
                 data = data.filter(function (d) {
