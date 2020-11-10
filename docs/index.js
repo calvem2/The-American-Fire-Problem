@@ -126,6 +126,9 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
         // Function to filter data based on state and group by year
         // Returns map of years to number of fires
         function filterData(state) {
+            // Get data
+            var data = fireCounts;
+
             // Filter to selected state
             if (state !== null) {
                 data = data.filter(function (d) {
