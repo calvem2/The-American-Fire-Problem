@@ -11,7 +11,7 @@ var projection = d3.geoAlbersUsa()
 var path = d3.geoPath().projection(projection);
 
 // Load the fire data
-d3.csv("over0.5AcreWithIDs.csv").then(function(fires) {
+d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
     // Remove the loading circle when the dataset loads
     d3.select("#circleLoader")
         .remove();
@@ -61,7 +61,7 @@ d3.csv("over0.5AcreWithIDs.csv").then(function(fires) {
     yearSlider.call(sliderYear);
 
     // Load the fire count data for each state
-    d3.csv("fireCountsWithStates.csv").then(function(fireCounts) {
+    d3.csv("fireCountsOver0.5Acre.csv").then(function(fireCounts) {
         // TODO: add necessary chart details (titles, subtitles, labels, axis titles)
         // Draw line chart
 
@@ -288,32 +288,33 @@ d3.csv("over0.5AcreWithIDs.csv").then(function(fires) {
                 .text(d => d.properties.name +'\n'+ d.properties.value + " Wildfires");
             }
             // TODO: add tooltip and/or mouseover hover for states like with fire markers
-
+            // TODO: this tooltipDisplay does not work
             states
                 .on('mouseover', function() {
                     if (tooltipDisplay){
-                    d3.select(this)
-                } else {
-                    d3.select(this).attr('title', null)
+                        d3.select(this)
+                    } else {
+                        d3.select(this).attr('title', null)
                 }})
                 .on('mouseout', function() {
                     d3.select(this).attr('title', null);
                 })
 
-            // TODO: add animation to state color
             // Recolor the states
             function updateStateColors(currYear) {
-                states.style("fill", function(d) {
-                    // Update the state colors
-                    updateJSONFireSize();
-                    var value = d.properties.value;
-                    // Grey out undefined values
-                    if (value) {
-                        return stateColor(value);
-                    } else {
-                        return "#ccc";
-                    }
-                });
+                states.transition().duration(1000)
+                    .style("fill", function(d) {
+                        // Update the state colors
+                        // Grey out undefined values
+                        updateJSONFireSize();
+                        var value = d.properties.value;
+                        if (value) {
+                            return stateColor(value);
+                        } else {
+                            return "#ccc";
+                        }
+                    });
+                states.select("title").text(d => d.properties.name +'\n'+ d.properties.value + " Wildfires");
             }
 
             // Set min and max scale for zooming into the map
@@ -356,7 +357,7 @@ d3.csv("over0.5AcreWithIDs.csv").then(function(fires) {
             function clicked(event, d) {
                 // Set current state clicked
                 clickedState = this.id;
-                tooltipDisplay = false
+                tooltipDisplay = false;     
 
                 // Get state bounds
                 const [[x0, y0], [x1, y1]] = path.bounds(d);
