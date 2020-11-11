@@ -16,6 +16,10 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
     d3.select("#circleLoader")
         .remove();
 
+    // Map title
+    d3.select(".chart-title")
+        .text("Area Burned by Wildfires (acres per 10,000 Acres) <-- move units to legend");
+
     // Current state clicked
     var clickedState = null;
 
@@ -80,7 +84,7 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
 
         // Graph title
         svg.append("text")
-            .attr("x", (width / 2))             
+            .attr("x", (width / 2))
             .attr("y", -50)
             .attr("text-anchor", "middle")  
             .style("font-size", "16px") 
@@ -218,7 +222,6 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
             // Create g element where states and fire circles will be appended
             const g = svg.append("g");
 
-
             // TODO: make these colors different
             // Scale to sort the data value into color buckets for each state
             // to the left = lighter color; to the right = darker color
@@ -285,7 +288,7 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
             // TODO: Replace to match Andy's tooltip
             if (tooltipDisplay){
                 states.append("title")
-                .text(d => d.properties.name +'\n'+ d.properties.value + " Acres Burned per 10,000");
+                .text(d => d.properties.name +'\n'+ d.properties.value + " acres burned per 10k acres");
             }
 
             // TODO: this tooltip display does not work...replace to match Andy's

@@ -71,6 +71,20 @@ p { margin: 0 0 10px 0; }
 .slider{
   stroke: white;
 }
+
+/* Style map chart title */
+#us_map, .chart-title {
+    font-size: 16px;
+    text-align: center;
+    color: white;
+}
+
+/* Style exploratory question */
+#question {
+   font-size: 14pt;
+    text-align: center;
+}
+
 /* Animation for the loading circle */
 @keyframes spin {
   0% { transform: rotate(0deg); }
@@ -86,8 +100,9 @@ p { margin: 0 0 10px 0; }
         strong {text-align: center;}
     </style>
    <section class="title">
-    <h1 href="/">The American Fire Problem</h1>
-  </section>
+    <h1 href="/">U.S. Wildfires</h1>
+    <p id="question"> How has the number of fires changed over time in the United States?</p>
+   </section>
 
    <section>
     <p>
@@ -96,12 +111,13 @@ p { margin: 0 0 10px 0; }
   </section>
 
   <section>
-    <h1> How has the number of fires changed over time in the United States?</h1>
     <div id="circleLoader" class="loader"></div>
     <div id="slider"></div>
     <div class="sideBySide">
         <div class="child">
-            <div id="us_map"></div>
+            <div id="us_map">
+                <h3 class="chart-title"></h3>
+            </div>
             <div id="legend"></div>
         </div>
         <div class="child">
