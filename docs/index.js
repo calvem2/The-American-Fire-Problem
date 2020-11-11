@@ -53,8 +53,12 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
     // Add slider to html
     var yearSlider = d3.select("#slider")
         .append("svg")
+        /*
         .attr("width", 1000)
         .attr("height", 100)
+        */
+        .attr("preserveAspectRatio", "xMinYMin meet")
+        .attr("viewBox", "0 0 " + width + " " + 100)
         .append("g")
         .attr("transform", 'translate(30,30)');
 
@@ -73,17 +77,21 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
         // Append svg for chart
         var svg = d3.select("#line-chart")
             .append("svg")
+            /*
             .attr("width", chartWidth + margin.left + margin.right)
             .attr("height", chartHeight + margin.top + margin.bottom)
+            */
+            .attr("preserveAspectRatio", "xMinYMin meet")
+            .attr("viewBox", "0 0 " + width + " " + height)
             .append("g")
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
         // Graph title
         svg.append("text")
-            .attr("x", (width / 2))             
+            .attr("x", (width / 2))
             .attr("y", -50)
-            .attr("text-anchor", "middle")  
-            .style("font-size", "16px") 
+            .attr("text-anchor", "middle")
+            .style("font-size", "16px")
             .style("fill", "white")
             .text("TODO: Add State & Year");
 
@@ -168,8 +176,6 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                     .x(function(d) { return x(parseTime(d[0])); })
                     .y(function(d) { return y(d[1]); })
                 )
-
-            // TODO: add mark labels/tooltip
             // TODO: highlight mark corresponding to selected year
             // Add marks for each year
             var marks = markGroup.selectAll("circle")
@@ -185,14 +191,27 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                     ,
                     exit => exit.remove()
                 );
-
+            marks.append('title').text(function(d) { return "Time: " + parseTime(d[0]) + '\n' + "Wildfires: " + d[1];});
+            marks
+              .on('mouseover', function() {
+                // The 'this' variable refers to the underlying SVG element.
+                // We can select it directly, then use D3 attribute setters.
+                // (Note that 'this' is set when using "function() {}" definitions,
+                //  but *not* when using arrow function "() => {}" definitions.)
+                d3.select(this).attr('stroke', 'white').attr('stroke-width', 2);
+              })
+              .on('mouseout', function() {
+                // Setting the stroke color to null removes it entirely.
+                d3.select(this).attr('stroke', null);
+              });
+            // TODO: refine transition for marks
             // Add transition for marks when switching between states
             marks.transition()
                 .duration(800)
                 .ease(d3.easeQuadOut)
                 .attr("cx", function(d) { return x(parseTime(d[0])); } )
                 .attr("cy", function(d) { return y(d[1]); } )
-                .attr("r", 5)
+                .attr("r", 5);
         }
 
         drawLine();
@@ -209,10 +228,10 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
         d3.json("us.json").then(function(us) {
 
             // Create svg container
-            var svg = d3.select("#us_map")
+            var svg = d3.select("#leftbox")
                 .append("svg")
-                .attr("width", width)
-                .attr("height", height)
+                .attr("preserveAspectRatio", "xMinYMin meet")
+                .attr("viewBox", "0 0 " + width + " " + height)
                 .on("click", reset);
 
             // Create g element where states and fire circles will be appended
@@ -292,11 +311,10 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
             states
                 .on('mouseover', function() {
                     if (tooltipDisplay){
-                        d3.select(this)
-                    } else {
                         d3.select(this).attr('title', null)
-                }})
+                    }})
                 .on('mouseout', function() {
+
                     d3.select(this).attr('title', null);
                 });
 
@@ -357,7 +375,7 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
             function clicked(event, d) {
                 // Set current state clicked
                 clickedState = this.id;
-                tooltipDisplay = false;     
+                tooltipDisplay = false;
 
                 // Get state bounds
                 const [[x0, y0], [x1, y1]] = path.bounds(d);
@@ -460,6 +478,18 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                     .append("title")
                     .text(d => d.FIRE_NAME + '\n' + d.FIRE_SIZE + " Acres Burned");
 
+                    // TODO: change color/style for circle outline
+                    // Outline the circle on mouse hover
+                circles
+                    .on('mouseover', function() {
+                      d3.select(this)
+                        .attr('stroke', 'white')
+                        .attr('stroke-width', 1)
+                        .attr('stroke-opacity', 1);
+                    })
+                    .on('mouseout', function() {
+                      d3.select(this).attr('stroke', null);
+                    })
                 // Add transition to the circles (fade in and grow)
                 circles
                     .transition()
@@ -480,8 +510,6 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                     .on('mouseout', function() {
                         d3.select(this).attr('stroke', null);
                     })
-
-
             }
 
             // Add on change function to year slider
