@@ -198,7 +198,6 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
 
             // TODO: highlight mark corresponding to selected year
             // Add marks for each year
-            console.log(data);
             var marks = markGroup.selectAll("circle")
                 .data(data, d => d[0])  // match on year
                 .join(
@@ -212,7 +211,7 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                     exit => exit.remove()
                 );
             marks.selectAll('title').remove();
-            marks.append('title').text(function(d) { console.log(d); return d[0] + '\n' + "Wildfires: " + d[1];});
+            marks.append('title').text(function(d) { return d[0] + '\n' + "Wildfires: " + d[1];});
             marks
               .on('mouseover', function() {
                 // The 'this' variable refers to the underlying SVG element.
@@ -246,7 +245,8 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
         // Create fire marker size scale based on fire size
         var size = d3.scaleSqrt()
             .domain(d3.extent(sizes, d => d.size))
-            .range([1, 16]);
+            .range([1, 12]);
+
         // Draw the map
         d3.json("us.json").then(function(us) {
 
@@ -536,7 +536,7 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                 circles
                     .transition()
                     .duration(1000)
-                    .attr("r", d => size(d.FIRE_SIZE))
+                    .attr("r", d => size(parseFloat(d.FIRE_SIZE)))
                     .style("opacity", 0.4);
 
                 // TODO: add tooltip to circles to match Andy's
