@@ -48,7 +48,7 @@
     top: 0;
     left: 0;
   }
- a, a:visited { text-decoration: none; color: #BB86FC; }
+ a, a:visited { text-decoration: none; color: #6EB4E6; }
 a:hover { text-decoration: underline; color: #f4b014; }
  h1, h2, h3, h4, h5 {
   color: #6EB4E6;
@@ -102,8 +102,12 @@ p { margin: 0 0 10px 0; }
   margin-top: 45px;
 }
 
-.slider{
-  stroke: #6EB4E6;
+#slider text {
+  font-size: 14px;
+}
+
+#team {
+    padding-bottom: 50px;
 }
 
 /* Style map chart title */
@@ -117,6 +121,13 @@ p { margin: 0 0 10px 0; }
 #question {
    font-size: 14pt;
     text-align: center;
+}
+
+/* Style subtitle for map */
+#map-subtitle {
+    font-size: 12px;
+    font-style: italic;
+    fill: #6EB4E6;
 }
 
 /* Animation for the loading circle */
@@ -147,24 +158,28 @@ p { margin: 0 0 10px 0; }
     </style>
    <section class="title">
     <h1 href="/">U.S. Wildfires</h1>
-    <p id="question"> How has the number of fires changed over time in the United States?</p>
+    <p id="question"> How has the number of wildfires and the total area burned by them changed over time in the United States?</p>
    </section>
 
    <section>
-    <p>
+    <p id="team">
       Team Members: Andrew Lee, Claire Beard, Ariel Shurygin, Megan Calverley, Anne Pham
     </p>
   </section>
 
   <section>
-    <h1> How has the number of fires changed over time in the United States?</h1>
     <div id="circleLoader" class="loader"></div>
     <div id="leftbox" >
-            <div id="us_map"></div>
+            <div id="us_map">
+                <h3 class="chart-title"></h3>
+            </div>
             <div id="legend"></div> <!-- i didnt see this bein used, make a new container for it if you want it to resize -->
     </div>
     <div id="rightbox">
-      <div id="line-chart"></div>
+      <div id="line-chart">
+          <h3 class="chart-title"></h3>
+          <p id="state-title"></p>
+      </div>
     </div>
     <div id="rightlowerbox">
       <div id="slider"></div>
@@ -173,7 +188,13 @@ p { margin: 0 0 10px 0; }
 
   <section>
     <h2>Design Decisions</h2>
-    <em>Since we were measuring and comparing the number of fires per 10k acres across the United
+    <em>
+        Our dataset contains records of wildfires that occurred in the United States from 1992 to 
+        2015 acquired by the U.S. Forest Service from the reporting systems of federal, state, and local
+        fire organizations. We excluded fires that were less than 0.5 acres in size in order to focus on
+        more substantial wildfires.<br><br>
+
+        Since we were measuring and comparing the number of fires per 10k acres across the United
         States, we decided to display our data findings with an interactive U.S. map using the
         Albers projection so that distortion is minimal between the standard parallels. In
         addition, we paired it with a line chart in order to provide more information of how the
@@ -186,6 +207,11 @@ p { margin: 0 0 10px 0; }
         include because then you could identify certain clusters within that specific state. The
         zoom functions also add a nice easability to the visualization and its purpose is to show the
         user that they're now looking at one specific state's data rather than the entirety of the country. <br> <br>
+
+        Additionally, we added a slider that enables scrubbing between years to enable exploration of wildfires 
+        across time. This allows the user to compare the total area burned across all the states over the years 
+        when the map is zoomed out. If the user has selected a state, scrubbing between the years adjusts the 
+        markers shown for the individual fires. <br><br>
 
         We also include some tooltips so that the user can gain even more information when they perform
         a mouseover. Including this allows for a bit more subtle information that can be quickly
@@ -220,12 +246,30 @@ p { margin: 0 0 10px 0; }
       Roughly how much time did you spend developing your application (in people-hours)?
       What aspects took the most time?]
       <br>Estimated hours per member:
-      <br> Andrew: __ hours
-      <br> Claire: __ hours
-      <br> Ariel: __ hours
-      <br> Megan: __ hours
-      <br> Anne: __ hours
-      <br> Total: __ hours
+      <br> Andrew: __ hours <br>
+
+        <br><br>
+      <br> Claire: __ hours <br>
+
+        <br><br>
+      <br> Ariel: 6 hours <br>
+            Over the course of the project I utilized my knowledge of Python, specifically pandas and numpy to assess the
+            data quality of our datasets, as well as connect data together from different sources to build some of our underlying datasets.
+            For example in order to get our land burned per 10,000 acres table I had to connect two tables, our original fire dataset
+            containing wildfire sizes, as well as a smaller dataset containing the acreage of each state. From there I aggregated and joined
+            the data, cleaning as I went. While this work was tricky at times there was less new elements to it than the work I did in d3,
+            specifically working on the tooltips for our map. I had not worked in javascript before so the learning curve was the aspect
+            that took the most time for me.
+        <br><br>
+      <br> Megan: __ hours <br>
+
+        <br><br>
+      <br> Anne: __ hours <br>
+
+        <br><br>
+      <br> Total: 6 hours <br>
+
+        <br><br>
     </em>
   </section>
 
