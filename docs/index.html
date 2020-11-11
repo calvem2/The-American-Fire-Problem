@@ -48,7 +48,7 @@
     top: 0;
     left: 0;
   }
- a, a:visited { text-decoration: none; color: #BB86FC; }
+ a, a:visited { text-decoration: none; color: #6EB4E6; }
 a:hover { text-decoration: underline; color: #f4b014; }
  h1, h2, h3, h4, h5 {
   color: #6EB4E6;
@@ -159,10 +159,14 @@ p { margin: 0 0 10px 0; }
   <section>
     <div id="circleLoader" class="loader"></div>
     <div id="leftbox" >
+<<<<<<< HEAD
+            <div id="us_map"></div>
+=======
             <div id="us_map">
                 <h3 class="chart-title"></h3>
             </div>
             <div id="legend"></div> <!-- i didnt see this bein used, make a new container for it if you want it to resize -->
+>>>>>>> b3a6bdfee2d8626632cc5a84e63980f24588cd44
     </div>
     <div id="rightbox">
       <div id="line-chart"></div>
@@ -174,7 +178,12 @@ p { margin: 0 0 10px 0; }
 
   <section>
     <h2>Design Decisions</h2>
-    <em>Since we were measuring and comparing the number of fires per 10k acres across the United
+    <em>
+        Our dataset contains records of wildfires that occurred in the United States from 1992 to 
+        2015 acquired from the reporting systems of federal, state, and local fire organizations. 
+        We excluded fires that were less than 0.5 acres in size in order to focus on more substantial wildfires.<br><br>
+
+        Since we were measuring and comparing the number of fires per 10k acres across the United
         States, we decided to display our data findings with an interactive U.S. map using the
         Albers projection so that distortion is minimal between the standard parallels. In
         addition, we paired it with a line chart in order to provide more information of how the
@@ -187,6 +196,11 @@ p { margin: 0 0 10px 0; }
         include because then you could identify certain clusters within that specific state. The
         zoom functions also add a nice easability to the visualization and its purpose is to show the
         user that they're now looking at one specific state's data rather than the entirety of the country. <br> <br>
+
+        Additionally, we added a slider that enables scrubbing between years to enable exploration of wildfires 
+        across time. This allows the user to compare the total area burned across all the states over the years 
+        when the map is zoomed out. If the user has selected a state, scrubbing between the years adjusts the 
+        markers shown for the individual fires. <br><br>
 
         We also include some tooltips so that the user can gain even more information when they perform
         a mouseover. Including this allows for a bit more subtle information that can be quickly

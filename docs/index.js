@@ -20,8 +20,14 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
     d3.select(".chart-title")
         .text("Area Burned by Wildfires");
 
+
+    // Legend
+    d3.select("#legend")
+        .append("image")
+
     // Current state clicked
     var clickedState = null;
+    var lineChartTitle = "U.S.A.";
 
     // Functions for parsing Dates and date strings
     var parseTime = d3.timeParse("%Y");
@@ -89,14 +95,6 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
             .append("g")
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-        // Graph title
-        svg.append("text")
-            .attr("x", (width / 2))
-            .attr("y", -50)
-            .attr("text-anchor", "middle")
-            .style("font-size", "16px")
-            .style("fill", "white")
-            .text(clickedState);
 
         // Create x axis scale
         var x = d3.scaleTime()
@@ -153,6 +151,16 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
             // Group by year
             return d3.rollup(data, g => d3.sum(g, d => d.FIRE_COUNT), d => d.FIRE_YEAR);
         }
+
+
+
+        // Graph title
+        var title = svg.append("text")
+                        .attr("x", (width / 2))
+                        .attr("y", -50)
+                        .attr("text-anchor", "middle")
+                        .style("font-size", "16px")
+                        .style("fill", "white")
 
         // Function for drawing line with marks on chart based on state selected
         function drawLine() {
@@ -219,6 +227,9 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                 .attr("cx", function(d) { return x(parseTime(d[0])); } )
                 .attr("cy", function(d) { return y(d[1]); } )
                 .attr("r", 5);
+
+
+            title.text(lineChartTitle);
         }
 
         drawLine();
@@ -252,6 +263,13 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                 .range(["#fed976", "#feb24c","#fd8d3c","#fc4e2a","#e31a1c", "#bd0026", "#800026", "#67000d"]);
 
             //stateColor.range().forEach(function(r){ console.log(r + ':' + stateColor.invertExtent(r));});
+            // Graph Legend
+            svg.append("image")
+                .attr('x', 830)
+                .attr('y', 350)
+                .attr('height', 300)
+                .attr('width', 150)
+                .attr("xlink:href", "images/legend.png");
 
             // Updates the state color
             function updateJSONFireSize() {
@@ -405,6 +423,13 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                     d3.pointer(event, svg.node())
                 );
 
+                // Setting the line chart title
+                if (clickedState == null) {
+                    lineChartTitle = "U.S.A.";
+                } else {
+                    lineChartTitle = clickedState;
+                }
+
                 // Draw circles for clickedState and selectedYear
                 drawFires();
 
@@ -444,6 +469,13 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
 
                 // Reset state selected
                 clickedState = null;
+
+                // Setting the line chart title
+                if (clickedState == null) {
+                    lineChartTitle = "U.S.A.";
+                } else {
+                    lineChartTitle = clickedState;
+                }
 
                 // Draw line
                 drawLine();
