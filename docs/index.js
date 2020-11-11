@@ -151,47 +151,45 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                 .range([chartHeight, 0]);
 
             // Add y axis
-            // TODO: refine transition for y axis
             yAxis.transition()
-                .duration(2000)
+                .duration(800)
                 .call(d3.axisLeft(y));
 
-            // TODO: refine color and transitions
             // Add line
             line
                 .datum(data)
                 .transition()
-                .duration(1000)
+                .duration(800)
+                .ease(d3.easeQuadOut)
                 .attr("fill", "none")
-                .attr("stroke", "red")
-                .attr("stroke-width", 1.5)
+                .attr("stroke", "#D60620")
+                .attr("stroke-width", 2)
                 .attr("d", d3.line()
                     .x(function(d) { return x(parseTime(d[0])); })
                     .y(function(d) { return y(d[1]); })
                 )
 
-            // TODO: refine color
             // TODO: add mark labels/tooltip
             // TODO: highlight mark corresponding to selected year
             // Add marks for each year
             var marks = markGroup.selectAll("circle")
-                .data(data, d => d[0])
+                .data(data, d => d[0])  // match on year
                 .join(
                     enter => enter
                         .append("circle")
                         .attr("cx", function(d) { return x(parseTime(d[0])); } )
                         .attr("cy", function(d) { return y(d[1]); } )
                         .attr("r", 5)
-                        .attr("fill", "red"),
+                        .attr("fill", "#D60620"),
                     update => update
                     ,
                     exit => exit.remove()
                 );
 
-            // TODO: refine transition for marks
             // Add transition for marks when switching between states
             marks.transition()
-                .duration(1000)
+                .duration(800)
+                .ease(d3.easeQuadOut)
                 .attr("cx", function(d) { return x(parseTime(d[0])); } )
                 .attr("cy", function(d) { return y(d[1]); } )
                 .attr("r", 5)
@@ -206,8 +204,7 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
         // Create fire marker size scale based on fire size
         var size = d3.scaleSqrt()
             .domain(d3.extent(sizes, d => d.size))
-            // TODO: adjust range
-            .range([1, 8]);
+            .range([1, 16]);
         // Draw the map
         d3.json("us.json").then(function(us) {
 
@@ -285,12 +282,13 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
 
             // Name the state
             // Displays text for default browser tooltip
+            // TODO: Replace to match Andy's tooltip
             if (tooltipDisplay){
                 states.append("title")
                 .text(d => d.properties.name +'\n'+ Math.round(d.properties.value  * 10000) / 10000 + " Wildfires per 10,000 acres");
             }
-            // TODO: add tooltip and/or mouseover hover for states like with fire markers
-            // TODO: this tooltipDisplay does not work
+
+            // TODO: this tooltip display does not work...replace to match Andy's
             states
                 .on('mouseover', function() {
                     if (tooltipDisplay){
@@ -300,11 +298,11 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                 }})
                 .on('mouseout', function() {
                     d3.select(this).attr('title', null);
-                })
+                });
 
             // Recolor the states
             function updateStateColors() {
-                states.transition().duration(1000)
+                states.transition().duration(800)
                     .style("fill", function(d) {
                         // Update the state colors
                         // Grey out undefined values
@@ -431,7 +429,7 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                 // Filter data to include only current year and state
                 // TODO: use id column for key
                     .data(fires.filter(d => (d.STATE.replace(" ", "_") === clickedState)
-                        && (d.FIRE_YEAR === yearSelected.toString())), d => [d.FIRE_NAME, d.LATITUDE, d.LONGITUDE])
+                        && (d.FIRE_YEAR === yearSelected.toString())), d => [d.FIRE_ID])
                     .join(
                         // add new circles
                         enter => enter
@@ -449,10 +447,9 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                             .on("click", function(event) { event.stopPropagation(); }),
                         update => update,
                         exit => exit
-                        // TODO: refine transition
                         // transition exiting circles to shrink and fade before removal
                             .transition()
-                            .duration(1000)
+                            .duration(800)
                             .attr('opacity', 0)
                             .attr('r', 0)
                             .remove()
@@ -460,26 +457,26 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
 
                 // Add title to the circles
                 // Default browser tooltip
+                // TODO: replace tooltip to match Andy's + use fires per 10k acres
                 circles
                     .append("title")
                     .text(d => d.FIRE_NAME + '\n' + d.FIRE_SIZE + " Acres Burned");
 
                 // Add transition to the circles (fade in and grow)
-                // TODO: refine transition
                 circles
                     .transition()
                     .duration(1000)
                     .attr("r", d => size(d.FIRE_SIZE))
-                    .style("opacity", 0.6);
+                    .style("opacity", 0.4);
 
-                // TODO: add tooltip to circles
+                // TODO: add tooltip to circles to match Andy's
                 // TODO: change color/style for circle outline
                 // Outline the circle on mouse hover
                 circles
                     .on('mouseover', function() {
                         d3.select(this)
-                            .attr('stroke', '#000')
-                            .attr('stroke-width', .2)
+                            .attr('stroke', 'white')
+                            .attr('stroke-width', .5)
                             .attr('stroke-opacity', 1);
                     })
                     .on('mouseout', function() {
