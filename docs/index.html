@@ -8,12 +8,42 @@
  body {
   margin: 0 auto 0 auto;
   padding: 0;
-  max-width: 1200px;
+  max-width: 100%;
   font-family: "Avenir", "Avenir Next", Helvetica Neue, Arial;
   font-size: 0.95em;
   color: white;
   background-color: #121212;
 }
+
+  #leftbox{
+    float:left;
+    width:50%;
+    height:30%;
+  }
+  #rightbox{
+    float:right;
+    width:50%;
+    height:30%;
+  }
+  #rightlowerbox{
+    float:right;
+    width:50%;
+    height:3%;
+  }
+  .svg-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 30%;
+    vertical-align: top;
+    overflow: hidden;
+  }
+  .svg-content {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
  a, a:visited { text-decoration: none; color: #BB86FC; }
 a:hover { text-decoration: underline; color: #f4b014; }
  h1, h2, h3, h4, h5 {
@@ -110,16 +140,17 @@ p { margin: 0 0 10px 0; }
   <section>
     <h1> How has the number of fires changed over time in the United States?</h1>
     <div id="circleLoader" class="loader"></div>
-    <div class="sideBySide">
-        <div class="child">
+    <div id="leftbox" >
             <div id="us_map"></div>
-            <div id="legend"></div>
-        </div>
-        <div class="child">
-            <div id="line-chart"></div>
-        </div>
-        <div id="slider"></div>
+            <div id="legend"></div> <!-- i didnt see this bein used, make a new container for it if you want it to resize -->
     </div>
+    <div id="rightbox">
+      <div id="line-chart"></div>
+    </div>
+    <div id="rightlowerbox">
+      <div id="slider"></div>
+    </div>
+
   </section>
 
   <section>

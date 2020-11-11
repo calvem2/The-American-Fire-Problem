@@ -53,8 +53,12 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
     // Add slider to html
     var yearSlider = d3.select("#slider")
         .append("svg")
+        /*
         .attr("width", 1000)
         .attr("height", 100)
+        */
+        .attr("preserveAspectRatio", "xMinYMin meet")
+        .attr("viewBox", "0 0 " + width + " " + 100)
         .append("g")
         .attr("transform", 'translate(30,30)');
 
@@ -73,8 +77,12 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
         // Append svg for chart
         var svg = d3.select("#line-chart")
             .append("svg")
+            /*
             .attr("width", chartWidth + margin.left + margin.right)
             .attr("height", chartHeight + margin.top + margin.bottom)
+            */
+            .attr("preserveAspectRatio", "xMinYMin meet")
+            .attr("viewBox", "0 0 " + width + " " + height)
             .append("g")
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
@@ -224,10 +232,10 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
         d3.json("us.json").then(function(us) {
 
             // Create svg container
-            var svg = d3.select("#us_map")
+            var svg = d3.select("#leftbox")
                 .append("svg")
-                .attr("width", width)
-                .attr("height", height)
+                .attr("preserveAspectRatio", "xMinYMin meet")
+                .attr("viewBox", "0 0 " + width + " " + height)
                 .on("click", reset);
 
             // Create g element where states and fire circles will be appended
@@ -306,12 +314,11 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
             states
                 .on('mouseover', function() {
                     if (tooltipDisplay){
-                        d3.select(this)
-                    } else {
                         d3.select(this).attr('title', null)
-                }})
+                    }})
                 .on('mouseout', function() {
-                    d3.select(this).attr('title', null);
+                  if (tooltipDisplay){
+                    d3.select(this).attr('title', null)}
                 })
 
             // Recolor the states
