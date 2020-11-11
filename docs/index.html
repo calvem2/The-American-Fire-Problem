@@ -178,10 +178,11 @@ p { margin: 0 0 10px 0; }
     <em>
         Our dataset contains records of wildfires that occurred in the United States from 1992 to 
         2015 acquired from the reporting systems of federal, state, and local fire organizations. 
-        We excluded fires that were less than 0.5 acres in size in order to focus on more substantial wildfires.<br><br>
+        We excluded fires that were less than 0.5 acres in size in order to focus on more substantial wildfires and eliminate
+        small fires on private property which did not endanger wildlife or forests.<br><br>
 
-        Since we were measuring and comparing the number of fires per 10k acres across the United
-        States, we decided to display our data findings with an interactive U.S. map using the
+        Since we were measuring and comparing the number of fires per 10,000 acres across the United
+        States, we decided to display our data findings with an interactive U.S. map. We used an
         Albers projection so that distortion is minimal between the standard parallels. In
         addition, we paired it with a line chart in order to provide more information of how the
         number of fires have changed throughout time starting from 1992 to 2015. <br> <br>
@@ -197,7 +198,7 @@ p { margin: 0 0 10px 0; }
         Additionally, we added a slider that enables scrubbing between years to enable exploration of wildfires 
         across time. This allows the user to compare the total area burned across all the states over the years 
         when the map is zoomed out. If the user has selected a state, scrubbing between the years adjusts the 
-        markers shown for the individual fires. <br><br>
+        markers shown for the individual fires, allowing them to look at high or low fire years and identify common locations.<br><br>
 
         We also include some tooltips so that the user can gain even more information when they perform
         a mouseover. Including this allows for a bit more subtle information that can be quickly
@@ -209,15 +210,18 @@ p { margin: 0 0 10px 0; }
         lesser number of fires per acre to red representing the more number of fires per acre. We
         decided to use this color because hotter temperatures are normally portrayed with a red
         high in contrast, and a lower temperature, but still hot, is normally seen as a lighter yellow.
-        We wanted the colors to be intuitive with our idea of fires. <br><br>
+        We wanted the colors to be intuitive with our idea of fires. We also chose the ratio of fires per 10,000 acres
+        to better normalize states of different sizes, and thus more or less wildfires.<br><br>
 
         Next, we also have the use of a line chart to combine with our map visualization. We wanted to
-        include this because we thought it would help individuals visually see how the number of fires per
-        acre change throughout the years. It's easier to see it graphed out, rather than just on a color
-        spectrum. The line chart corresponds to the year that the slider is set to, along with the state
+        include this because we thought it would help individuals visually see how the number of fires
+        changed throughout the years. The line chart allows the user to see the fire conditions of the state before and after
+        the year they are currently analyzing, portraying a story of fires in the state rather than a single year.
+        The line chart corresponds to the year that the slider is set to, along with the state
         once a state is clicked. It also has a dynamic y-axis because each state has a different interval
         of the number of fires that it has. We include that transition of the y-axis changing so that it's
-        clear to the user that it has been modified. The line chart is just a static red color to just represent the fires. <br><br>
+        clear to the user that it has been modified. Finally, we styled the line chart as a static red, both to contrast it from
+        the black background, but not to grab attention away from the centerpiece of the visualization, the map.<br><br>
 
         Lastly, the overall style of the website is simple so that it is clear to the user what they're
         main focus should be on. We also wanted to make the background fit a more "dark-mode" theme so
@@ -232,12 +236,30 @@ p { margin: 0 0 10px 0; }
       Roughly how much time did you spend developing your application (in people-hours)?
       What aspects took the most time?]
       <br>Estimated hours per member:
-      <br> Andrew: __ hours
-      <br> Claire: __ hours
-      <br> Ariel: __ hours
-      <br> Megan: __ hours
-      <br> Anne: __ hours
-      <br> Total: __ hours
+      <br> Andrew: __ hours <br>
+
+        <br><br>
+      <br> Claire: __ hours <br>
+
+        <br><br>
+      <br> Ariel: 6 hours <br>
+            Over the course of the project I utilized my knowledge of Python, specifically pandas and numpy to assess the
+            data quality of our datasets, as well as connect data together from different sources to build some of our underlying datasets.
+            For example in order to get our land burned per 10,000 acres table I had to connect two tables, our original fire dataset
+            containing wildfire sizes, as well as a smaller dataset containing the acreage of each state. From there I aggregated and joined
+            the data, cleaning as I went. While this work was tricky at times there was less new elements to it than the work I did in d3,
+            specifically working on the tooltips for our map. I had not worked in javascript before so the learning curve was the aspect
+            that took the most time for me.
+        <br><br>
+      <br> Megan: __ hours <br>
+
+        <br><br>
+      <br> Anne: __ hours <br>
+
+        <br><br>
+      <br> Total: 6 hours <br>
+
+        <br><br>
     </em>
   </section>
 
