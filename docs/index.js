@@ -211,7 +211,7 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                     ,
                     exit => exit.remove()
                 );
-            marks.append('title').text(function(d) { return "Time: " + parseTime(d[0]) + '\n' + "Wildfires: " + d[1];});
+            marks.append('title').text(function(d) { return d[0] + '\n' + "Wildfires: " + d[1];});
             marks
               .on('mouseover', function() {
                 // The 'this' variable refers to the underlying SVG element.
@@ -263,10 +263,14 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
             // to the left = lighter color; to the right = darker color
             // yellow -> orange colors -> red
             var stateColor = d3.scaleThreshold()
-                .domain([12, 25, 38, 51, 64, 76, 89, 102])
+                .domain([14, 28, 42, 56, 70, 84, 98])
                 .range(["#fed976", "#feb24c","#fd8d3c","#fc4e2a","#e31a1c", "#bd0026", "#800026", "#67000d"]);
 
-            //stateColor.range().forEach(function(r){ console.log(r + ':' + stateColor.invertExtent(r));});
+            // Get color bin values
+            stateColor.range().forEach(function(r){ console.log(r + ':' + stateColor.invertExtent(r));});
+            // console.log(stateColor.domain());
+            console.log(d3.extent(fireCounts, d => parseFloat(d.NUM_BURNED_ACRES_PER_10K_ACRE)));
+
             // Graph Legend
             svg.append("image")
                 .attr('x', 830)
@@ -279,15 +283,6 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
             function updateJSONFireSize() {
                 // Filter the firecount csv based on the selected year
                 var filteredCSV = fireCounts.filter(d => (d.FIRE_YEAR === yearSelected.toString()));
-
-
-                // Filter the min and max data for the given year
-                // stateColor.domain([
-                //     d3.min(fireCounts,
-                //         function(d) { return parseFloat(d.NUM_BURNED_ACRES_PER_10K_ACRE); }),
-                //     d3.max(fireCounts,
-                //         function(d) { return parseFloat(d.NUM_BURNED_ACRES_PER_10K_ACRE); })
-                // ]);
 
                 // Merge the data in the fireCounts csv with the json
                 for (var i = 0; i < us.features.length; i++) {
@@ -318,7 +313,7 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                     updateJSONFireSize();
                     var value = d.properties.value;
                     // Grey out undefined values
-                    if (value) {
+                    if (value !== undefined) {
                         return stateColor(value);
                     } else {
                         return "#ccc";
@@ -344,14 +339,14 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                 states.append("title")
                     .text(function (d) {
                         var stateInfo = currentFires.find(({STATE}) => STATE === d.properties.name)
-                        console.log(currentFires.find(({STATE}) => STATE === d.properties.name));
-                        var acresBurned = 0.0;
+                        var acresBurned = "no data";
                         if (stateInfo !== undefined) {
-                            acresBurned = stateInfo["NUM_BURNED_ACRES_PER_10K_ACRE"];
+                            acresBurned = stateInfo["NUM_BURNED_ACRES_PER_10K_ACRE"] + " acres burned per 10k acres";
                         }
-                        return d.properties.name + '\n' + acresBurned + " acres burned per 10k acres"
+                        return d.properties.name + '\n' + acresBurned;
                     });
             }
+            updateStateTooltip();
 
 
             // Recolor the states
@@ -362,7 +357,7 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                         // Grey out undefined values
                         updateJSONFireSize();
                         var value = d.properties.value;
-                        if (value) {
+                        if (value !== undefined) {
                             return stateColor(value);
                         } else {
                             return "#ccc";
