@@ -46,7 +46,7 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
         .ticks(dataYears.length)                    // number of ticks
         .tickFormat(d3.format('.0f'))               // format for year
         .tickValues(dataYears)                      // tick values
-        .default(dataYears[dataYears.length - 1])
+        .default(dataYears[0])
         d3.select("#slider").style("fill", "#BB86FC");  // value slider set to initially (max year)
 
     // TODO: arrange map and slider on page
@@ -65,12 +65,12 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
     yearSlider.call(sliderYear);
 
     // Load the fire count data for each state
-    d3.csv("firesPerAcre.csv").then(function(fireCounts) {
+    d3.csv("firesPerAcre(2).csv").then(function(fireCounts) {
         // TODO: add necessary chart details (titles, subtitles, labels, axis titles)
         // Draw line chart
 
         // Set dimensions/margins
-        var margin = {top: 100, right: 30, bottom: 30, left: 60},
+        var margin = {top: 100, right: 30, bottom: 40, left: 60},
             chartWidth = width - margin.left - margin.right,
             chartHeight = height - margin.top - margin.bottom;
 
@@ -112,7 +112,7 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
             .attr("class", "x label")
             .attr("text-anchor", "middle")
             .attr("x", chartWidth - 440)    // moves the text left and right from the x-axis
-            .attr("y", chartHeight + 30)    // moves the text up and down from the x-axis
+            .attr("y", chartHeight + 40)    // moves the text up and down from the x-axis
             .style("fill", "white")
             .text("Year");
 
@@ -124,7 +124,7 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
             .attr("dy", ".75em")
             .attr("transform", "rotate(-90)")
             .style("fill", "white")
-            .text("# Fires Per Acre");
+            .text("Number of Wildfires");
 
 
         // Append line and marks containers
@@ -134,10 +134,8 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
         // Function to filter data based on state and group by year
         // Returns map of years to number of fires
         function filterData(state) {
-            // Filter Puerto Rico
-            var data = fireCounts.filter(function (d) {
-                return d.STATE !== "Puerto Rico";
-            });
+            // Get data
+            var data = fireCounts;
 
             // Filter to selected state
             if (state !== null) {
@@ -161,36 +159,34 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                 .range([chartHeight, 0]);
 
             // Add y axis
-            // TODO: refine transition for y axis
             yAxis.transition()
-                .duration(2000)
+                .duration(800)
                 .call(d3.axisLeft(y));
 
-            // TODO: refine color and transitions
             // Add line
             line
                 .datum(data)
                 .transition()
-                .duration(1000)
+                .duration(800)
+                .ease(d3.easeQuadOut)
                 .attr("fill", "none")
-                .attr("stroke", "red")
-                .attr("stroke-width", 1.5)
+                .attr("stroke", "#D60620")
+                .attr("stroke-width", 2)
                 .attr("d", d3.line()
                     .x(function(d) { return x(parseTime(d[0])); })
                     .y(function(d) { return y(d[1]); })
                 )
-
             // TODO: highlight mark corresponding to selected year
             // Add marks for each year
             var marks = markGroup.selectAll("circle")
-                .data(data, d => d[0])
+                .data(data, d => d[0])  // match on year
                 .join(
                     enter => enter
                         .append("circle")
                         .attr("cx", function(d) { return x(parseTime(d[0])); } )
                         .attr("cy", function(d) { return y(d[1]); } )
                         .attr("r", 5)
-                        .attr("fill", "red"),
+                        .attr("fill", "#D60620"),
                     update => update
                     ,
                     exit => exit.remove()
@@ -211,7 +207,8 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
             // TODO: refine transition for marks
             // Add transition for marks when switching between states
             marks.transition()
-                .duration(1000)
+                .duration(800)
+                .ease(d3.easeQuadOut)
                 .attr("cx", function(d) { return x(parseTime(d[0])); } )
                 .attr("cy", function(d) { return y(d[1]); } )
                 .attr("r", 5);
@@ -226,8 +223,7 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
         // Create fire marker size scale based on fire size
         var size = d3.scaleSqrt()
             .domain(d3.extent(sizes, d => d.size))
-            // TODO: adjust range
-            .range([1, 8]);
+            .range([1, 16]);
         // Draw the map
         d3.json("us.json").then(function(us) {
 
@@ -257,9 +253,9 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                 // Filter the min and max data for the given year
                 stateColor.domain([
                     d3.min(fireCounts,
-                        function(d) { return d.FIRE_COUNT; }),
+                        function(d) { return d.NUM_BURNED_ACRES_PER_10K_ACRE; }),
                     d3.max(fireCounts,
-                        function(d) { return d.FIRE_COUNT; })
+                        function(d) { return d.NUM_BURNED_ACRES_PER_10K_ACRE; })
                 ]);
 
                 // Merge the data in the fireCounts csv with the json
@@ -271,10 +267,10 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                         var csvStateName = filteredCSV[j].STATE;
                         // If the state names match
                         if (jsonStateName === csvStateName) {
-                            // Current fire count for the given state
-                            var currFireCount = filteredCSV[j].FIRE_COUNT;
+                            // Current fire count for the given state                          
+                            var currFireCount = filteredCSV[j].NUM_BURNED_ACRES_PER_10K_ACRE;
                             // Update the json file
-                            us.features[i].properties.value = currFireCount;
+                            us.features[i].properties.value = parseFloat(currFireCount);
                             break;
                         }
                     }
@@ -305,25 +301,26 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
 
             // Name the state
             // Displays text for default browser tooltip
+            // TODO: Replace to match Andy's tooltip
             if (tooltipDisplay){
                 states.append("title")
-                .text(d => d.properties.name +'\n'+ d.properties.value + " Wildfires");
+                .text(d => d.properties.name +'\n'+ d.properties.value + " Acres Burned per 10,000");
             }
-            // TODO: add tooltip and/or mouseover hover for states like with fire markers
-            // TODO: this tooltipDisplay does not work
+
+            // TODO: this tooltip display does not work...replace to match Andy's
             states
                 .on('mouseover', function() {
                     if (tooltipDisplay){
                         d3.select(this).attr('title', null)
                     }})
                 .on('mouseout', function() {
-                  if (tooltipDisplay){
-                    d3.select(this).attr('title', null)}
-                })
+
+                    d3.select(this).attr('title', null);
+                });
 
             // Recolor the states
-            function updateStateColors(currYear) {
-                states.transition().duration(1000)
+            function updateStateColors() {
+                states.transition().duration(800)
                     .style("fill", function(d) {
                         // Update the state colors
                         // Grey out undefined values
@@ -335,7 +332,7 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                             return "#ccc";
                         }
                     });
-                states.select("title").text(d => d.properties.name +'\n'+ d.properties.value + " Wildfires");
+                states.select("title").text(d => d.properties.name +'\n'+ d.properties.value + " Acres Burned per 10,000");
             }
 
             // Set min and max scale for zooming into the map
@@ -448,7 +445,7 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                 // Filter data to include only current year and state
                 // TODO: use id column for key
                     .data(fires.filter(d => (d.STATE.replace(" ", "_") === clickedState)
-                        && (d.FIRE_YEAR === yearSelected.toString())), d => [d.FIRE_NAME, d.LATITUDE, d.LONGITUDE])
+                        && (d.FIRE_YEAR === yearSelected.toString())), d => [d.FIRE_ID])
                     .join(
                         // add new circles
                         enter => enter
@@ -466,10 +463,9 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                             .on("click", function(event) { event.stopPropagation(); }),
                         update => update,
                         exit => exit
-                        // TODO: refine transition
                         // transition exiting circles to shrink and fade before removal
                             .transition()
-                            .duration(1000)
+                            .duration(800)
                             .attr('opacity', 0)
                             .attr('r', 0)
                             .remove()
@@ -477,6 +473,7 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
 
                 // Add title to the circles
                 // Default browser tooltip
+                // TODO: replace tooltip to match Andy's + use fires per 10k acres
                 circles
                     .append("title")
                     .text(d => d.FIRE_NAME + '\n' + d.FIRE_SIZE + " Acres Burned");
@@ -494,12 +491,25 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                       d3.select(this).attr('stroke', null);
                     })
                 // Add transition to the circles (fade in and grow)
-                // TODO: refine transition
                 circles
                     .transition()
                     .duration(1000)
                     .attr("r", d => size(d.FIRE_SIZE))
-                    .style("opacity", 0.6);
+                    .style("opacity", 0.4);
+
+                // TODO: add tooltip to circles to match Andy's
+                // TODO: change color/style for circle outline
+                // Outline the circle on mouse hover
+                circles
+                    .on('mouseover', function() {
+                        d3.select(this)
+                            .attr('stroke', 'white')
+                            .attr('stroke-width', .5)
+                            .attr('stroke-opacity', 1);
+                    })
+                    .on('mouseout', function() {
+                        d3.select(this).attr('stroke', null);
+                    })
             }
 
             // Add on change function to year slider
