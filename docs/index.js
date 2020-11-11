@@ -18,7 +18,7 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
 
     // Map title
     d3.select(".chart-title")
-        .text("Area Burned by Wildfires (acres per 10,000 Acres) <-- move units to legend");
+        .text("Area Burned by Wildfires");
 
     // Current state clicked
     var clickedState = null;
@@ -74,7 +74,7 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
         // Draw line chart
 
         // Set dimensions/margins
-        var margin = {top: 100, right: 30, bottom: 40, left: 60},
+        var margin = {top: 100, right: 30, bottom: 50, left: 90},
             chartWidth = width - margin.left - margin.right,
             chartHeight = height - margin.top - margin.bottom;
 
@@ -105,9 +105,10 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
             .range([0, chartWidth]);
 
         // Append axes
-        svg.append("g")
+        var xTicks = svg.append("g")
             .attr("transform", "translate(0," + chartHeight + ")")
             .call(d3.axisBottom(x));
+        xTicks.selectAll("text").attr("font-size", 16);
 
         var yAxis = svg.append("g");
 
@@ -115,15 +116,17 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
         svg.append("text")
             .attr("class", "x label")
             .attr("text-anchor", "middle")
+            .attr("font-size", 18)
             .attr("x", chartWidth - 440)    // moves the text left and right from the x-axis
-            .attr("y", chartHeight + 40)    // moves the text up and down from the x-axis
+            .attr("y", chartHeight + 50)    // moves the text up and down from the x-axis
             .style("fill", "white")
             .text("Year");
 
         svg.append("text")
             .attr("class", "y label")
             .attr("text-anchor", "middle")
-            .attr("y", -60)     // moves the text left and right from the y-axis
+            .attr("font-size", 18)
+            .attr("y", -90)     // moves the text left and right from the y-axis
             .attr("x", -200)    // moves the text up and down from the y-axis
             .attr("dy", ".75em")
             .attr("transform", "rotate(-90)")
@@ -163,9 +166,10 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                 .range([chartHeight, 0]);
 
             // Add y axis
-            yAxis.transition()
+            var yTicks = yAxis.transition()
                 .duration(800)
                 .call(d3.axisLeft(y));
+            yTicks.selectAll("text").attr("font-size", 16);
 
             // Add line
             line

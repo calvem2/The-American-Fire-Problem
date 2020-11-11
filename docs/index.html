@@ -102,8 +102,8 @@ p { margin: 0 0 10px 0; }
   margin-top: 45px;
 }
 
-.slider{
-  stroke: #6EB4E6;
+#slider text {
+  font-size: 14px;
 }
 
 /* Style map chart title */
@@ -159,7 +159,9 @@ p { margin: 0 0 10px 0; }
   <section>
     <div id="circleLoader" class="loader"></div>
     <div id="leftbox" >
-            <div id="us_map"></div>
+            <div id="us_map">
+                <h3 class="chart-title"></h3>
+            </div>
             <div id="legend"></div> <!-- i didnt see this bein used, make a new container for it if you want it to resize -->
     </div>
     <div id="rightbox">
