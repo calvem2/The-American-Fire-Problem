@@ -198,6 +198,7 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
 
             // TODO: highlight mark corresponding to selected year
             // Add marks for each year
+            console.log(data);
             var marks = markGroup.selectAll("circle")
                 .data(data, d => d[0])  // match on year
                 .join(
@@ -207,11 +208,11 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                         .attr("cy", function(d) { return y(d[1]); } )
                         .attr("r", 5)
                         .attr("fill", "#D60620"),
-                    update => update
-                    ,
+                    update => update,
                     exit => exit.remove()
                 );
-            marks.append('title').text(function(d) { return d[0] + '\n' + "Wildfires: " + d[1];});
+            marks.selectAll('title').remove();
+            marks.append('title').text(function(d) { console.log(d); return d[0] + '\n' + "Wildfires: " + d[1];});
             marks
               .on('mouseover', function() {
                 // The 'this' variable refers to the underlying SVG element.
@@ -273,11 +274,6 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
             var stateColor = d3.scaleThreshold()
                 .domain([14, 28, 42, 56, 70, 84, 98])
                 .range(["#fed976", "#feb24c","#fd8d3c","#fc4e2a","#e31a1c", "#bd0026", "#800026", "#67000d"]);
-
-            // Get color bin values
-            stateColor.range().forEach(function(r){ console.log(r + ':' + stateColor.invertExtent(r));});
-            // console.log(stateColor.domain());
-            console.log(d3.extent(fireCounts, d => parseFloat(d.NUM_BURNED_ACRES_PER_10K_ACRE)));
 
             // Graph Legend
             svg.append("image")
