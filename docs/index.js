@@ -309,24 +309,28 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                 .attr("d", path)                                        // draw state
                 .attr("id", d => d.properties.name.replace(" ", "_"));  // assign state name as path id
 
-            // Name the state
-            // Displays text for default browser tooltip
-            // TODO: Replace to match Andy's tooltip
-            if (tooltipDisplay){
+
+            // Append tooltip to states
+            // TODO: match andy's tooltip
+            // TODO: make tooltip for state currently clicked on disappear
+            function updateStateTooltip() {
+                // Filter by year selected
+                var currentFires = fireCounts.filter(function (d) {
+                    return d.FIRE_YEAR === yearSelected.toString();
+                })
+
                 states.append("title")
-                .text(d => d.properties.name +'\n'+ d.properties.value + " acres burned per 10k acres");
+                    .text(function (d) {
+                        var stateInfo = currentFires.find(({STATE}) => STATE === d.properties.name)
+                        console.log(currentFires.find(({STATE}) => STATE === d.properties.name));
+                        var acresBurned = 0.0;
+                        if (stateInfo !== undefined) {
+                            acresBurned = stateInfo["NUM_BURNED_ACRES_PER_10K_ACRE"];
+                        }
+                        return d.properties.name + '\n' + acresBurned + " acres burned per 10k acres"
+                    });
             }
 
-            // TODO: this tooltip display does not work...replace to match Andy's
-            states
-                .on('mouseover', function() {
-                    if (tooltipDisplay){
-                        d3.select(this).attr('title', null)
-                    }})
-                .on('mouseout', function() {
-
-                    d3.select(this).attr('title', null);
-                });
 
             // Recolor the states
             function updateStateColors() {
@@ -480,9 +484,8 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                 // TODO: replace tooltip to match Andy's + use fires per 10k acres
                 circles
                     .append("title")
-                    .text(d => d.FIRE_NAME + '\n' + d.FIRE_SIZE + " Acres Burned");
+                    .text(d => d.FIRE_NAME + '\n' + d.FIRE_SIZE + " acres burned");
 
-                    // TODO: change color/style for circle outline
                     // Outline the circle on mouse hover
                 circles
                     .on('mouseover', function() {
@@ -502,7 +505,6 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                     .style("opacity", 0.4);
 
                 // TODO: add tooltip to circles to match Andy's
-                // TODO: change color/style for circle outline
                 // Outline the circle on mouse hover
                 circles
                     .on('mouseover', function() {
@@ -523,6 +525,11 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                 updateStateColors(yearSelected);
                 d3.select("#slider").style("fill", "#6EB4E6")
                 drawFires();
+
+                // Update state tooltip
+                // TODO: match andy's tooltip
+                states.selectAll("title").remove();
+                updateStateTooltip();
             });
         });
     });
