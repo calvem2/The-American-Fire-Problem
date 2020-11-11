@@ -51,7 +51,7 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
         .tickFormat(d3.format('.0f'))               // format for year
         .tickValues(dataYears)                      // tick values
         .default(dataYears[0])
-        d3.select("#slider").style("fill", "#6EB4E6");  // value slider set to initially (max year)
+        d3.select("#slider").style("fill", "#6EB4E6");  // value slider set to initially (min year)
 
     // TODO: arrange map and slider on page
     // Add slider to html
@@ -528,7 +528,7 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
             sliderYear.on('onchange', val => {
                 yearSelected = val;
                 updateStateColors(yearSelected);
-                d3.select("#slider").style("fill", "#BB86FC")
+                d3.select("#slider").style("fill", "#6EB4E6")
                 drawFires();
             });
         });
