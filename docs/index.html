@@ -15,6 +15,9 @@
   background-color: #121212;
 }
 
+ a, a:visited { text-decoration: none; color: #6EB4E6; }
+=======
+
   #leftbox{
     float:left;
     width:50%;
@@ -49,9 +52,9 @@
  a, a:visited { text-decoration: none; color: #BB86FC; }
 a:hover { text-decoration: underline; color: #f4b014; }
  h1, h2, h3, h4, h5 {
-  color: #BB86FC;
+  color: #6EB4E6;
   background-color: inherit;
-  font-weight: normal;
+  font-weight: bold;
   padding: 0 0 5px 0;
   margin: 15px 0 0 0;
   border: none;
@@ -69,7 +72,7 @@ p { margin: 0 0 10px 0; }
   /* background-color: #121212; */
 }
  .title, .title h1, .title a {
-  color: #BB86FC;
+  color:#6EB4E6;
   font-size: 24pt;
   margin-bottom: 20px;
   margin-top: 5px;
@@ -91,7 +94,7 @@ p { margin: 0 0 10px 0; }
 /* Style of the loading circle */
 .loader {
   border: 16px solid #f3f3f3; /* Light grey */
-  border-top: 16px solid #BB86FC; /* Purple */
+  border-top: 16px solid#6EB4E6; /* Purple */
   border-radius: 50%;
   width: 90px;
   height: 90px;
@@ -101,8 +104,22 @@ p { margin: 0 0 10px 0; }
 }
 
 .slider{
-  stroke: white;
+  stroke: #6EB4E6;
 }
+
+/* Style map chart title */
+#us_map, .chart-title {
+    font-size: 16px;
+    text-align: center;
+    color: white;
+}
+
+/* Style exploratory question */
+#question {
+   font-size: 14pt;
+    text-align: center;
+}
+
 /* Animation for the loading circle */
 @keyframes spin {
   0% { transform: rotate(0deg); }
@@ -130,12 +147,13 @@ p { margin: 0 0 10px 0; }
         strong {text-align: center;}
     </style>
    <section class="title">
-    <h1 href="/">The American Fire Problem</h1>
-  </section>
+    <h1 href="/">U.S. Wildfires</h1>
+    <p id="question"> How has the number of fires changed over time in the United States?</p>
+   </section>
 
    <section>
     <p>
-      <strong>Team Members</strong>: Andrew Lee, Claire Beard, Ariel Shurygin, Megan Calverley, Anne Pham
+      Team Members: Andrew Lee, Claire Beard, Ariel Shurygin, Megan Calverley, Anne Pham
     </p>
   </section>
 
@@ -152,7 +170,6 @@ p { margin: 0 0 10px 0; }
     <div id="rightlowerbox">
       <div id="slider"></div>
     </div>
-
   </section>
 
   <section>
