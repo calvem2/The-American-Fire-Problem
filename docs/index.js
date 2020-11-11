@@ -128,11 +128,7 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
             .attr("dy", ".75em")
             .attr("transform", "rotate(-90)")
             .style("fill", "white")
-<<<<<<< HEAD
-            .text("Total # of Fires");
-=======
             .text("Number of Wildfires");
->>>>>>> 1b342ede2b5ec4cfd57782f56841d60248a443c1
 
 
         // Append line and marks containers
