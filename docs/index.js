@@ -66,7 +66,7 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
         // Draw line chart
 
         // Set dimensions/margins
-        var margin = {top: 100, right: 30, bottom: 30, left: 60},
+        var margin = {top: 100, right: 30, bottom: 40, left: 60},
             chartWidth = width - margin.left - margin.right,
             chartHeight = height - margin.top - margin.bottom;
 
@@ -104,7 +104,7 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
             .attr("class", "x label")
             .attr("text-anchor", "middle")
             .attr("x", chartWidth - 440)    // moves the text left and right from the x-axis
-            .attr("y", chartHeight + 30)    // moves the text up and down from the x-axis
+            .attr("y", chartHeight + 40)    // moves the text up and down from the x-axis
             .style("fill", "white")
             .text("Year");
 
@@ -116,7 +116,7 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
             .attr("dy", ".75em")
             .attr("transform", "rotate(-90)")
             .style("fill", "white")
-            .text("# Fires");
+            .text("Number of Wildfires");
 
 
         // Append line and marks containers
@@ -233,10 +233,10 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
 
                 // Filter the min and max data for the given year
                 stateColor.domain([
-                    d3.min(filteredCSV,
-                        function(d) { return d.NUM_BURNED_ACRES_PER_10K_ACRE; }), //return d.FIRES_PER_10K_ACRE; }),return 0.0008;
-                    d3.max(filteredCSV,
-                        function(d) { return d.NUM_BURNED_ACRES_PER_10K_ACRE; })//return d.FIRES_PER_10K_ACRE; })return 2.3;
+                    d3.min(fireCounts,
+                        function(d) { return d.NUM_BURNED_ACRES_PER_10K_ACRE; }),
+                    d3.max(fireCounts,
+                        function(d) { return d.NUM_BURNED_ACRES_PER_10K_ACRE; })
                 ]);
 
                 // Merge the data in the fireCounts csv with the json
