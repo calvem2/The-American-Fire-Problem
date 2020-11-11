@@ -46,44 +46,52 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
         .ticks(dataYears.length)                    // number of ticks
         .tickFormat(d3.format('.0f'))               // format for year
         .tickValues(dataYears)                      // tick values
-        .default(dataYears[dataYears.length - 1])
+        .default(dataYears[0])
         d3.select("#slider").style("fill", "#BB86FC");  // value slider set to initially (max year)
 
     // TODO: arrange map and slider on page
     // Add slider to html
     var yearSlider = d3.select("#slider")
         .append("svg")
+        /*
         .attr("width", 1000)
         .attr("height", 100)
+        */
+        .attr("preserveAspectRatio", "xMinYMin meet")
+        .attr("viewBox", "0 0 " + width + " " + 100)
         .append("g")
         .attr("transform", 'translate(30,30)');
 
     yearSlider.call(sliderYear);
 
     // Load the fire count data for each state
-    d3.csv("fireCountsOver0.5Acre.csv").then(function(fireCounts) {
+    d3.csv("firesPerAcre(2).csv").then(function(fireCounts) {
         // TODO: add necessary chart details (titles, subtitles, labels, axis titles)
         // Draw line chart
 
         // Set dimensions/margins
-        var margin = {top: 100, right: 30, bottom: 30, left: 60},
+        var margin = {top: 100, right: 30, bottom: 40, left: 60},
             chartWidth = width - margin.left - margin.right,
             chartHeight = height - margin.top - margin.bottom;
 
         // Append svg for chart
         var svg = d3.select("#line-chart")
             .append("svg")
+            /*
             .attr("width", chartWidth + margin.left + margin.right)
             .attr("height", chartHeight + margin.top + margin.bottom)
+            */
+            .attr("preserveAspectRatio", "xMinYMin meet")
+            .attr("viewBox", "0 0 " + width + " " + height)
             .append("g")
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
         // Graph title
         svg.append("text")
-            .attr("x", (width / 2))             
+            .attr("x", (width / 2))
             .attr("y", -50)
-            .attr("text-anchor", "middle")  
-            .style("font-size", "16px") 
+            .attr("text-anchor", "middle")
+            .style("font-size", "16px")
             .style("fill", "white")
             .text(clickedState);
 
@@ -104,7 +112,7 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
             .attr("class", "x label")
             .attr("text-anchor", "middle")
             .attr("x", chartWidth - 440)    // moves the text left and right from the x-axis
-            .attr("y", chartHeight + 30)    // moves the text up and down from the x-axis
+            .attr("y", chartHeight + 40)    // moves the text up and down from the x-axis
             .style("fill", "white")
             .text("Year");
 
@@ -116,7 +124,11 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
             .attr("dy", ".75em")
             .attr("transform", "rotate(-90)")
             .style("fill", "white")
+<<<<<<< HEAD
             .text("Total # of Fires");
+=======
+            .text("Number of Wildfires");
+>>>>>>> 1b342ede2b5ec4cfd57782f56841d60248a443c1
 
 
         // Append line and marks containers
@@ -126,7 +138,9 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
         // Function to filter data based on state and group by year
         // Returns map of years to number of fires
         function filterData(state) {
+            // Get data
             var data = fireCounts;
+
             // Filter to selected state
             if (state !== null) {
                 data = data.filter(function (d) {
@@ -149,50 +163,59 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                 .range([chartHeight, 0]);
 
             // Add y axis
-            // TODO: refine transition for y axis
             yAxis.transition()
-                .duration(2000)
+                .duration(800)
                 .call(d3.axisLeft(y));
 
-            // TODO: refine color and transitions
             // Add line
             line
                 .datum(data)
                 .transition()
-                .duration(1000)
+                .duration(800)
+                .ease(d3.easeQuadOut)
                 .attr("fill", "none")
-                .attr("stroke", "red")
-                .attr("stroke-width", 1.5)
+                .attr("stroke", "#D60620")
+                .attr("stroke-width", 2)
                 .attr("d", d3.line()
                     .x(function(d) { return x(parseTime(d[0])); })
                     .y(function(d) { return y(d[1]); })
                 )
-
-            // TODO: refine color
-            // TODO: add mark labels/tooltip
             // TODO: highlight mark corresponding to selected year
             // Add marks for each year
             var marks = markGroup.selectAll("circle")
-                .data(data, d => d[0])
+                .data(data, d => d[0])  // match on year
                 .join(
                     enter => enter
                         .append("circle")
                         .attr("cx", function(d) { return x(parseTime(d[0])); } )
                         .attr("cy", function(d) { return y(d[1]); } )
                         .attr("r", 5)
-                        .attr("fill", "red"),
+                        .attr("fill", "#D60620"),
                     update => update
                     ,
                     exit => exit.remove()
                 );
-
+            marks.append('title').text(function(d) { return "Time: " + parseTime(d[0]) + '\n' + "Wildfires: " + d[1];});
+            marks
+              .on('mouseover', function() {
+                // The 'this' variable refers to the underlying SVG element.
+                // We can select it directly, then use D3 attribute setters.
+                // (Note that 'this' is set when using "function() {}" definitions,
+                //  but *not* when using arrow function "() => {}" definitions.)
+                d3.select(this).attr('stroke', 'white').attr('stroke-width', 2);
+              })
+              .on('mouseout', function() {
+                // Setting the stroke color to null removes it entirely.
+                d3.select(this).attr('stroke', null);
+              });
             // TODO: refine transition for marks
             // Add transition for marks when switching between states
             marks.transition()
-                .duration(1000)
+                .duration(800)
+                .ease(d3.easeQuadOut)
                 .attr("cx", function(d) { return x(parseTime(d[0])); } )
                 .attr("cy", function(d) { return y(d[1]); } )
-                .attr("r", 5)
+                .attr("r", 5);
         }
 
         drawLine();
@@ -204,16 +227,15 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
         // Create fire marker size scale based on fire size
         var size = d3.scaleSqrt()
             .domain(d3.extent(sizes, d => d.size))
-            // TODO: adjust range
-            .range([1, 8]);
+            .range([1, 16]);
         // Draw the map
         d3.json("us.json").then(function(us) {
 
             // Create svg container
-            var svg = d3.select("#us_map")
+            var svg = d3.select("#leftbox")
                 .append("svg")
-                .attr("width", width)
-                .attr("height", height)
+                .attr("preserveAspectRatio", "xMinYMin meet")
+                .attr("viewBox", "0 0 " + width + " " + height)
                 .on("click", reset);
 
             // Create g element where states and fire circles will be appended
@@ -237,10 +259,10 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
 
                 // Filter the min and max data for the given year
                 stateColor.domain([
-                    d3.min(fireCounts, 
-                        function(d) { return d.FIRE_COUNT; }),
-                    d3.max(fireCounts, 
-                        function(d) { return d.FIRE_COUNT; })
+                    d3.min(fireCounts,
+                        function(d) { return d.NUM_BURNED_ACRES_PER_10K_ACRE; }),
+                    d3.max(fireCounts,
+                        function(d) { return d.NUM_BURNED_ACRES_PER_10K_ACRE; })
                 ]);
 
                 // Merge the data in the fireCounts csv with the json
@@ -253,9 +275,9 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                         // If the state names match
                         if (jsonStateName === csvStateName) {
                             // Current fire count for the given state                          
-                            var currFireCount = filteredCSV[j].FIRE_COUNT;
+                            var currFireCount = filteredCSV[j].NUM_BURNED_ACRES_PER_10K_ACRE;
                             // Update the json file
-                            us.features[i].properties.value = currFireCount;
+                            us.features[i].properties.value = parseFloat(currFireCount);
                             break;
                         }
                     }
@@ -287,26 +309,26 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
 
             // Name the state
             // Displays text for default browser tooltip
+            // TODO: Replace to match Andy's tooltip
             if (tooltipDisplay){
                 states.append("title")
-                .text(d => d.properties.name +'\n'+ d.properties.value + " Wildfires");
+                .text(d => d.properties.name +'\n'+ d.properties.value + " Acres Burned per 10,000");
             }
-            // TODO: add tooltip and/or mouseover hover for states like with fire markers
-            // TODO: this tooltipDisplay does not work
+
+            // TODO: this tooltip display does not work...replace to match Andy's
             states
                 .on('mouseover', function() {
                     if (tooltipDisplay){
-                        d3.select(this)
-                    } else {
                         d3.select(this).attr('title', null)
-                }})
+                    }})
                 .on('mouseout', function() {
+
                     d3.select(this).attr('title', null);
-                })
+                });
 
             // Recolor the states
-            function updateStateColors(currYear) {
-                states.transition().duration(1000)
+            function updateStateColors() {
+                states.transition().duration(800)
                     .style("fill", function(d) {
                         // Update the state colors
                         // Grey out undefined values
@@ -318,7 +340,7 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                             return "#ccc";
                         }
                     });
-                states.select("title").text(d => d.properties.name +'\n'+ d.properties.value + " Wildfires");
+                states.select("title").text(d => d.properties.name +'\n'+ d.properties.value + " Acres Burned per 10,000");
             }
 
             // Set min and max scale for zooming into the map
@@ -361,7 +383,7 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
             function clicked(event, d) {
                 // Set current state clicked
                 clickedState = this.id;
-                tooltipDisplay = false;     
+                tooltipDisplay = false;
 
                 // Get state bounds
                 const [[x0, y0], [x1, y1]] = path.bounds(d);
@@ -431,7 +453,7 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                 // Filter data to include only current year and state
                 // TODO: use id column for key
                     .data(fires.filter(d => (d.STATE.replace(" ", "_") === clickedState)
-                        && (d.FIRE_YEAR === yearSelected.toString())), d => [d.FIRE_NAME, d.LATITUDE, d.LONGITUDE])
+                        && (d.FIRE_YEAR === yearSelected.toString())), d => [d.FIRE_ID])
                     .join(
                         // add new circles
                         enter => enter
@@ -449,10 +471,9 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                             .on("click", function(event) { event.stopPropagation(); }),
                         update => update,
                         exit => exit
-                        // TODO: refine transition
                         // transition exiting circles to shrink and fade before removal
                             .transition()
-                            .duration(1000)
+                            .duration(800)
                             .attr('opacity', 0)
                             .attr('r', 0)
                             .remove()
@@ -460,33 +481,43 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
 
                 // Add title to the circles
                 // Default browser tooltip
+                // TODO: replace tooltip to match Andy's + use fires per 10k acres
                 circles
                     .append("title")
                     .text(d => d.FIRE_NAME + '\n' + d.FIRE_SIZE + " Acres Burned");
 
+                    // TODO: change color/style for circle outline
+                    // Outline the circle on mouse hover
+                circles
+                    .on('mouseover', function() {
+                      d3.select(this)
+                        .attr('stroke', 'white')
+                        .attr('stroke-width', 1)
+                        .attr('stroke-opacity', 1);
+                    })
+                    .on('mouseout', function() {
+                      d3.select(this).attr('stroke', null);
+                    })
                 // Add transition to the circles (fade in and grow)
-                // TODO: refine transition
                 circles
                     .transition()
                     .duration(1000)
                     .attr("r", d => size(d.FIRE_SIZE))
-                    .style("opacity", 0.6);
+                    .style("opacity", 0.4);
 
-                // TODO: add tooltip to circles
+                // TODO: add tooltip to circles to match Andy's
                 // TODO: change color/style for circle outline
                 // Outline the circle on mouse hover
                 circles
                     .on('mouseover', function() {
                         d3.select(this)
-                            .attr('stroke', '#000')
-                            .attr('stroke-width', .2)
+                            .attr('stroke', 'white')
+                            .attr('stroke-width', .5)
                             .attr('stroke-opacity', 1);
                     })
                     .on('mouseout', function() {
                         d3.select(this).attr('stroke', null);
                     })
-
-
             }
 
             // Add on change function to year slider
