@@ -106,6 +106,10 @@ p { margin: 0 0 10px 0; }
   font-size: 14px;
 }
 
+#team {
+    padding-bottom: 50px;
+}
+
 /* Style map chart title */
 #us_map, .chart-title {
     font-size: 16px;
@@ -151,7 +155,7 @@ p { margin: 0 0 10px 0; }
    </section>
 
    <section>
-    <p>
+    <p id="team">
       Team Members: Andrew Lee, Claire Beard, Ariel Shurygin, Megan Calverley, Anne Pham
     </p>
   </section>
@@ -159,14 +163,16 @@ p { margin: 0 0 10px 0; }
   <section>
     <div id="circleLoader" class="loader"></div>
     <div id="leftbox" >
-            <div id="us_map"></div>
             <div id="us_map">
                 <h3 class="chart-title"></h3>
             </div>
             <div id="legend"></div> <!-- i didnt see this bein used, make a new container for it if you want it to resize -->
     </div>
     <div id="rightbox">
-      <div id="line-chart"></div>
+      <div id="line-chart">
+          <h3 class="chart-title"></h3>
+          <p id="state-title"></p>
+      </div>
     </div>
     <div id="rightlowerbox">
       <div id="slider"></div>
@@ -177,8 +183,9 @@ p { margin: 0 0 10px 0; }
     <h2>Design Decisions</h2>
     <em>
         Our dataset contains records of wildfires that occurred in the United States from 1992 to 
-        2015 acquired from the reporting systems of federal, state, and local fire organizations. 
-        We excluded fires that were less than 0.5 acres in size in order to focus on more substantial wildfires.<br><br>
+        2015 acquired by the U.S. Forest Service from the reporting systems of federal, state, and local
+        fire organizations. We excluded fires that were less than 0.5 acres in size in order to focus on
+        more substantial wildfires.<br><br>
 
         Since we were measuring and comparing the number of fires per 10k acres across the United
         States, we decided to display our data findings with an interactive U.S. map using the

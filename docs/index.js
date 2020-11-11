@@ -17,8 +17,12 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
         .remove();
 
     // Map title
-    d3.select(".chart-title")
+    d3.select("#us_map .chart-title")
         .text("Area Burned by Wildfires");
+
+    // Line Chart Title
+    d3.select("#line-chart .chart-title")
+        .text("Total Number of Wildfires per Year");
 
 
     // Legend
@@ -155,10 +159,10 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
 
 
         // Graph title
-        var title = svg.append("text")
-                        .attr("x", (width / 2))
-                        .attr("y", -50)
-                        .attr("text-anchor", "middle")
+        var title = d3.select("#state-title")
+                        // .attr("x", (width / 2))
+                        // .attr("y", -50)
+                        // .attr("text-anchor", "middle")
                         .style("font-size", "16px")
                         .style("fill", "white")
 
@@ -427,7 +431,7 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                 if (clickedState == null) {
                     lineChartTitle = "U.S.A.";
                 } else {
-                    lineChartTitle = clickedState;
+                    lineChartTitle = clickedState.replace("_", " ");
                 }
 
                 // Draw circles for clickedState and selectedYear
@@ -554,7 +558,7 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
             // Update current year selected and redraw circles
             sliderYear.on('onchange', val => {
                 yearSelected = val;
-                updateStateColors(yearSelected);
+                updateStateColors();
                 d3.select("#slider").style("fill", "#6EB4E6")
                 drawFires();
 
