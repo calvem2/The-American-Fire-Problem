@@ -60,8 +60,8 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
         .ticks(dataYears.length)                    // number of ticks
         .tickFormat(d3.format('.0f'))               // format for year
         .tickValues(dataYears)                      // tick values
-        .default(dataYears[0])
-        d3.select("#slider").style("fill", "#6EB4E6");  // value slider set to initially (min year)
+        .default(dataYears[0])                      // value slider set to initially (min year)
+        d3.select("#slider").style("fill", "#6EB4E6");
 
     // Add slider to html
     var yearSlider = d3.select("#slider")
@@ -258,6 +258,14 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
 
             // Create g element where states and fire circles will be appended
             const g = svg.append("g");
+
+            // Map subtitle
+            d3.select("#leftbox")
+                .append("p")
+                .attr("id", "map-subtitle")
+                .text("Map is colored according to each state's area burned by wildfires per 10,000 acres for the selected year. " +
+                    "Click on a state to view individual wildfires. " +
+                    "Wildfire markers are sized according to area burned by the fire.");
 
             // Scale to sort the data value into color buckets for each state
             // to the left = lighter color; to the right = darker color
