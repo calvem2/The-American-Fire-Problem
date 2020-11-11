@@ -251,7 +251,7 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                             // Current fire count for the given state                          
                             var currFireCount = filteredCSV[j].NUM_BURNED_ACRES_PER_10K_ACRE;
                             // Update the json file
-                            us.features[i].properties.value = parseFloat(currFireRatio);
+                            us.features[i].properties.value = parseFloat(currFireCount);
                             break;
                         }
                     }
