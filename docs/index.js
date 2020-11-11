@@ -80,10 +80,10 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
 
         // Graph title
         svg.append("text")
-            .attr("x", (width / 2))             
+            .attr("x", (width / 2))
             .attr("y", -50)
-            .attr("text-anchor", "middle")  
-            .style("font-size", "16px") 
+            .attr("text-anchor", "middle")
+            .style("font-size", "16px")
             .style("fill", "white")
             .text("TODO: Add State & Year");
 
@@ -172,8 +172,6 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                     .y(function(d) { return y(d[1]); })
                 )
 
-            // TODO: refine color
-            // TODO: add mark labels/tooltip
             // TODO: highlight mark corresponding to selected year
             // Add marks for each year
             var marks = markGroup.selectAll("circle")
@@ -189,14 +187,26 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                     ,
                     exit => exit.remove()
                 );
-
+            marks.append('title').text(function(d) { return "Time: " + parseTime(d[0]) + '\n' + "Wildfires: " + d[1];});
+            marks
+              .on('mouseover', function() {
+                // The 'this' variable refers to the underlying SVG element.
+                // We can select it directly, then use D3 attribute setters.
+                // (Note that 'this' is set when using "function() {}" definitions,
+                //  but *not* when using arrow function "() => {}" definitions.)
+                d3.select(this).attr('stroke', 'white').attr('stroke-width', 2);
+              })
+              .on('mouseout', function() {
+                // Setting the stroke color to null removes it entirely.
+                d3.select(this).attr('stroke', null);
+              });
             // TODO: refine transition for marks
             // Add transition for marks when switching between states
             marks.transition()
                 .duration(1000)
                 .attr("cx", function(d) { return x(parseTime(d[0])); } )
                 .attr("cy", function(d) { return y(d[1]); } )
-                .attr("r", 5)
+                .attr("r", 5);
         }
 
         drawLine();
@@ -238,9 +248,9 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
 
                 // Filter the min and max data for the given year
                 stateColor.domain([
-                    d3.min(fireCounts, 
+                    d3.min(fireCounts,
                         function(d) { return d.FIRE_COUNT; }),
-                    d3.max(fireCounts, 
+                    d3.max(fireCounts,
                         function(d) { return d.FIRE_COUNT; })
                 ]);
 
@@ -253,7 +263,7 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                         var csvStateName = filteredCSV[j].STATE;
                         // If the state names match
                         if (jsonStateName === csvStateName) {
-                            // Current fire count for the given state                          
+                            // Current fire count for the given state
                             var currFireCount = filteredCSV[j].FIRE_COUNT;
                             // Update the json file
                             us.features[i].properties.value = currFireCount;
@@ -361,7 +371,7 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
             function clicked(event, d) {
                 // Set current state clicked
                 clickedState = this.id;
-                tooltipDisplay = false;     
+                tooltipDisplay = false;
 
                 // Get state bounds
                 const [[x0, y0], [x1, y1]] = path.bounds(d);
@@ -464,6 +474,18 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                     .append("title")
                     .text(d => d.FIRE_NAME + '\n' + d.FIRE_SIZE + " Acres Burned");
 
+                    // TODO: change color/style for circle outline
+                    // Outline the circle on mouse hover
+                circles
+                    .on('mouseover', function() {
+                      d3.select(this)
+                        .attr('stroke', 'white')
+                        .attr('stroke-width', 1)
+                        .attr('stroke-opacity', 1);
+                    })
+                    .on('mouseout', function() {
+                      d3.select(this).attr('stroke', null);
+                    })
                 // Add transition to the circles (fade in and grow)
                 // TODO: refine transition
                 circles
@@ -471,22 +493,6 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                     .duration(1000)
                     .attr("r", d => size(d.FIRE_SIZE))
                     .style("opacity", 0.6);
-
-                // TODO: add tooltip to circles
-                // TODO: change color/style for circle outline
-                // Outline the circle on mouse hover
-                circles
-                    .on('mouseover', function() {
-                        d3.select(this)
-                            .attr('stroke', '#000')
-                            .attr('stroke-width', .2)
-                            .attr('stroke-opacity', 1);
-                    })
-                    .on('mouseout', function() {
-                        d3.select(this).attr('stroke', null);
-                    })
-
-
             }
 
             // Add on change function to year slider

@@ -76,6 +76,18 @@ p { margin: 0 0 10px 0; }
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+    div.tooltip {
+      position: absolute;
+      text-align: center;
+      width: 60px;
+      height: 28px;
+      padding: 2px;
+      font: 12px sans-serif;
+      background: lightsteelblue;
+      border: 0px;
+      border-radius: 8px;
+      pointer-events: none;
+    }
   </style>
 </head>
 <body>
@@ -98,7 +110,6 @@ p { margin: 0 0 10px 0; }
   <section>
     <h1> How has the number of fires changed over time in the United States?</h1>
     <div id="circleLoader" class="loader"></div>
-    <div id="slider"></div>
     <div class="sideBySide">
         <div class="child">
             <div id="us_map"></div>
@@ -107,47 +118,48 @@ p { margin: 0 0 10px 0; }
         <div class="child">
             <div id="line-chart"></div>
         </div>
+        <div id="slider"></div>
     </div>
   </section>
 
   <section>
     <h2>Design Decisions</h2>
-    <em>Since we were measuring and comparing the number of fires per 10k acres across the United 
-        States, we decided to display our data findings with an interactive U.S. map using the 
-        Albers projection so that distortion is minimal between the standard parallels. In 
-        addition, we paired it with a line chart in order to provide more information of how the 
+    <em>Since we were measuring and comparing the number of fires per 10k acres across the United
+        States, we decided to display our data findings with an interactive U.S. map using the
+        Albers projection so that distortion is minimal between the standard parallels. In
+        addition, we paired it with a line chart in order to provide more information of how the
         number of fires have changed throughout time starting from 1992 to 2015. <br> <br>
 
-        Starting with the U.S. map, we decided to go with the interactivity of allowing the user 
-        to click each state that they're interested in and it will trigger a pan zoom-in effect 
-        to get a closer look into the states' specific locations of where the fires are occurring. 
-        Once zoomed in, we have little markers to show the fires' location which we decided to 
-        include because then you could identify certain clusters within that specific state. The 
-        zoom functions also add a nice easability to the visualization and its purpose is to show the 
+        Starting with the U.S. map, we decided to go with the interactivity of allowing the user
+        to click each state that they're interested in and it will trigger a pan zoom-in effect
+        to get a closer look into the states' specific locations of where the fires are occurring.
+        Once zoomed in, we have little markers to show the fires' location which we decided to
+        include because then you could identify certain clusters within that specific state. The
+        zoom functions also add a nice easability to the visualization and its purpose is to show the
         user that they're now looking at one specific state's data rather than the entirety of the country. <br> <br>
-      
-        We also include some tooltips so that the user can gain even more information when they perform 
-        a mouseover. Including this allows for a bit more subtle information that can be quickly 
-        accessible. Having it be a mouseover is also nice for when you're zoomed in and you want 
-        to look at a specific fire marker and there isn't some distracting big table that displays 
+
+        We also include some tooltips so that the user can gain even more information when they perform
+        a mouseover. Including this allows for a bit more subtle information that can be quickly
+        accessible. Having it be a mouseover is also nice for when you're zoomed in and you want
+        to look at a specific fire marker and there isn't some distracting big table that displays
         the information, rather you get it right where your mouse is. <br><br>
-      
-        The colors of each state is based on a color spectrum range starting at yellow with the 
-        lesser number of fires per acre to red representing the more number of fires per acre. We 
-        decided to use this color because hotter temperatures are normally portrayed with a red 
-        high in contrast, and a lower temperature, but still hot, is normally seen as a lighter yellow. 
+
+        The colors of each state is based on a color spectrum range starting at yellow with the
+        lesser number of fires per acre to red representing the more number of fires per acre. We
+        decided to use this color because hotter temperatures are normally portrayed with a red
+        high in contrast, and a lower temperature, but still hot, is normally seen as a lighter yellow.
         We wanted the colors to be intuitive with our idea of fires. <br><br>
-      
-        Next, we also have the use of a line chart to combine with our map visualization. We wanted to 
-        include this because we thought it would help individuals visually see how the number of fires per 
-        acre change throughout the years. It's easier to see it graphed out, rather than just on a color 
-        spectrum. The line chart corresponds to the year that the slider is set to, along with the state 
-        once a state is clicked. It also has a dynamic y-axis because each state has a different interval 
-        of the number of fires that it has. We include that transition of the y-axis changing so that it's 
+
+        Next, we also have the use of a line chart to combine with our map visualization. We wanted to
+        include this because we thought it would help individuals visually see how the number of fires per
+        acre change throughout the years. It's easier to see it graphed out, rather than just on a color
+        spectrum. The line chart corresponds to the year that the slider is set to, along with the state
+        once a state is clicked. It also has a dynamic y-axis because each state has a different interval
+        of the number of fires that it has. We include that transition of the y-axis changing so that it's
         clear to the user that it has been modified. The line chart is just a static red color to just represent the fires. <br><br>
-      
-        Lastly, the overall style of the website is simple so that it is clear to the user what they're 
-        main focus should be on. We also wanted to make the background fit a more "dark-mode" theme so 
+
+        Lastly, the overall style of the website is simple so that it is clear to the user what they're
+        main focus should be on. We also wanted to make the background fit a more "dark-mode" theme so
         that the harsh colors of the yellow-red spectrum would pop out more to the user!
       </em>
   </section>
@@ -155,8 +167,8 @@ p { margin: 0 0 10px 0; }
   <section>
     <h2>Development Process</h2>
     <em>[Add: describe how the work was split among the team members.
-      Include a commentary on the development process, including answers to the following questions: 
-      Roughly how much time did you spend developing your application (in people-hours)? 
+      Include a commentary on the development process, including answers to the following questions:
+      Roughly how much time did you spend developing your application (in people-hours)?
       What aspects took the most time?]
       <br>Estimated hours per member:
       <br> Andrew: __ hours
@@ -178,5 +190,4 @@ p { margin: 0 0 10px 0; }
  <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
  <script src="index.js"></script>
 </body>
-</html> 
-
+</html>
