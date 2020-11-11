@@ -314,7 +314,7 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                             return "#ccc";
                         }
                     });
-                states.select("title").text(d => d.properties.name +'\n'+ d.properties.value + " Wildfires");
+                states.select("title").text(d => d.properties.name +'\n'+ d.properties.value + " Acres Burned per 10,000");
             }
 
             // Set min and max scale for zooming into the map
