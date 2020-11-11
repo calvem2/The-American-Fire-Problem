@@ -61,7 +61,7 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
     yearSlider.call(sliderYear);
 
     // Load the fire count data for each state
-    d3.csv("firesPerAcre.csv").then(function(fireCounts) {
+    d3.csv("firesPerAcre(2).csv").then(function(fireCounts) {
         // TODO: add necessary chart details (titles, subtitles, labels, axis titles)
         // Draw line chart
 
@@ -116,7 +116,7 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
             .attr("dy", ".75em")
             .attr("transform", "rotate(-90)")
             .style("fill", "white")
-            .text("# Fires Per Acre");
+            .text("# Fires");
 
 
         // Append line and marks containers
@@ -234,9 +234,9 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                 // Filter the min and max data for the given year
                 stateColor.domain([
                     d3.min(filteredCSV,
-                        function(d) { return d.FIRES_PER_10K_ACRE; }), //return d.FIRES_PER_10K_ACRE; }),return 0.0008;
+                        function(d) { return d.NUM_BURNED_ACRES_PER_10K_ACRE; }), //return d.FIRES_PER_10K_ACRE; }),return 0.0008;
                     d3.max(filteredCSV,
-                        function(d) { return d.FIRES_PER_10K_ACRE; })//return d.FIRES_PER_10K_ACRE; })return 2.3;
+                        function(d) { return d.NUM_BURNED_ACRES_PER_10K_ACRE; })//return d.FIRES_PER_10K_ACRE; })return 2.3;
                 ]);
 
                 // Merge the data in the fireCounts csv with the json
@@ -249,7 +249,7 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                         // If the state names match
                         if (jsonStateName === csvStateName) {
                             // Current fire count for the given state                          
-                            var currFireCount = filteredCSV[j].FIRES_PER_10K_ACRE;
+                            var currFireCount = filteredCSV[j].NUM_BURNED_ACRES_PER_10K_ACRE;
                             // Update the json file
                             us.features[i].properties.value = currFireCount;
                             break;
@@ -285,7 +285,7 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
             // TODO: Replace to match Andy's tooltip
             if (tooltipDisplay){
                 states.append("title")
-                .text(d => d.properties.name +'\n'+ d.properties.value + " Wildfires");
+                .text(d => d.properties.name +'\n'+ d.properties.value + " Acres Burned per 10,000");
             }
 
             // TODO: this tooltip display does not work...replace to match Andy's
