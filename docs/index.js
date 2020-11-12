@@ -195,7 +195,6 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                     .y(function(d) { return y(d[1]); })
                 )
 
-            // TODO: highlight mark corresponding to selected year
             // Add marks for each year
             var marks = markGroup.selectAll("circle")
                 .data(data, d => d[0])  // match on year
