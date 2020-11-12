@@ -31,7 +31,7 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
 
     // Current state clicked
     var clickedState = null;
-    var lineChartTitle = "U.S.A.";
+    var lineChartTitle = "United States";
 
     // Functions for parsing Dates and date strings
     var parseTime = d3.timeParse("%Y");
@@ -61,7 +61,7 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
         .tickFormat(d3.format('.0f'))               // format for year
         .tickValues(dataYears)                      // tick values
         .default(dataYears[0])                      // value slider set to initially (min year)
-        d3.select("#slider").style("fill", "#6EB4E6");
+        d3.select("#slider").style("fill", "#feb24c");
 
     // Add slider to html
     var yearSlider = d3.select("#slider")
@@ -195,7 +195,6 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                     .y(function(d) { return y(d[1]); })
                 )
 
-            // TODO: highlight mark corresponding to selected year
             // Add marks for each year
             var marks = markGroup.selectAll("circle")
                 .data(data, d => d[0])  // match on year
@@ -204,9 +203,39 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                         .append("circle")
                         .attr("cx", function(d) { return x(parseTime(d[0])); } )
                         .attr("cy", function(d) { return y(d[1]); } )
-                        .attr("r", 5)
-                        .attr("fill", "#D60620"),
-                    update => update,
+                        .attr("r", function (d) {
+                            // Make selected year dot bigger
+                            if(d[0] == yearSelected) {
+                                return 6;
+                            } else {
+                                return 5;
+                            } 
+                        })
+                        .attr("fill", function(d) { 
+                            // Highlight dot on selected year
+                            if(d[0] == yearSelected) {
+                                return "#feb24c";
+                            } else {
+                                return "#D60620";
+                            }
+                        }),
+                    update => update
+                    .attr("r", function(d) {
+                        // Make selected year dot bigger
+                        if(d[0] == yearSelected) {
+                            return 6;
+                        } else {
+                            return 5;
+                        } 
+                    })
+                    .attr("fill", function(d) { 
+                        // Highlight dot on selected year
+                        if(d[0] == yearSelected) {
+                            return "#feb24c";
+                        } else {
+                            return "#D60620";
+                        }
+                    }),
                     exit => exit.remove()
                 );
             marks.selectAll('title').remove();
@@ -229,7 +258,14 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                 .ease(d3.easeQuadOut)
                 .attr("cx", function(d) { return x(parseTime(d[0])); } )
                 .attr("cy", function(d) { return y(d[1]); } )
-                .attr("r", 5);
+                .attr("r", function(d) {
+                    // Make selected year dot bigger
+                    if(d[0] == yearSelected) {
+                        return 6;
+                    } else {
+                        return 5;
+                    } 
+                });
 
 
             title.text(lineChartTitle);
@@ -331,8 +367,6 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
 
 
             // Append tooltip to states
-            // TODO: match andy's tooltip
-            // TODO: make tooltip for state currently clicked on disappear
             function updateStateTooltip() {
                 // Filter by year selected
                 var currentFires = fireCounts.filter(function (d) {
@@ -389,7 +423,7 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                 .attr("fill", "white")
                 .attr("stroke", "#444")         // border color
                 .attr("stroke-width", 1)        // border width
-                .attr("x", width - 122)
+                .attr("x", width + 80)
                 .attr("y", 10)
                 .attr("width", 112)
                 .attr("height", 25)
@@ -397,7 +431,7 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                 .on("click", reset);
             backButton.append("text")
                 .attr("fill", "#444")
-                .attr("x", width - 112)
+                .attr("x", width + 90)
                 .attr("y", 27)
                 .attr("font-size", 14)
                 .attr("color", "#444")
@@ -427,7 +461,7 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
 
                 // Setting the line chart title
                 if (clickedState == null) {
-                    lineChartTitle = "U.S.A.";
+                    lineChartTitle = "United States";
                 } else {
                     lineChartTitle = clickedState.replace("_", " ");
                 }
@@ -474,7 +508,7 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
 
                 // Setting the line chart title
                 if (clickedState == null) {
-                    lineChartTitle = "U.S.A.";
+                    lineChartTitle = "United States";
                 } else {
                     lineChartTitle = clickedState;
                 }
@@ -515,7 +549,6 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
 
                 // Add title to the circles
                 // Default browser tooltip
-                // TODO: replace tooltip to match Andy's + use fires per 10k acres
                 circles
                     .append("title")
                     .text(d => d.FIRE_NAME + '\n' + d.FIRE_SIZE + " acres burned");
@@ -538,7 +571,6 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                     .attr("r", d => size(parseFloat(d.FIRE_SIZE)))
                     .style("opacity", 0.4);
 
-                // TODO: add tooltip to circles to match Andy's
                 // Outline the circle on mouse hover
                 circles
                     .on('mouseover', function() {
@@ -557,11 +589,12 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
             sliderYear.on('onchange', val => {
                 yearSelected = val;
                 updateStateColors();
-                d3.select("#slider").style("fill", "#6EB4E6")
+                d3.select("#slider").style("fill", "#feb24c")
                 drawFires();
+                // Update the circle highlighted on the graph
+                drawLine();
 
                 // Update state tooltip
-                // TODO: match andy's tooltip
                 states.selectAll("title").remove();
                 updateStateTooltip();
             });
