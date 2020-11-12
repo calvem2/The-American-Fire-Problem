@@ -208,7 +208,6 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                             if(d[0] == yearSelected) {
                                 return 6;
                             } else {
-                                console.log(parseTime(d[0]) + " " + yearSelected );
                                 return 5;
                             } 
                         })
@@ -217,7 +216,6 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                             if(d[0] == yearSelected) {
                                 return "#feb24c";
                             } else {
-                                console.log(parseTime(d[0]) + " " + yearSelected );
                                 return "#D60620";
                             }
                         }),
@@ -227,7 +225,6 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                         if(d[0] == yearSelected) {
                             return 6;
                         } else {
-                            console.log(parseTime(d[0]) + " " + yearSelected );
                             return 5;
                         } 
                     })
@@ -236,7 +233,6 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                         if(d[0] == yearSelected) {
                             return "#feb24c";
                         } else {
-                            console.log(parseTime(d[0]) + " " + yearSelected );
                             return "#D60620";
                         }
                     }),
@@ -267,7 +263,6 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                     if(d[0] == yearSelected) {
                         return 6;
                     } else {
-                        console.log(parseTime(d[0]) + " " + yearSelected );
                         return 5;
                     } 
                 });
