@@ -423,7 +423,7 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                 .attr("fill", "white")
                 .attr("stroke", "#444")         // border color
                 .attr("stroke-width", 1)        // border width
-                .attr("x", width - 122)
+                .attr("x", width + 80)
                 .attr("y", 10)
                 .attr("width", 112)
                 .attr("height", 25)
@@ -431,7 +431,7 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                 .on("click", reset);
             backButton.append("text")
                 .attr("fill", "#444")
-                .attr("x", width - 112)
+                .attr("x", width + 90)
                 .attr("y", 27)
                 .attr("font-size", 14)
                 .attr("color", "#444")
