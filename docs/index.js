@@ -134,7 +134,6 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
             .style("fill", "white")
             .text("Number of Wildfires");
 
-
         // Append line and marks containers
         var line = svg.append("path");
         var markGroup = svg.append("g");
