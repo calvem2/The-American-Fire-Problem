@@ -254,7 +254,7 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
             var svg = d3.select("#leftbox")
                 .append("svg")
                 .attr("preserveAspectRatio", "xMinYMin meet")
-                .attr("viewBox", "0 0 " + width + " " + height)
+                .attr("viewBox", "0 0 " + (width + 200) + " " + (height + 100))
                 .on("click", reset);
 
             // Create g element where states and fire circles will be appended
@@ -277,9 +277,9 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
 
             // Graph Legend
             svg.append("image")
-                .attr('x', 830)
+                .attr('x', 950)
                 .attr('y', 350)
-                .attr('height', 300)
+                .attr('height', 200)
                 .attr('width', 150)
                 .attr("xlink:href", "images/legend.png");
 
