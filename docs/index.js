@@ -204,9 +204,44 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                         .append("circle")
                         .attr("cx", function(d) { return x(parseTime(d[0])); } )
                         .attr("cy", function(d) { return y(d[1]); } )
-                        .attr("r", 5)
-                        .attr("fill", "#D60620"),
-                    update => update,
+                        .attr("r", function(d) {
+                            // Make selected year dot bigger
+                            if(d[0] == yearSelected) {
+                                return 7;
+                            } else {
+                                console.log(parseTime(d[0]) + " " + yearSelected );
+                                return 5;
+                            } 
+                        })
+                        .attr("fill", function(d) { 
+                            // Highlight dot on selected year
+                            if(d[0] == yearSelected) {
+                                return "#feb24c";
+                            } else {
+                                console.log(parseTime(d[0]) + " " + yearSelected );
+                                return "#D60620";
+                            }
+                        }),
+                        //.attr("fill", "blue"),
+                    update => update
+                    .attr("r", function(d) {
+                        // Make selected year dot bigger
+                        if(d[0] == yearSelected) {
+                            return 7;
+                        } else {
+                            console.log(parseTime(d[0]) + " " + yearSelected );
+                            return 5;
+                        } 
+                    })
+                    .attr("fill", function(d) { 
+                        // Highlight dot on selected year
+                        if(d[0] == yearSelected) {
+                            return "#feb24c";
+                        } else {
+                            console.log(parseTime(d[0]) + " " + yearSelected );
+                            return "#D60620";
+                        }
+                    }),
                     exit => exit.remove()
                 );
             marks.selectAll('title').remove();
@@ -229,7 +264,15 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                 .ease(d3.easeQuadOut)
                 .attr("cx", function(d) { return x(parseTime(d[0])); } )
                 .attr("cy", function(d) { return y(d[1]); } )
-                .attr("r", 5);
+                .attr("r", function(d) {
+                    // Make selected year dot bigger
+                    if(d[0] == yearSelected) {
+                        return 7;
+                    } else {
+                        console.log(parseTime(d[0]) + " " + yearSelected );
+                        return 5;
+                    } 
+                });
 
 
             title.text(lineChartTitle);
@@ -559,6 +602,8 @@ d3.csv("over0.5AcreWithIDs(2).csv").then(function(fires) {
                 updateStateColors();
                 d3.select("#slider").style("fill", "#6EB4E6")
                 drawFires();
+                // Update the circle highlighted on the graph
+                drawLine();
 
                 // Update state tooltip
                 // TODO: match andy's tooltip
